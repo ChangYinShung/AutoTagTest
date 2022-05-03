@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <VoloVersion>513.0.2</VoloVersion>
     <FSVersion>513.0.1</FSVersion>
   </PropertyGroup>
