@@ -1,0 +1,61 @@
+<Project>
+  <PropertyGroup>
+    <AbpVersion>5.1.3</AbpVersion>
+    <EasyAbpTreeVersion>2.5.3</EasyAbpTreeVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>0.0.1</Version>
+    <VoloVersion>513.0.2</VoloVersion>
+    <FSVersion>513.0.1</FSVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <HtmlAgilityPackVersion>1.11.24</HtmlAgilityPackVersion>
+    <RestSharpVersion>106.11.4</RestSharpVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <Authors>YinChang</Authors>
+    <Company>Further Software</Company>
+    <PackageProjectUrl>https://github.com/fs-tw/SCHOOL.Works</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/fs-tw/SCHOOL.Works</RepositoryUrl>
+    <PackageTags>abp module</PackageTags>
+    <AbpProjectType>module</AbpProjectType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+
+    <!-- All Microsoft packages -->
+    <MicrosoftPackageVersion>6.0.*</MicrosoftPackageVersion>
+
+    <!-- Microsoft.NET.Test.Sdk https://www.nuget.org/packages/Microsoft.NET.Test.Sdk -->
+    <MicrosoftNETTestSdkPackageVersion>16.11.0</MicrosoftNETTestSdkPackageVersion>
+
+    <!-- NSubstitute  https://www.nuget.org/packages/NSubstitute -->
+    <NSubstitutePackageVersion>4.2.2</NSubstitutePackageVersion>
+
+    <!-- Shouldly https://www.nuget.org/packages/Shouldly -->
+    <ShouldlyPackageVersion>4.0.3</ShouldlyPackageVersion>
+
+    <!-- xunit https://www.nuget.org/packages/xUnit -->
+    <xUnitPackageVersion>2.4.1</xUnitPackageVersion>
+
+    <!-- xunit.extensibility.execution https://www.nuget.org/packages/xunit.extensibility.execution -->
+    <xUnitExtensibilityExecutionPackageVersion>2.4.1</xUnitExtensibilityExecutionPackageVersion>
+
+    <!-- xunit.runner.visualstudio https://www.nuget.org/packages/xunit.runner.visualstudio -->
+    <xUnitRunnerVisualstudioPackageVersion>2.4.3</xUnitRunnerVisualstudioPackageVersion>
+
+    <!-- Mongo2Go https://www.nuget.org/packages/Mongo2Go -->
+    <Mongo2GoPackageVersion>3.1.3</Mongo2GoPackageVersion>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
