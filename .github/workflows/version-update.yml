@@ -1,4 +1,4 @@
-name: publish to nuget
+name: Auto Tag by prop
 on:
   push:
     branches:
@@ -8,11 +8,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: NuGet/setup-nuget@v1.0.5
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.x'
-
       - name: read directoryBuild.props
         id: directoryBuildProps
         uses: juliangruber/read-file-action@v1
