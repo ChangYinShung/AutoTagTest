@@ -32,7 +32,7 @@ jobs:
 
       - name: add git tag
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
-        uses: tvdias/github-tagger@v0.0.1
+        uses:  Klemensas/action-autotag@stable
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ steps.getVersion.outputs.first_match }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version: ${{ steps.getVersion.outputs.first_match }}
