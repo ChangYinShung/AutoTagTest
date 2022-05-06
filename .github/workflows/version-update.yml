@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   publish:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: read directoryBuild.props
@@ -32,8 +32,7 @@ jobs:
 
       - name: add git tag
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
-        uses: jaliborc/action-general-autotag@1.0.0
+        uses: tvdias/github-tagger@v0.0.1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          source_file: "./Directory.Build.props"
-          extraction_regex: "\\(?<=>)[^<>]+(?=</Version>)\""
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.getVersion.outputs.first_match }}
