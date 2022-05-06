@@ -32,7 +32,8 @@ jobs:
 
       - name: add git tag
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
-        uses:  Klemensas/action-autotag@stable
+        uses: jaliborc/action-general-autotag@1.0.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          version: ${{ steps.getVersion.outputs.first_match }}
+          source_file: "./Directory.Build.props"
+          extraction_regex: "\\(?<=>)[^<>]+(?=</Version>)\""
