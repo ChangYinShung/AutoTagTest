@@ -32,8 +32,7 @@ jobs:
 
       - name: add git tag
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
-        uses: dothq/tag-and-release-and-upload@v1.0.2
+        uses: tvdias/github-tagger@v0.0.1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          version: ${{ steps.getVersion.outputs.first_match }}
-          overwrite: false
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.getVersion.outputs.first_match }}
