@@ -2,7 +2,7 @@ name: Auto Tag by prop
 on:
   push:
     branches:
-      - master
+      - release/*
 jobs:
   publish:
     permissions: write-all
