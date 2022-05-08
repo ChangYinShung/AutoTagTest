@@ -32,7 +32,7 @@ jobs:
 
       - name: add git tag
         if: ${{ steps.checkTag.outputs.exists == 'false' }}
-        uses: phish108/autotag-action@1.1.37
+        uses: jasondavis303/tag-and-release-and-upload@v1.2.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          
+          version: ${{ steps.getVersion.outputs.first_match }}
