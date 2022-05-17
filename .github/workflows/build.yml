@@ -15,7 +15,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
       with:
-        submodules: 'true'
+        submodules: recursive
         persist-credentials: false
         token: ${{ secrets.ADMIN_TOKEN || github.token }}
 
