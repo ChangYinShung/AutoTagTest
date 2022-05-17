@@ -4,3 +4,9 @@
 [submodule "tools/entitydeveloper"]
 	path = tools/entitydeveloper
 	url = https://github.com/fs-tw/entitydeveloper.git
+[submodule "projects/EasyAbp.EShop"]
+	path = projects/EasyAbp.EShop
+	url = https://github.com/EasyAbp/EShop.git
+[submodule "projects/EasyAbp.PaymentService"]
+	path = projects/EasyAbp.PaymentService
+	url = https://github.com/EasyAbp/PaymentService.git
