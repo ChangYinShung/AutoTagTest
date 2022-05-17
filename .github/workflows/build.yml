@@ -26,8 +26,8 @@ jobs:
       run: |
 	dotnet nuget remove source "ABP Commercial NuGet Source"
 	dotnet nuget add source https://nuget.abp.io/5811553c-0aa3-4d7d-a8ca-5afb5a45b6d7/v3/index.json --name "ABP Commercial NuGet Source"
-     	dotnet nuget remove source "github"
-        dotnet nuget add source --username ChangYinShung --password ${{ secrets.ADMIN_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/fs-tw/index.json"
+	dotnet nuget remove source "github"
+	dotnet nuget add source --username ChangYinShung --password ${{ secrets.ADMIN_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/fs-tw/index.json"
         ./build-all.ps1
       continue-on-error: true
 
