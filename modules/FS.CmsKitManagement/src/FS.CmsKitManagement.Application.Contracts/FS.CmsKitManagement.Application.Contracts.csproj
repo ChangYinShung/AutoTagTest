@@ -1,0 +1,186 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CmsKitManagement</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!--<ProjectReference Include="..\..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR.Core\FS.Abp.MediatR.Core.csproj" />
+		<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />-->
+		<!--<ProjectReference Include="..\..\..\..\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Application.Contracts\FS.Abp.AutoFilterer.Application.Contracts.csproj" />-->
+		<ProjectReference Include="..\..\..\..\framework\FS.CmsKit.ContentComposites\src\FS.CmsKit.ContentComposites.Application.Contracts\FS.CmsKit.ContentComposites.Application.Contracts.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.CmsKit.ContentDefinitions\src\FS.CmsKit.ContentDefinitions.Application.Contracts\FS.CmsKit.ContentDefinitions.Application.Contracts.csproj" />
+		<ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.CmsKit.Application.Contracts" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Deprecated\**" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\**" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\Shapes\**" />
+		<EmbeddedResource Remove="Deprecated\**" />
+		<EmbeddedResource Remove="_Generated\FS.CmsKitManagement\MultiLinguals\**" />
+		<EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Shapes\**" />
+		<None Remove="Deprecated\**" />
+		<None Remove="_Generated\FS.CmsKitManagement\MultiLinguals\**" />
+		<None Remove="_Generated\FS.CmsKitManagement\Shapes\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="_Generated\FS.CmsKitManagement\Attachments\AttachmentsPermissionDefinitionProviders.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\Attachments\AttachmentsPermissionNames.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\Attachments\Dtos\AttachmentMediaDescriptorDto.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\Attachments\IAttachmentMediaDescriptorCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IBlogsApi.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComponent\ContentComponentPermissionDefinitionProviders.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComponent\ContentComponentPermissionNames.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComposites\ContentCompositesPermissionDefinitionProviders.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComposites\ContentCompositesPermissionNames.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComposites\Dtos\ContentCompositeDto.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComposites\IContentCompositeCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComposite\ContentCompositePermissionDefinitionProviders.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComposite\ContentCompositePermissionNames.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\ContentDefinitionsPermissionDefinitionProviders.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\ContentDefinitionsPermissionNames.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\Dtos\ContentDefinitionDto.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\Dtos\ContentPartDefinitionDto.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\Dtos\ContentPartFieldDefinitionDto.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\Dtos\ContentTypeDefinitionDto.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\Dtos\ContentTypePartDefinitionDto.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\IContentDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\IContentPartDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\IContentPartFieldDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\IContentTypeDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\IContentTypePartDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentEntities\ContentEntitiesPermissionDefinitionProviders.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentEntities\ContentEntitiesPermissionNames.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentEntity\ContentEntityPermissionDefinitionProviders.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentEntity\ContentEntityPermissionNames.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentRecords\ContentRecordsPermissionDefinitionProviders.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentRecords\ContentRecordsPermissionNames.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IAttachmentMediaCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IContentDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IContentPropertyCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IEntityBlogCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IEntityContentCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IEntityContentDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IMultiLingualCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IMultiLingualTranslationCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IShapeCrudAppService.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="FS.CmsKit\ContentEntities\ContentEntityDto.cs">
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\Attachments\Dtos\AttachmentDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\Attachments\Dtos\AttachmentDtoValidator.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\Attachments\IAttachmentCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Attachments</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\Attachments\Permissions\AttachmentsPermissionDefinitionProviders.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Permissions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\Attachments\Permissions\AttachmentsPermissionNames.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Permissions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\BlogPostSettingDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\Blogs\IBlogPostSettingAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Blogs</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentEntities\Dtos\ContentEntityDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentEntities\Dtos\ContentEntityDtoValidator.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentEntities\IContentEntityCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ContentEntities</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentEntities\Permissions\ContentEntitiesPermissionDefinitionProviders.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Permissions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentEntities\Permissions\ContentEntitiesPermissionNames.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Permissions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\Dtos\ContentPartFieldRecordDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\Dtos\ContentPartFieldRecordDtoValidator.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\Dtos\ContentPartRecordDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\Dtos\ContentPartRecordDtoValidator.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\Dtos\ContentTypeRecordDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\Dtos\ContentTypeRecordDtoValidator.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\IContentPartFieldRecordCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ContentRecords</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\IContentPartRecordCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ContentRecords</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\IContentTypeRecordCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ContentRecords</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\Permissions\ContentRecordsPermissionDefinitionProviders.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Permissions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\Permissions\ContentRecordsPermissionNames.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Permissions</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="_Generated\FS.CmsKitManagement\ContentComponent\" />
+		<Folder Include="_Generated\FS.CmsKitManagement\ContentComposites\Dtos\" />
+		<Folder Include="_Generated\FS.CmsKitManagement\ContentComposite\" />
+		<Folder Include="_Generated\FS.CmsKitManagement\ContentDefinitions\Dtos\" />
+		<Folder Include="_Generated\FS.CmsKitManagement\ContentEntity\" />
+	</ItemGroup>
+
+
+
+</Project>

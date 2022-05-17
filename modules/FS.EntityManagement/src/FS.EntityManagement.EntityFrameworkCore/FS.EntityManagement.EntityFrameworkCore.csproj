@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.EntityManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.EntityManagement\EfCoreEntityDefaultItemRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.EntityManagement\EfCoreEntityDefaultRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.EntityManagement\EntityFrameworkCore\EntityManagementModelBuilderConfigurationOptions.Generated.cs" />
+    <Compile Remove="_Generated\FS.EntityManagement\EntityManagementDbContext.Generated.cs" />
+    <Compile Remove="_Generated\FS.EntityManagement\EntityManagementDbContextModelCreatingExtensions.Generated.cs" />
+    <Compile Remove="_Generated\FS.EntityManagement\EntityManagementModelBuilderConfigurationOptions.Generated.cs" />
+    <Compile Remove="_Generated\FS.EntityManagement\IEntityManagementDbContext.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Entity.EntityDefaults\src\FS.Entity.EntityDefaults.EntityFrameworkCore\FS.Entity.EntityDefaults.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Entity.MultiLinguals\src\FS.Entity.MultiLinguals.EntityFrameworkCore\FS.Entity.MultiLinguals.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.EntityManagement.Domain\FS.EntityManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.EntityManagement\EntityFrameworkCore\EntityManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.EntityManagement\EntityFrameworkCore\EntityManagementDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.EntityManagement\EntityFrameworkCore\IEntityManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

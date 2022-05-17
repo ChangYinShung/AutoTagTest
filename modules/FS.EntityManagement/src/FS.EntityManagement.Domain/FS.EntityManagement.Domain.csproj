@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.EntityManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="FS.Abp.Data" Version="$(FSVersion)" />-->
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Entity.EntityDefaults\src\FS.Entity.EntityDefaults.Domain\FS.Entity.EntityDefaults.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Entity.EntityFeatures\src\FS.Entity.EntityFeatures.Domain\FS.Entity.EntityFeatures.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Entity.MultiLinguals\src\FS.Entity.MultiLinguals.Domain\FS.Entity.MultiLinguals.Domain.csproj" />
+    <ProjectReference Include="..\FS.EntityManagement.Domain.Shared\FS.EntityManagement.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

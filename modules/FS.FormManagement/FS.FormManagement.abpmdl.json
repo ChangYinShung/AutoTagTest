@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.FormManagement.Domain.Shared": {
+      "path": "src/FS.FormManagement.Domain.Shared/FS.FormManagement.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.Domain": {
+      "path": "src/FS.FormManagement.Domain/FS.FormManagement.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.Application.Contracts": {
+      "path": "src/FS.FormManagement.Application.Contracts/FS.FormManagement.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.Application": {
+      "path": "src/FS.FormManagement.Application/FS.FormManagement.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.EntityFrameworkCore": {
+      "path": "src/FS.FormManagement.EntityFrameworkCore/FS.FormManagement.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.MongoDB": {
+      "path": "src/FS.FormManagement.MongoDB/FS.FormManagement.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.HttpApi": {
+      "path": "src/FS.FormManagement.HttpApi/FS.FormManagement.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.HttpApi.Client": {
+      "path": "src/FS.FormManagement.HttpApi.Client/FS.FormManagement.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.TestBase": {
+      "path": "test/FS.FormManagement.TestBase/FS.FormManagement.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.FormManagement.EntityFrameworkCore.Tests": {
+      "path": "test/FS.FormManagement.EntityFrameworkCore.Tests/FS.FormManagement.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.FormManagement.MongoDB.Tests": {
+      "path": "test/FS.FormManagement.MongoDB.Tests/FS.FormManagement.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.FormManagement.Domain.Tests": {
+      "path": "test/FS.FormManagement.Domain.Tests/FS.FormManagement.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.FormManagement.Application.Tests": {
+      "path": "test/FS.FormManagement.Application.Tests/FS.FormManagement.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.FormManagement.HttpApi.Host": {
+      "path": "host/FS.FormManagement.HttpApi.Host/FS.FormManagement.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.FormManagement.Web": {
+      "path": "src/FS.FormManagement.Web/FS.FormManagement.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.FormManagement.HttpApi.Client.ConsoleTestApp/FS.FormManagement.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.FormManagement.Web.Host": {
+      "path": "host/FS.FormManagement.Web.Host/FS.FormManagement.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.FormManagement.IdentityServer": {
+      "path": "host/FS.FormManagement.IdentityServer/FS.FormManagement.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.FormManagement.Host.Shared": {
+      "path": "host/FS.FormManagement.Host.Shared/FS.FormManagement.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.FormManagement.Web.Unified": {
+      "path": "host/FS.FormManagement.Web.Unified/FS.FormManagement.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.FormManagement.Blazor": {
+      "path": "src/FS.FormManagement.Blazor/FS.FormManagement.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.Blazor.Host": {
+      "path": "host/FS.FormManagement.Blazor.Host/FS.FormManagement.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.FormManagement.Blazor.Server": {
+      "path": "src/FS.FormManagement.Blazor.Server/FS.FormManagement.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.Blazor.WebAssembly": {
+      "path": "src/FS.FormManagement.Blazor.WebAssembly/FS.FormManagement.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.FormManagement.Blazor.Server.Host": {
+      "path": "host/FS.FormManagement.Blazor.Server.Host/FS.FormManagement.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

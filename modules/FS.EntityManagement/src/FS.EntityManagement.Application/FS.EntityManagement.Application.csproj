@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.EntityManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.EntityManagement\EntityDefaults\Dtos\EntityDefaultsSettingsDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.EntityManagement\EntityDefaults\EntityDefaultsSettingsAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Entity.EntityDefaults\src\FS.Entity.EntityDefaults.Application\FS.Entity.EntityDefaults.Application.csproj" />
+    <ProjectReference Include="..\FS.EntityManagement.Application.Contracts\FS.EntityManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.EntityManagement.Domain\FS.EntityManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.EntityManagement\EntityDefaults\Dtos\" />
+  </ItemGroup>
+
+</Project>

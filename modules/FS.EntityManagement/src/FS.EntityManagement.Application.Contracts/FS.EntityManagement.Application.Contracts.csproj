@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.EntityManagement</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_Generated\FS.EntityManagement\EntityDefaults\Dtos\EntityDefaultsSettingsDto.Generated.cs" />
+	  <Compile Remove="_Generated\FS.EntityManagement\EntityDefaults\Dtos\EntityDefaultsSettingsDtoValidator.Generated.cs" />
+	  <Compile Remove="_Generated\FS.EntityManagement\EntityDefaults\IEntityDefaultsSettingsAppService.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\framework\FS.Entity.EntityDefaults\src\FS.Entity.EntityDefaults.Application.Contracts\FS.Entity.EntityDefaults.Application.Contracts.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Entity\src\FS.Entity.Application.Contracts\FS.Entity.Application.Contracts.csproj" />
+		<ProjectReference Include="..\FS.EntityManagement.Domain.Shared\FS.EntityManagement.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="_Generated\FS.EntityManagement\EntityDefaults\Dtos\" />
+	</ItemGroup>
+
+</Project>

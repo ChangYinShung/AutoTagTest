@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>FS.EntityManagement</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\..\framework\FS.Entity.EntityDefaults\src\FS.Entity.EntityDefaults.AspNetCore\FS.Entity.EntityDefaults.AspNetCore.csproj" />
+	  <ProjectReference Include="..\..\..\..\framework\FS.Entity.EntityFeatures\src\FS.Entity.EntityFeatures.AspNetCore\FS.Entity.EntityFeatures.AspNetCore.csproj" />
+	  <ProjectReference Include="..\..\..\..\framework\FS.Entity.MultiLinguals\src\FS.Entity.MultiLinguals.AspNetCore\FS.Entity.MultiLinguals.AspNetCore.csproj" />
+	  <ProjectReference Include="..\FS.EntityManagement.Application\FS.EntityManagement.Application.csproj" />
+	  <ProjectReference Include="..\FS.EntityManagement.EntityFrameworkCore\FS.EntityManagement.EntityFrameworkCore.csproj" />
+	  <ProjectReference Include="..\FS.EntityManagement.HttpApi\FS.EntityManagement.HttpApi.csproj" />
+	</ItemGroup>
+
+</Project>

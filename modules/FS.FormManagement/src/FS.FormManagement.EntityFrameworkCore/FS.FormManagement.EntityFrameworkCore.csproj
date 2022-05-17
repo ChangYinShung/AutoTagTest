@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>FS.FormManagement</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\FS.FormManagement.Domain\FS.FormManagement.Domain.csproj" />
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Forms.EntityFrameworkCore" Version="$(VoloVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="EntityFrameworkCore\FormManagementDbContextModelCreatingExtensions.cs">
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="_Generated\FS.FormManagement\EntityForms\EntityFormsStore.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityForms</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.FormManagement\EntityForms\EntityFrameworkCore\EfCoreEntityFormRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.FormManagement\EntityForms\EntityFrameworkCore\EntityForm.Configuration.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.FormManagement\EntityForms\EntityFrameworkCore\IEntityFormsDbContext.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.FormManagement\EntityFrameworkCore\FormManagementDbContext.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.FormManagement\EntityFrameworkCore\FormManagementDbContextModelCreatingExtensions.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.FormManagement\EntityFrameworkCore\FormManagementModelBuilderConfigurationOptions.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.FormManagement\EntityFrameworkCore\IFormManagementDbContext.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+</Project>

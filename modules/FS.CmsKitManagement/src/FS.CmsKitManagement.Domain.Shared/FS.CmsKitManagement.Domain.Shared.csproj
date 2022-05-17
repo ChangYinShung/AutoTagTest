@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CmsKitManagement</RootNamespace>
+		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\framework\FS.Abp.Data\src\FS.Abp.Data.Core\FS.Abp.Data.Core.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper.Core\FS.Abp.Npoi.Mapper.Core.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.CmsKit.ContentComposites\src\FS.CmsKit.ContentComposites.Domain.Shared\FS.CmsKit.ContentComposites.Domain.Shared.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.CmsKit.ContentDefinitions\src\FS.CmsKit.ContentDefinitions.Domain.Shared\FS.CmsKit.ContentDefinitions.Domain.Shared.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Entity.EntityFeatures\src\FS.Entity.EntityFeatures.Core\FS.Entity.EntityFeatures.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+		<PackageReference Include="Volo.CmsKit.Domain.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="FS.Abp.AutoFilterer.Core" Version="$(FSVersion)" />
+		<!--<PackageReference Include="FS.Abp.Data" Version="$(FSVersion)" />-->
+		<PackageReference Include="FS.Abp.Npoi.Mapper.Core" Version="$(FSVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Localization\CmsKitManagement\*.json" />
+		<Content Remove="Localization\CmsKitManagement\*.json" />
+		<EmbeddedResource Include="Files\**" />
+		<Content Remove="Files\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="DataModel\CmsKitManagement.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CmsKitManagement.efml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="DataModel\CmsKit.Diagram1.view">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CmsKit.efml</DependentUpon>
+		</None>
+		<None Update="DataModel\CmsKit.edps">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CmsKit.efml</DependentUpon>
+		</None>
+		<None Update="DataModel\CmsKit.efml">
+			<Generator>DevartEFCoreGenerator</Generator>
+			<LastGenOutput>CmsKit.info</LastGenOutput>
+		</None>
+		<None Update="DataModel\CmsKit.info">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CmsKit.efml</DependentUpon>
+		</None>
+		<None Update="DataModel\CmsKitManagement.Diagram1.view">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CmsKitManagement.efml</DependentUpon>
+		</None>
+		<None Update="DataModel\CmsKitManagement.edps">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CmsKitManagement.efml</DependentUpon>
+		</None>
+		<None Update="DataModel\CmsKitManagement.efml">
+			<Generator>DevartEFCoreGenerator</Generator>
+			<LastGenOutput>CmsKitManagement.info</LastGenOutput>
+		</None>
+		<None Update="DataModel\CmsKitManagement.info">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CmsKitManagement.efml</DependentUpon>
+		</None>
+	</ItemGroup>
+
+</Project>

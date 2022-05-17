@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.EntityManagement.Domain.Shared": {
+      "path": "src/FS.EntityManagement.Domain.Shared/FS.EntityManagement.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.Domain": {
+      "path": "src/FS.EntityManagement.Domain/FS.EntityManagement.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.Application.Contracts": {
+      "path": "src/FS.EntityManagement.Application.Contracts/FS.EntityManagement.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.Application": {
+      "path": "src/FS.EntityManagement.Application/FS.EntityManagement.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.EntityFrameworkCore": {
+      "path": "src/FS.EntityManagement.EntityFrameworkCore/FS.EntityManagement.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.MongoDB": {
+      "path": "src/FS.EntityManagement.MongoDB/FS.EntityManagement.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.HttpApi": {
+      "path": "src/FS.EntityManagement.HttpApi/FS.EntityManagement.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.HttpApi.Client": {
+      "path": "src/FS.EntityManagement.HttpApi.Client/FS.EntityManagement.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.TestBase": {
+      "path": "test/FS.EntityManagement.TestBase/FS.EntityManagement.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EntityManagement.EntityFrameworkCore.Tests": {
+      "path": "test/FS.EntityManagement.EntityFrameworkCore.Tests/FS.EntityManagement.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EntityManagement.MongoDB.Tests": {
+      "path": "test/FS.EntityManagement.MongoDB.Tests/FS.EntityManagement.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EntityManagement.Domain.Tests": {
+      "path": "test/FS.EntityManagement.Domain.Tests/FS.EntityManagement.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EntityManagement.Application.Tests": {
+      "path": "test/FS.EntityManagement.Application.Tests/FS.EntityManagement.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EntityManagement.HttpApi.Host": {
+      "path": "host/FS.EntityManagement.HttpApi.Host/FS.EntityManagement.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EntityManagement.Web": {
+      "path": "src/FS.EntityManagement.Web/FS.EntityManagement.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.EntityManagement.HttpApi.Client.ConsoleTestApp/FS.EntityManagement.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EntityManagement.Web.Host": {
+      "path": "host/FS.EntityManagement.Web.Host/FS.EntityManagement.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EntityManagement.IdentityServer": {
+      "path": "host/FS.EntityManagement.IdentityServer/FS.EntityManagement.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EntityManagement.Host.Shared": {
+      "path": "host/FS.EntityManagement.Host.Shared/FS.EntityManagement.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EntityManagement.Web.Unified": {
+      "path": "host/FS.EntityManagement.Web.Unified/FS.EntityManagement.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EntityManagement.Blazor": {
+      "path": "src/FS.EntityManagement.Blazor/FS.EntityManagement.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.Blazor.Host": {
+      "path": "host/FS.EntityManagement.Blazor.Host/FS.EntityManagement.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EntityManagement.Blazor.Server": {
+      "path": "src/FS.EntityManagement.Blazor.Server/FS.EntityManagement.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.Blazor.WebAssembly": {
+      "path": "src/FS.EntityManagement.Blazor.WebAssembly/FS.EntityManagement.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EntityManagement.Blazor.Server.Host": {
+      "path": "host/FS.EntityManagement.Blazor.Server.Host/FS.EntityManagement.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

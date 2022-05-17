@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore context-namespace="FS.FormManagement.EntityFrameworkCore" namespace="FS.FormManagement" p1:name="FormManagementDbContext" p1:Guid="afc34d1e-5755-4b9a-81cd-251ec6908948" p1:VersionTag="5.1.3" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <p1:Attributes>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>DomainShared</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement.Domain.Shared</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Domain</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement.Domain</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Application</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement.Application</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>ApplicationContracts</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement.Application.Contracts</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EntityFrameworkCore</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement.EntityFrameworkCore</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.FormManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+  </p1:Attributes>
+  <class name="FS.FormManagement.EntityForms.EntityForm" entity-set="EntityForms" schema="dbo" p1:Guid="0378cec5-e695-46c7-b29c-ac1e8ba43477" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>EntityForms</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="985f07a3-399c-4096-9637-47e02be20473" p1:GenerateDTO="False">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="1118cf00-d4ef-4c23-a352-d75a4a87bc27">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EntityId" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="71b8937e-5b91-4ce4-b264-bc4f84063dc4">
+      <column name="EntityId" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="FormId" type="Guid" p1:ValidateRequired="true" p1:Guid="8e2a760d-aeeb-4bd2-972c-e40e93aa2e3c">
+      <column name="" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f36b30bf-0d93-447e-a7aa-e269bc3565f9" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+  </class>
+</efcore>

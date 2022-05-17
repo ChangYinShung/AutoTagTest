@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.FormManagement": {
+      "path": "FS.FormManagement.abpmdl.json"
+    }
+  }
+}

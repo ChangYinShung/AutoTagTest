@@ -1,0 +1,142 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CmsKitManagement</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!--<ProjectReference Include="..\..\..\..\framework\FS.Abp.Settings\src\FS.Abp.Settings.Domain\FS.Abp.Settings.Domain.csproj" />-->
+		<!--<ProjectReference Include="..\..\..\..\framework\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />-->
+		<!--<ProjectReference Include="..\..\..\..\framework\FS.Abp.Settings\src\FS.Abp.Settings.Domain\FS.Abp.Settings.Domain.csproj" />-->
+		<ProjectReference Include="..\..\..\..\framework\FS.CmsKit.ContentComposites\src\FS.CmsKit.ContentComposites.Domain\FS.CmsKit.ContentComposites.Domain.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.CmsKit.ContentDefinitions\src\FS.CmsKit.ContentDefinitions.Domain\FS.CmsKit.ContentDefinitions.Domain.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.CmsKit\src\FS.CmsKit.Domain\FS.CmsKit.Domain.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Entity.MultiLinguals\src\FS.Entity.MultiLinguals.Domain\FS.Entity.MultiLinguals.Domain.csproj" />
+		<ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!--<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />-->
+		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
+		<!--<PackageReference Include="FS.Abp.EntityFeatures.Domain" Version="$(FSVersion)" />-->
+		<PackageReference Include="FS.Abp.Settings.Domain" Version="$(FSVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Deprecated\**" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\**" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\**" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\Shapes\**" />
+		<EmbeddedResource Remove="Deprecated\**" />
+		<EmbeddedResource Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\**" />
+		<EmbeddedResource Remove="_Generated\FS.CmsKitManagement\MultiLinguals\**" />
+		<EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Shapes\**" />
+		<None Remove="Deprecated\**" />
+		<None Remove="_Generated\FS.CmsKitManagement\ContentDefinitions\**" />
+		<None Remove="_Generated\FS.CmsKitManagement\MultiLinguals\**" />
+		<None Remove="_Generated\FS.CmsKitManagement\Shapes\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="_Generated\FS.CmsKitManagement\AttachmentMedia.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\Attachments\AttachmentMediaDescriptor.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\Attachments\IAttachmentMediaDescriptorRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComposites\ContentComposite.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComposites\IContentCompositesStore.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentComposites\IContentCompositeTreeRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentDefinition.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ContentProperty.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\EntityBlog.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\EntityContent.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\EntityContentDefinition.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IAttachmentMediaRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\ICmsKitManagementStore.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IContentDefinitionRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IContentPropertyRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IContentsStore.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IEntityBlogRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IEntityBlogsStore.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IEntityContentDefinitionRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IEntityContentRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IMediaDescriptorsStore.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IMultiLingualRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IMultiLingualsStore.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IMultiLingualTranslationRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IShapeRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\IShapesStore.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\MultiLingual.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\MultiLingualTranslation.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\NameValue.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKitManagement\Shape.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="_Generated\FS.CmsKitManagement\Attachments\Attachment.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Attachments</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\Attachments\IAttachmentRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Attachments</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\Attachments\IAttachmentsStore.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Attachments</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogPostSetting.AbpSetting.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Blogs</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogPostSetting.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Blogs</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentEntities\ContentEntity.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentEntities</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentEntities\IContentEntitiesStore.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentEntities</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentEntities\IContentEntityRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentEntities</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\ContentPartFieldRecord.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentRecords</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\ContentPartRecord.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentRecords</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\ContentTypeRecord.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentRecords</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\IContentPartFieldRecordRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentRecords</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\IContentPartRecordRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentRecords</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\IContentRecordsStore.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentRecords</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKitManagement\ContentRecords\IContentTypeRecordRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentRecords</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="_Generated\FS.CmsKitManagement\ContentComposites\" />
+	</ItemGroup>
+
+</Project>

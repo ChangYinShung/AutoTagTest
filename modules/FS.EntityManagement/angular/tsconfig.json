@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s/entity-management": [
+        "projects/entity-management/src/public-api.ts"
+      ],
+      "@f-s/entity-management/config": [
+        "projects/entity-management/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/entity-management/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/entity-management/src/lib/proxy/*"]
+    }
+  }
+}
