@@ -1,0 +1,87 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CmsKit.ContentDefinitions</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentDefinitionDtoValidator.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentPartDefinitionDtoValidator.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentPartFieldDefinitionDtoValidator.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentTypeDefinitionDtoValidator.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentTypePartDefinitionDtoValidator.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\FS.CmsKit.ContentDefinitions.Application.Contracts\FS.CmsKit.ContentDefinitions.Application.Contracts.csproj" />
+		<ProjectReference Include="..\FS.CmsKit.ContentDefinitions.Domain\FS.CmsKit.ContentDefinitions.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="FS.CmsKit.ContentDefinitions\ContentDefinitionCrudAppService.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentDefinitions\ContentPartDefinitionCrudAppService.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentDefinitions\ContentTypeDefinitionCrudAppService.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentDefinitions\Dtos\ContentDefinitionDtoAutoMapperProfile.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentDefinitions\Dtos\ContentPartDefinitionDtoAutoMapperProfile.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentDefinitions\Dtos\ContentTypeDefinitionDtoAutoMapperProfile.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentDefinitionCrudAppService.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentPartDefinitionCrudAppService.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentPartFieldDefinitionCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentTypeDefinitionCrudAppService.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentTypePartDefinitionCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentDefinitionDtoAutoMapperProfile.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentPartDefinitionDtoAutoMapperProfile.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentPartFieldDefinitionDtoAutoMapperProfile.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentTypeDefinitionDtoAutoMapperProfile.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentTypePartDefinitionDtoAutoMapperProfile.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Dtos</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

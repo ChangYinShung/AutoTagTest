@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Entity.EntityFeatures</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Entity\src\FS.Entity.Application.Contracts\FS.Entity.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Entity.EntityFeatures.Domain.Shared\FS.Entity.EntityFeatures.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.CmsKit.ContentComposites": {
+      "path": "FS.CmsKit.ContentComposites.abpmdl.json"
+    }
+  }
+}

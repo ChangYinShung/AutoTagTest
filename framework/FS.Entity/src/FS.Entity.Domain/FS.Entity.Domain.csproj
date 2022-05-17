@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Entity</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!--<PackageReference Include="FS.Abp.Settings.Domain" Version="$(FSVersion)" />-->
+		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\FS.Entity.Domain.Shared\FS.Entity.Domain.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

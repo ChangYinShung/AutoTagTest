@@ -1,0 +1,21 @@
+﻿{
+  "culture": "en",
+  "texts": {
+    "MultiLingualTranslation.Id": "Id",
+    "Description:MultiLingualTranslation.Id": "Id",
+    "DisplayName:MultiLingualTranslation.Id": "Id",
+    "MultiLingualTranslation.Culture": "Culture",
+    "Description:MultiLingualTranslation.Culture": "Culture",
+    "DisplayName:MultiLingualTranslation.Culture": "Culture",
+    "MultiLingualTranslation.Properties": "Properties",
+    "Description:MultiLingualTranslation.Properties": "Properties",
+    "DisplayName:MultiLingualTranslation.Properties": "Properties",
+    "MultiLingualTranslation.MultiLingualId": "MultiLingualId",
+    "Description:MultiLingualTranslation.MultiLingualId": "MultiLingualId",
+    "DisplayName:MultiLingualTranslation.MultiLingualId": "MultiLingualId",
+    "MultiLingualTranslation.TenantId": "TenantId",
+    "Description:MultiLingualTranslation.TenantId": "TenantId",
+    "DisplayName:MultiLingualTranslation.TenantId": "TenantId"
+
+  }
+}

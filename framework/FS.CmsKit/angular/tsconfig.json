@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s/cms-kit": [
+        "projects/cms-kit/src/public-api.ts"
+      ],
+      "@f-s/cms-kit/config": [
+        "projects/cms-kit/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/cms-kit/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/cms-kit/src/lib/proxy/*"]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s.Cms-kit/content-definitions": [
+        "projects/content-definitions/src/public-api.ts"
+      ],
+      "@f-s.Cms-kit/content-definitions/config": [
+        "projects/content-definitions/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/content-definitions/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/content-definitions/src/lib/proxy/*"]
+    }
+  }
+}

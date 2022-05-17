@@ -1,0 +1,112 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CmsKit.ContentComposites</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IAttachmentCompositeCrudAppService.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IContentCompositeCrudAppService.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IContentItemCrudAppService.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IImageCompositeCrudAppService.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\FS.CmsKit\src\FS.CmsKit.Application.Contracts\FS.CmsKit.Application.Contracts.csproj" />
+		<ProjectReference Include="..\FS.CmsKit.ContentComposites.Domain.Shared\FS.CmsKit.ContentComposites.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="FS.CmsKit.ContentComposites\Dtos\ContentComponentDto.cs">
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="FS.CmsKit.ContentComposites\Dtos\ContentComponentDtoJsonSubtypesConverterBuilders.cs">
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="FS.CmsKit.ContentComposites\Dtos\ContentCompositeDto.cs">
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="FS.CmsKit.ContentComposites\Dtos\ContentItemDto.cs">
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="FS.CmsKit.ContentComposites\IContentComponentCrudAppService.cs">
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\AttachmentCompositeDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\AttachmentCompositeDtoJsonSubtypesConverterBuilders.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\AttachmentCompositeDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentComponentDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentComponentDtoJsonSubtypesConverterBuilders.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentComponentDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentCompositeDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentCompositeDtoJsonSubtypesConverterBuilders.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentCompositeDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentItemDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentItemDtoJsonSubtypesConverterBuilders.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentItemDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ImageCompositeDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ImageCompositeDtoJsonSubtypesConverterBuilders.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ImageCompositeDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\IContentComponentCrudAppService.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentComposites</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Permissions\ContentCompositesPermissionDefinitionProviders.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Permissions</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\Permissions\ContentCompositesPermissionNames.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Permissions</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+</Project>

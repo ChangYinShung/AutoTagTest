@@ -1,0 +1,18 @@
+﻿{
+  "culture": "en",
+  "texts": {
+    "EntityDefault.Id": "Id",
+    "Description:EntityDefault.Id": "Id",
+    "DisplayName:EntityDefault.Id": "Id",
+    "EntityDefault.EntityType": "EntityType",
+    "Description:EntityDefault.EntityType": "EntityType",
+    "DisplayName:EntityDefault.EntityType": "EntityType",
+    "EntityDefault.EntityId": "EntityId",
+    "Description:EntityDefault.EntityId": "EntityId",
+    "DisplayName:EntityDefault.EntityId": "EntityId",
+    "EntityDefault.DefaultType": "DefaultType",
+    "Description:EntityDefault.DefaultType": "DefaultType",
+    "DisplayName:EntityDefault.DefaultType": "DefaultType"
+
+  }
+}

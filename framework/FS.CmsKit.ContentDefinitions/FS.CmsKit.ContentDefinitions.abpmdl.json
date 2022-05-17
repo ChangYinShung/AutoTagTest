@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.CmsKit.ContentDefinitions.Domain.Shared": {
+      "path": "src/FS.CmsKit.ContentDefinitions.Domain.Shared/FS.CmsKit.ContentDefinitions.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.Domain": {
+      "path": "src/FS.CmsKit.ContentDefinitions.Domain/FS.CmsKit.ContentDefinitions.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.Application.Contracts": {
+      "path": "src/FS.CmsKit.ContentDefinitions.Application.Contracts/FS.CmsKit.ContentDefinitions.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.Application": {
+      "path": "src/FS.CmsKit.ContentDefinitions.Application/FS.CmsKit.ContentDefinitions.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.EntityFrameworkCore": {
+      "path": "src/FS.CmsKit.ContentDefinitions.EntityFrameworkCore/FS.CmsKit.ContentDefinitions.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.MongoDB": {
+      "path": "src/FS.CmsKit.ContentDefinitions.MongoDB/FS.CmsKit.ContentDefinitions.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.HttpApi": {
+      "path": "src/FS.CmsKit.ContentDefinitions.HttpApi/FS.CmsKit.ContentDefinitions.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.HttpApi.Client": {
+      "path": "src/FS.CmsKit.ContentDefinitions.HttpApi.Client/FS.CmsKit.ContentDefinitions.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.TestBase": {
+      "path": "test/FS.CmsKit.ContentDefinitions.TestBase/FS.CmsKit.ContentDefinitions.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.CmsKit.ContentDefinitions.EntityFrameworkCore.Tests": {
+      "path": "test/FS.CmsKit.ContentDefinitions.EntityFrameworkCore.Tests/FS.CmsKit.ContentDefinitions.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.CmsKit.ContentDefinitions.MongoDB.Tests": {
+      "path": "test/FS.CmsKit.ContentDefinitions.MongoDB.Tests/FS.CmsKit.ContentDefinitions.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.CmsKit.ContentDefinitions.Domain.Tests": {
+      "path": "test/FS.CmsKit.ContentDefinitions.Domain.Tests/FS.CmsKit.ContentDefinitions.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.CmsKit.ContentDefinitions.Application.Tests": {
+      "path": "test/FS.CmsKit.ContentDefinitions.Application.Tests/FS.CmsKit.ContentDefinitions.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.CmsKit.ContentDefinitions.HttpApi.Host": {
+      "path": "host/FS.CmsKit.ContentDefinitions.HttpApi.Host/FS.CmsKit.ContentDefinitions.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.CmsKit.ContentDefinitions.Web": {
+      "path": "src/FS.CmsKit.ContentDefinitions.Web/FS.CmsKit.ContentDefinitions.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.CmsKit.ContentDefinitions.HttpApi.Client.ConsoleTestApp/FS.CmsKit.ContentDefinitions.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.CmsKit.ContentDefinitions.Web.Host": {
+      "path": "host/FS.CmsKit.ContentDefinitions.Web.Host/FS.CmsKit.ContentDefinitions.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.CmsKit.ContentDefinitions.IdentityServer": {
+      "path": "host/FS.CmsKit.ContentDefinitions.IdentityServer/FS.CmsKit.ContentDefinitions.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.CmsKit.ContentDefinitions.Host.Shared": {
+      "path": "host/FS.CmsKit.ContentDefinitions.Host.Shared/FS.CmsKit.ContentDefinitions.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.CmsKit.ContentDefinitions.Web.Unified": {
+      "path": "host/FS.CmsKit.ContentDefinitions.Web.Unified/FS.CmsKit.ContentDefinitions.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.CmsKit.ContentDefinitions.Blazor": {
+      "path": "src/FS.CmsKit.ContentDefinitions.Blazor/FS.CmsKit.ContentDefinitions.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.Blazor.Host": {
+      "path": "host/FS.CmsKit.ContentDefinitions.Blazor.Host/FS.CmsKit.ContentDefinitions.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.CmsKit.ContentDefinitions.Blazor.Server": {
+      "path": "src/FS.CmsKit.ContentDefinitions.Blazor.Server/FS.CmsKit.ContentDefinitions.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.Blazor.WebAssembly": {
+      "path": "src/FS.CmsKit.ContentDefinitions.Blazor.WebAssembly/FS.CmsKit.ContentDefinitions.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.CmsKit.ContentDefinitions.Blazor.Server.Host": {
+      "path": "host/FS.CmsKit.ContentDefinitions.Blazor.Server.Host/FS.CmsKit.ContentDefinitions.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

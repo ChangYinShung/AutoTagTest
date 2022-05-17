@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s.Cms-kit/content-composites": [
+        "projects/content-composites/src/public-api.ts"
+      ],
+      "@f-s.Cms-kit/content-composites/config": [
+        "projects/content-composites/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/content-composites/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/content-composites/src/lib/proxy/*"]
+    }
+  }
+}

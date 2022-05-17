@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.CmsKit</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.CmsKit.Domain.Shared\FS.CmsKit.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.CmsKit\EntityMedias\EntityMedia.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityMedias</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\EntityMedias\EntityMediaGroup.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityMedias</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\EntityMedias\EntityMediaItem.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityMedias</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\EntityMedias\IEntityMediaGroupRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityMedias</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\EntityMedias\IEntityMediaItemRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityMedias</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\EntityMedias\IEntityMediaRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityMedias</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\EntityMedias\IEntityMediasStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityMedias</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

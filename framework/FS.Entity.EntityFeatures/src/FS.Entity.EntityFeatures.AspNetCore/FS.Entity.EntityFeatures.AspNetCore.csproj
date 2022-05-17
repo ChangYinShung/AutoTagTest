@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>FS.Entity.EntityFeatures</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="FS.Entity.EntityFeatures\**" />
+	  <EmbeddedResource Remove="FS.Entity.EntityFeatures\**" />
+	  <None Remove="FS.Entity.EntityFeatures\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="FS.Entity.EntityFeatures\JsonOptionsSetup.cs" />
+	  <Compile Include="FS.Entity.EntityFeatures\PolymorphicJsonConverter.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\FS.Entity.EntityFeatures.Application\FS.Entity.EntityFeatures.Application.csproj" />
+	  <ProjectReference Include="..\FS.Entity.EntityFeatures.EntityFrameworkCore\FS.Entity.EntityFeatures.EntityFrameworkCore.csproj" />
+	</ItemGroup>
+
+</Project>

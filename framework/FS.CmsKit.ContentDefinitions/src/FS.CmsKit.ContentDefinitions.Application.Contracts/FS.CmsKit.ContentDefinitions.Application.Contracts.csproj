@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.CmsKit.ContentDefinitions</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\FS.CmsKit\src\FS.CmsKit.Application.Contracts\FS.CmsKit.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.CmsKit.ContentDefinitions.Domain.Shared\FS.CmsKit.ContentDefinitions.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FS.CmsKit.ContentDefinitions\Dtos\ContentDefinitionDto.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKit.ContentDefinitions\Dtos\ContentTypeDefinitionDto.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKit.ContentDefinitions\Dtos\ContentPartDefinitionDto.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKit.ContentDefinitions\IContentDefinitionCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKit.ContentDefinitions\IContentTypeDefinitionCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentDefinitionDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentPartDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentPartDefinitionDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentPartFieldDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentPartFieldDefinitionDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentTypeDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentTypeDefinitionDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentTypePartDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Dtos\ContentTypePartDefinitionDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentDefinitions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentPartDefinitionCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentDefinitions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentPartDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentDefinitions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentPartFieldDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentDefinitions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentTypeDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentDefinitions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentTypePartDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentDefinitions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Permissions\ContentDefinitionsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Permissions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\Permissions\ContentDefinitionsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Permissions</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

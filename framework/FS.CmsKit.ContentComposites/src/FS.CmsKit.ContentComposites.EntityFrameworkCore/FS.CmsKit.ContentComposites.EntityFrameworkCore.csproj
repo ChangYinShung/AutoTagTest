@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>FS.CmsKit.ContentComposites</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\EfCoreAttachmentCompositeRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\EfCoreContentComponentRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\EfCoreContentCompositeRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\EfCoreContentCompositeTreeRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\EfCoreContentItemRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\EfCoreImageCompositeRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentEntities\ContentEntitiesStore.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentEntities\EntityFrameworkCore\ContentEntitiesDbContext.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentEntities\EntityFrameworkCore\ContentEntity.Configuration.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentEntities\EntityFrameworkCore\EfCoreContentEntityRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentEntities\EntityFrameworkCore\IContentEntitiesDbContext.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+		<PackageReference Include="EasyAbp.Abp.Trees.EntityFrameworkCore" Version="$(EasyAbpTreeVersion)" />
+		<ProjectReference Include="..\FS.CmsKit.ContentComposites.Domain\FS.CmsKit.ContentComposites.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\ContentCompositesStore.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentComposites</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\AttachmentComposite.Configuration.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\ContentComponent.Configuration.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\ContentComposite.Configuration.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\ContentCompositesDbContext.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\ContentCompositesDbContextModelCreatingExtensions.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\ContentItem.Configuration.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\EfCoreContentComponentTreeRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\IContentCompositesDbContext.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\EntityFrameworkCore\ImageComposite.Configuration.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="_Generated\FS.CmsKit\ContentEntities\EntityFrameworkCore\" />
+	</ItemGroup>
+
+</Project>

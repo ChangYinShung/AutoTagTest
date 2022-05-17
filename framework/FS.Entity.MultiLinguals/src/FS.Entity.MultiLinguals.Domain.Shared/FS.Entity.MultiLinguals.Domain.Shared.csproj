@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Entity.MultiLinguals</RootNamespace>
+		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\FS.Entity.MultiLinguals.Core\FS.Entity.MultiLinguals.Core.csproj" />
+		<ProjectReference Include="..\..\..\FS.Entity\src\FS.Entity.Domain.Shared\FS.Entity.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Localization\MultiLinguals\*.json" />
+		<Content Remove="Localization\MultiLinguals\*.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="_Generated\FS.Entity\MultiLinguals\Localization\MultiLingualTranslation\en.json" />
+	  <None Remove="_Generated\FS.Entity\MultiLinguals\Localization\MultiLingualTranslation\zh-Hant.json" />
+	  <None Remove="_Generated\FS.Entity\MultiLinguals\Localization\MultiLingual\en.json" />
+	  <None Remove="_Generated\FS.Entity\MultiLinguals\Localization\MultiLingual\zh-Hant.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="_Generated\FS.Entity\MultiLinguals\Localization\MultiLingualTranslation\en.json">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>MultiLingualTranslation</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="_Generated\FS.Entity\MultiLinguals\Localization\MultiLingualTranslation\zh-Hant.json">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>MultiLingualTranslation</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="_Generated\FS.Entity\MultiLinguals\Localization\MultiLingual\en.json">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>MultiLingual</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="_Generated\FS.Entity\MultiLinguals\Localization\MultiLingual\zh-Hant.json">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>MultiLingual</DependentUpon>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+</Project>

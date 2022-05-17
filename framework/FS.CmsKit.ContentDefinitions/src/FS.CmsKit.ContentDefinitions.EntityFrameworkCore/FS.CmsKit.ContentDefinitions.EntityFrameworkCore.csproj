@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.CmsKit.ContentDefinitions</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.CmsKit.ContentDefinitions.Domain\FS.CmsKit.ContentDefinitions.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FS.CmsKit.ContentDefinitions\ContentDefinitionsStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKit.ContentDefinitions\EntityFrameworkCore\ContentDefinition.Configuration.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKit.ContentDefinitions\EntityFrameworkCore\EfCoreContentPartDefinitionRepository.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKit.ContentDefinitions\EntityFrameworkCore\EfCoreContentTypeDefinitionRepository.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentDefinitionsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentDefinitions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\ContentDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\ContentDefinitionsDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\ContentDefinitionsDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\ContentPartDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\ContentPartFieldDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\ContentTypeDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\ContentTypePartDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\EfCoreContentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\EfCoreContentPartDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\EfCoreContentPartFieldDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\EfCoreContentTypeDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\EfCoreContentTypePartDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKit\ContentDefinitions\EntityFrameworkCore\IContentDefinitionsDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

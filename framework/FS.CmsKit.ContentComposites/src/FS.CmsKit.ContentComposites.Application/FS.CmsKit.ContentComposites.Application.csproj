@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CmsKit.ContentComposites</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="_Generated\FS.CmsKit\ContentComposites\AttachmentCompositeCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKit\ContentComposites\ContentCompositeCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKit\ContentComposites\ContentItemCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentComponentDtoValidator.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentCompositeDtoValidator.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentItemDtoValidator.Generated.cs" />
+		<Compile Remove="_Generated\FS.CmsKit\ContentComposites\ImageCompositeCrudAppService.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\FS.CmsKit.ContentComposites.Application.Contracts\FS.CmsKit.ContentComposites.Application.Contracts.csproj" />
+		<ProjectReference Include="..\FS.CmsKit.ContentComposites.Domain\FS.CmsKit.ContentComposites.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="FS.CmsKit.ContentComposites\Dtos\ContentComponentDtoAutoMapperProfile.cs">
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentComposites\Dtos\ContentCompositeDtoAutoMapperProfile.cs">
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentComposites\Dtos\ContentItemDtoAutoMapperProfile.cs">
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentComposites\ContentComponentCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ContentComposites</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\AttachmentCompositeDtoAutoMapperProfile.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentComponentDtoAutoMapperProfile.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentCompositeDtoAutoMapperProfile.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ContentItemDtoAutoMapperProfile.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentComposites\ContentComponentCrudAppService.cs">
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentComposites\Dtos\ImageCompositeDtoAutoMapperProfile.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Dtos</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Entity.EntityDefaults</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultsSettingDto.Generated.cs" />
+	  <Compile Remove="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultsSettingDtoValidator.Generated.cs" />
+	  <Compile Remove="_Generated\FS.Entity\EntityDefaults\IEntityDefaultsSettingAppService.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\FS.Entity\src\FS.Entity.Application.Contracts\FS.Entity.Application.Contracts.csproj" />
+		<ProjectReference Include="..\FS.Entity.EntityDefaults.Domain.Shared\FS.Entity.EntityDefaults.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultItemDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultItemDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityPropertyDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityPropertyDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\IEntityDefaultCrudAppService.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityDefaults</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\IEntityDefaultItemCrudAppService.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityDefaults</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\Permissions\EntityDefaultsPermissionDefinitionProviders.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Permissions</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Entity\EntityDefaults\Permissions\EntityDefaultsPermissionNames.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Permissions</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+
+
+</Project>

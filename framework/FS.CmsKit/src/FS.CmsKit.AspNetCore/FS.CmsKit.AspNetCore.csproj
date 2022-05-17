@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>FS.CmsKit</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\FS.CmsKit.Application\FS.CmsKit.Application.csproj" />
+		<ProjectReference Include="..\FS.CmsKit.EntityFrameworkCore\FS.CmsKit.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\FS.CmsKit.HttpApi\FS.CmsKit.HttpApi.csproj" />
+	</ItemGroup>
+
+</Project>

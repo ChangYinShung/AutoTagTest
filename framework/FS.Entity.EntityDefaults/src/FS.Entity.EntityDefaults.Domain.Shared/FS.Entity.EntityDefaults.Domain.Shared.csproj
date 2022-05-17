@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Entity.EntityDefaults</RootNamespace>
+		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\FS.Entity\src\FS.Entity.Domain.Shared\FS.Entity.Domain.Shared.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Localization\EntityDefaults\*.json" />
+		<Content Remove="Localization\EntityDefaults\*.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="_Generated\FS.Entity\EntityDefaults\Localization\**\*.json" />
+		<Content Remove="_Generated\FS.Entity\EntityDefaults\Localization\**\*.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="_Generated\FS.Entity\EntityDefaults\Localization\EntityDefaultItem\en.json">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityDefaultItem</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="_Generated\FS.Entity\EntityDefaults\Localization\EntityDefaultItem\zh-Hant.json">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityDefaultItem</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="_Generated\FS.Entity\EntityDefaults\Localization\EntityDefault\en.json">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityDefault</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="_Generated\FS.Entity\EntityDefaults\Localization\EntityDefault\zh-Hant.json">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityDefault</DependentUpon>
+	  </EmbeddedResource>
+	</ItemGroup>
+	
+</Project>

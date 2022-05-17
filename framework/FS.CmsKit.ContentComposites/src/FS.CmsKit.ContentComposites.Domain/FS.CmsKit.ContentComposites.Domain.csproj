@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CmsKit.ContentComposites</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_Generated\FS.CmsKit\ContentEntities\**" />
+	  <EmbeddedResource Remove="_Generated\FS.CmsKit\ContentEntities\**" />
+	  <None Remove="_Generated\FS.CmsKit\ContentEntities\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IAttachmentCompositeRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IContentComponentRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IContentCompositeRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IContentCompositeTreeRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IContentItemRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.CmsKit\ContentComposites\IImageCompositeRepository.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="$(EasyAbpTreeVersion)" />
+		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\..\..\FS.CmsKit\src\FS.CmsKit.Domain\FS.CmsKit.Domain.csproj" />
+		<ProjectReference Include="..\FS.CmsKit.ContentComposites.Domain.Shared\FS.CmsKit.ContentComposites.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\AttachmentComposite.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentComposites</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\ContentComponent.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentComposites</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\ContentComposite.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentComposites</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\ContentItem.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentComposites</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\IContentComponentTreeRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentComposites</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\IContentCompositesStore.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentComposites</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\ContentComposites\ImageComposite.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ContentComposites</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+</Project>

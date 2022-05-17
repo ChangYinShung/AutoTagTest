@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CmsKit</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\FS.CmsKit.Domain.Shared\FS.CmsKit.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\Dtos\EntityMediaDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\Dtos\EntityMediaDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\Dtos\EntityMediaGroupDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\Dtos\EntityMediaGroupDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\Dtos\EntityMediaItemDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\Dtos\EntityMediaItemDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\IEntityMediaCrudAppService.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityMedias</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\IEntityMediaGroupCrudAppService.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityMedias</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\IEntityMediaItemCrudAppService.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityMedias</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\Permissions\EntityMediasPermissionDefinitionProviders.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Permissions</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.CmsKit\EntityMedias\Permissions\EntityMediasPermissionNames.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Permissions</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Entity.EntityFeatures</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EntityFrameworkCore\EntityFeaturesDbContext.cs" />
+    <Compile Remove="EntityFrameworkCore\EntityFeaturesDbContextModelCreatingExtensions.cs" />
+    <Compile Remove="EntityFrameworkCore\IEntityFeaturesDbContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.Entity.EntityFeatures.Domain\FS.Entity.EntityFeatures.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

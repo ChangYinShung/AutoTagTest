@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CmsKit.ContentDefinitions</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\..\..\FS.CmsKit\src\FS.CmsKit.Domain\FS.CmsKit.Domain.csproj" />
+		<ProjectReference Include="..\..\..\FS.Entity.EntityFeatures\src\FS.Entity.EntityFeatures.Domain\FS.Entity.EntityFeatures.Domain.csproj" />
+		<ProjectReference Include="..\FS.CmsKit.ContentDefinitions.Domain.Shared\FS.CmsKit.ContentDefinitions.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="FS.CmsKit.ContentDefinitions\ContentPartDefinition.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentDefinitions\IContentPartDefinitionRepository.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="FS.CmsKit.ContentDefinitions\IContentTypeDefinitionRepository.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentDefinition.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentPartDefinition.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentPartFieldDefinition.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentTypeDefinition.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\ContentTypePartDefinition.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentDefinitionRepository.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentDefinitionsStore.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentPartDefinitionRepository.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentPartFieldDefinitionRepository.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentTypeDefinitionRepository.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CmsKit\ContentDefinitions\IContentTypePartDefinitionRepository.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>ContentDefinitions</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

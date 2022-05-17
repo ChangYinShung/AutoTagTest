@@ -1,0 +1,6 @@
+{
+  "culture": "en",
+  "texts": {
+    "ContentDefinitions:DuplicateContentDefinitionVersion": "The ContentDefinition version '{version}' is duplicated."
+  }
+}
