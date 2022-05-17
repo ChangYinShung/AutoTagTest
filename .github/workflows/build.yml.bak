@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-dotnet@master
@@ -28,5 +28,5 @@ jobs:
       with:
         token: ${{ secrets.LINE_NOTIFY_TOKEN }}
         message: 'LINE Notify test message'
-      
+
       

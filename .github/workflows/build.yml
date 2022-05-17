@@ -6,14 +6,12 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-dotnet@master
       with:
         dotnet-version: 6.0.300
-
-
     - name: Build All
       id: buildAction
       run: .\build-all.ps1
@@ -22,12 +20,11 @@ jobs:
       continue-on-error: true
       
     
-    runs-on: ubuntu-latest 
-    steps:
     - name: NotifyMessage
       uses: louis70109/line-notify-action@master
       if : steps.buildAction.outcome != 'success'
       with:
         token: ${{ secrets.LINE_NOTIFY_TOKEN }}
         message: 'LINE Notify test message'
+
       
