@@ -17,7 +17,7 @@ jobs:
       with:
         submodules: 'true'
         persist-credentials: false
-        token: ${{ secrets.Admin_Token }}
+        token: ${{ secrets.Admin_Token || github.token }}
 
     - name: build all
       id: buildAction
