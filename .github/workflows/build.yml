@@ -1,6 +1,6 @@
 
 name: "build"
-#only build develop branches
+
 on:
   push:
     branches: [ master ]
