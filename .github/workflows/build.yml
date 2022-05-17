@@ -17,18 +17,21 @@ jobs:
         dotnet-version: 6.0.300
     - name: build all
       id: buildAction
+      if: contains(matrix.os, 'windows-latest')
       run: .\build-all.ps1
       working-directory: .\ci
       shell: powershell
       continue-on-error: true
 
     - name: read directoryBuild 
+     if: contains(matrix.os, 'windows-latest')
       id: directoryBuildProps 
       uses: juliangruber/read-file-action@v1
       with:
         path: ./Directory.Build.props
 
     - name: get version
+      if: contains(matrix.os, 'windows-latest')
       id: getVersion
       uses: AsasInnab/regex-action@v1
       with:
@@ -38,7 +41,7 @@ jobs:
     
     - name: NotifyMessage while error
       uses: louis70109/line-notify-action@master
-      if : steps.buildAction.outcome != 'success'
+      if : steps.buildAction.outcome != 'success && contains(matrix.os, 'ubuntu-latest') '
       with:
         token: ${{ secrets.LINE_NOTIFY_TOKEN }}
         message: 'Github get an error while build'
