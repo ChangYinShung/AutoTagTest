@@ -1,0 +1,28 @@
+
+name: "build"
+#only build develop branches
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@master
+      with:
+        dotnet-version: 6.0.300
+    - uses: louis70109/line-notify-action@master
+
+    - name: Build All
+      id: buildAction
+      run: .\build-all.ps1
+      working-directory: .\ci
+      shell: powershell
+      continue-on-error: true
+
+    - name: NotifyMessage
+     
+      token: ${{ secrets.LINE_NOTIFY_TOKEN }}
+      if : steps.buildAction.outcome != 'success'
+      message: 'LINE Notify test message'
