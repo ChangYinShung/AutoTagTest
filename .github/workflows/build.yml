@@ -24,7 +24,7 @@ jobs:
       continue-on-error: true
 
     - name: read directoryBuild 
-     if: contains(matrix.os, 'windows-latest')
+      if: contains(matrix.os, 'windows-latest')
       id: directoryBuildProps 
       uses: juliangruber/read-file-action@v1
       with:
