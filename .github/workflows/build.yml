@@ -17,7 +17,8 @@ jobs:
       id: buildAction
       shell: pwsh
       working-directory: ./ci
-      run: /build-all.ps1
+      run: |
+        Invoke-Pester build-all.ps1 -Passthru
       continue-on-error: true
 
     - name: read directoryBuild 
