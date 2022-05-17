@@ -18,12 +18,16 @@ jobs:
         submodules: recursive
         persist-credentials: false
         token: ${{ secrets.ADMIN_TOKEN || github.token }}
-
+    - name: Add Source
+      id: AddSource
+      run: dotnet nuget add source --username ChangYinShung --password ${{ secrets.ADMIN_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/fs-tw/index.json"
+      
     - name: build all
       id: buildAction
       shell: pwsh
       working-directory: ./ci
       run: |
+        dotnet nuget add source --username ChangYinShung --password ${{ secrets.ADMIN_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/fs-tw/index.json"
         ./build-all.ps1
       continue-on-error: true
 
