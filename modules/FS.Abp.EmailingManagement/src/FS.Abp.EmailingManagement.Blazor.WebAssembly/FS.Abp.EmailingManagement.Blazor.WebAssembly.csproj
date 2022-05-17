@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <Import Project="..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.Theming" Version="5.1.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\FS.Abp.EmailingManagement.Blazor\FS.Abp.EmailingManagement.Blazor.csproj" />
+        <ProjectReference Include="..\FS.Abp.EmailingManagement.HttpApi.Client\FS.Abp.EmailingManagement.HttpApi.Client.csproj" />
+    </ItemGroup>
+
+</Project>

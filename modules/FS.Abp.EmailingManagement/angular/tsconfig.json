@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s.Abp/emailing-management": [
+        "projects/emailing-management/src/public-api.ts"
+      ],
+      "@f-s.Abp/emailing-management/config": [
+        "projects/emailing-management/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/emailing-management/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/emailing-management/src/lib/proxy/*"]
+    }
+  }
+}

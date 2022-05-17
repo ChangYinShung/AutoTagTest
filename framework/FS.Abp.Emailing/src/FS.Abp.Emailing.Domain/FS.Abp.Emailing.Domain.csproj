@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Abp.Emailing</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_Generated\FS.Abp.Emailing\IMailMessageRepository.Generated.cs" />
+	  <Compile Remove="_Generated\FS.Abp.Emailing\MailMessage.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Emailing" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.TextTemplating.Razor" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Caching" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\FS.Abp.Emailing.Domain.Shared\FS.Abp.Emailing.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="FS.Abp.Emailing\IEmailingStore.cs">
+		  <AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="_Generated\FS.Abp.Emailing\IEmailingStore.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>FS.Abp.Emailing</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Abp.Emailing\IMailMessageTemplateRepository.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>FS.Abp.Emailing</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Abp.Emailing\MailMessageTemplate.Generated.cs">
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>FS.Abp.Emailing</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

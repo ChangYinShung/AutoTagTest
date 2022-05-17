@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.EShopManagement.Domain.Shared": {
+      "path": "src/FS.EShopManagement.Domain.Shared/FS.EShopManagement.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.Domain": {
+      "path": "src/FS.EShopManagement.Domain/FS.EShopManagement.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.Application.Contracts": {
+      "path": "src/FS.EShopManagement.Application.Contracts/FS.EShopManagement.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.Application": {
+      "path": "src/FS.EShopManagement.Application/FS.EShopManagement.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.EntityFrameworkCore": {
+      "path": "src/FS.EShopManagement.EntityFrameworkCore/FS.EShopManagement.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.MongoDB": {
+      "path": "src/FS.EShopManagement.MongoDB/FS.EShopManagement.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.HttpApi": {
+      "path": "src/FS.EShopManagement.HttpApi/FS.EShopManagement.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.HttpApi.Client": {
+      "path": "src/FS.EShopManagement.HttpApi.Client/FS.EShopManagement.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.TestBase": {
+      "path": "test/FS.EShopManagement.TestBase/FS.EShopManagement.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EShopManagement.EntityFrameworkCore.Tests": {
+      "path": "test/FS.EShopManagement.EntityFrameworkCore.Tests/FS.EShopManagement.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EShopManagement.MongoDB.Tests": {
+      "path": "test/FS.EShopManagement.MongoDB.Tests/FS.EShopManagement.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EShopManagement.Domain.Tests": {
+      "path": "test/FS.EShopManagement.Domain.Tests/FS.EShopManagement.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EShopManagement.Application.Tests": {
+      "path": "test/FS.EShopManagement.Application.Tests/FS.EShopManagement.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EShopManagement.HttpApi.Host": {
+      "path": "host/FS.EShopManagement.HttpApi.Host/FS.EShopManagement.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EShopManagement.Web": {
+      "path": "src/FS.EShopManagement.Web/FS.EShopManagement.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.EShopManagement.HttpApi.Client.ConsoleTestApp/FS.EShopManagement.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EShopManagement.Web.Host": {
+      "path": "host/FS.EShopManagement.Web.Host/FS.EShopManagement.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EShopManagement.IdentityServer": {
+      "path": "host/FS.EShopManagement.IdentityServer/FS.EShopManagement.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EShopManagement.Host.Shared": {
+      "path": "host/FS.EShopManagement.Host.Shared/FS.EShopManagement.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EShopManagement.Web.Unified": {
+      "path": "host/FS.EShopManagement.Web.Unified/FS.EShopManagement.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EShopManagement.Blazor": {
+      "path": "src/FS.EShopManagement.Blazor/FS.EShopManagement.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.Blazor.Host": {
+      "path": "host/FS.EShopManagement.Blazor.Host/FS.EShopManagement.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EShopManagement.Blazor.Server": {
+      "path": "src/FS.EShopManagement.Blazor.Server/FS.EShopManagement.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.Blazor.WebAssembly": {
+      "path": "src/FS.EShopManagement.Blazor.WebAssembly/FS.EShopManagement.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EShopManagement.Blazor.Server.Host": {
+      "path": "host/FS.EShopManagement.Blazor.Server.Host/FS.EShopManagement.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

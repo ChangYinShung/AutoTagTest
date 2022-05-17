@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Tspg</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FS.Tspg.Application\FS.Tspg.Application.csproj" />
+    <ProjectReference Include="..\..\src\FS.Tspg.HttpClient.Core\FS.Tspg.HttpClient.Core.csproj" />
+    <ProjectReference Include="..\FS.Tspg.Domain.Tests\FS.Tspg.Domain.Tests.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+  </ItemGroup>
+
+</Project>

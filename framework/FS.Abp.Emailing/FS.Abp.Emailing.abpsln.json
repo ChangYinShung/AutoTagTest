@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Abp.Emailing": {
+      "path": "FS.Abp.Emailing.abpmdl.json"
+    }
+  }
+}

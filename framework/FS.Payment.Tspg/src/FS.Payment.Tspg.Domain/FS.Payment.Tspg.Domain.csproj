@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<LangVersion>latest</LangVersion>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Payment.Tspg</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="HttpTracer" Version="2.1.1" />
+	  <PackageReference Include="RestSharp" Version="107.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!--<ProjectReference Include="..\..\..\..\framework\FS.Tspg\src\FS.Tspg.Domain\FS.Tspg.Domain.csproj" />-->
+		<ProjectReference Include="..\..\..\..\projects\Volo.Payment\src\Volo.Payment.Domain\Volo.Payment.Domain.csproj" />
+		<ProjectReference Include="..\FS.Payment.Tspg.Domain.Shared\FS.Payment.Tspg.Domain.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

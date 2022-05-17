@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Abp.Emailing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.Abp.Emailing\Dtos\MailMessageDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Abp.Emailing\MailMessageCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.Abp.Emailing.Application.Contracts\FS.Abp.Emailing.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Abp.Emailing.Domain\FS.Abp.Emailing.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Abp.Emailing\Dtos\MailMessageTemplateDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp.Emailing\MailMessageTemplateCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.Abp.Emailing</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

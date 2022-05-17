@@ -1,0 +1,16 @@
+﻿@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@using FS.Abp.AspNetCore.Mvc.UI.Theme.Unice.Bundling
+@inject IThemeManager ThemeManager
+@{
+    ViewBag.Title = "";
+    ViewBag.Description = "";
+    ViewBag.Image = "";
+    ViewBag.Author = "豐碩資訊";
+    ViewBag.Keywords = "豐碩資訊";
+    //theme
+    ViewBag.HasBackground = true;
+    ViewBag.DataOffset = "50";
+    ViewBag.HeaderClass = "ecommerce nav-fix";
+    ViewBag.SkinScript = UniceThemeBundles.Scripts.Sass;
+    ViewBag.SkinStyles = UniceThemeBundles.Styles.Sass;
+}

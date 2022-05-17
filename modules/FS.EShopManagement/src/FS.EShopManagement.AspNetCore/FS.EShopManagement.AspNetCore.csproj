@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.EShopManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.PaymentService\src\FS.PaymentService.AspNetCore\FS.PaymentService.AspNetCore.csproj" />
+    <ProjectReference Include="..\FS.EShopManagement.Application\FS.EShopManagement.Application.csproj" />
+    <ProjectReference Include="..\FS.EShopManagement.EntityFrameworkCore\FS.EShopManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.EShopManagement.HttpApi\FS.EShopManagement.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>

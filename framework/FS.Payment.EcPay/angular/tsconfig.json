@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s.Payment/ec-pay": [
+        "projects/ec-pay/src/public-api.ts"
+      ],
+      "@f-s.Payment/ec-pay/config": [
+        "projects/ec-pay/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/ec-pay/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/ec-pay/src/lib/proxy/*"]
+    }
+  }
+}

@@ -1,0 +1,1453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore namespace="FS_EShopManagement" p1:name="Model" p1:Guid="2db5a144-dfa7-4abc-966c-6b70b3d08bbd" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="Transaction" entity-set="Transactions" table="EasyAbpEShopStoresTransactions" schema="dbo" p1:Guid="d8ab76cd-5831-4f5e-856a-8e73f25c08f4">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="a99e6c7d-2532-4d57-936d-760c44e5a817">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7052225e-6cab-47ab-9955-200ee329ca96">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="StoreId" type="Guid" p1:ValidateRequired="true" p1:Guid="e79ae320-497e-483c-96b3-4986dbbe8ac0">
+      <column name="StoreId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="OrderId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fef79060-380c-4601-939c-d8adc32bfd7a">
+      <column name="OrderId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="TransactionType" type="Int32" p1:ValidateRequired="true" p1:Guid="5b205204-d4f1-42b8-a69f-8edaf27b3711">
+      <column name="TransactionType" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ActionName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="115e01f0-923c-4f75-a464-fc398be0d89b">
+      <column name="ActionName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Currency" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="13d05976-d944-4787-acef-f00799db6c79">
+      <column name="Currency" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Amount" type="Decimal" p1:ValidateRequired="true" p1:Guid="efa73193-8412-47ae-bb06-7df1e2dc97d3">
+      <column name="Amount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a338b3c8-0a2e-459d-9375-e6eec35e7f40">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="688cfb7d-1059-43c6-baa6-79132fc86276">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="217ffa80-20e1-4b5b-a414-9860c5d86780">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cba64947-ea7b-423f-9160-078d310a529d">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Store" entity-set="Stores" table="EasyAbpEShopStoresStores" schema="dbo" p1:Guid="beec80d3-c897-4324-9b1e-e1e698960794">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="6280d6b9-0570-4fd4-91bf-ecab82c39671">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="95e245f5-043b-41f1-a693-f840103ed720">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="Name" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fe4269f7-84ff-4649-bb8f-f4d63f45ed9e">
+      <column name="Name" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b1604baf-9f2e-4c59-9de9-8e7f3dc6c3d9">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="555b7489-bebb-40c1-b71d-0f8372cbd3f8">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="7a5604c1-3b68-4c67-8bf1-f7fb12b16e8a">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="68da41b5-f116-40b8-9916-49cbf1739bab">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8fdd2c5a-7157-49d8-9c30-ad76081c4f5c">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="111467bb-0ca2-45e6-b315-98b1ad02c3b7">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="7708bb64-e49b-4f15-ad4c-f11fd2573f00">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="11fa06a6-ea6b-4e46-90c8-6b941a3a6e6f">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="290f3fee-7c19-4f1f-bd7d-7c5907e71f07">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="StoreOwner" entity-set="StoreOwners" table="EasyAbpEShopStoresStoreOwners" schema="dbo" p1:Guid="f2a81ff0-d6b2-4146-a7b7-26018ff5fde1">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="c62a655b-037a-4fca-8312-74cbdadff8f9">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="80642812-dd56-4ebd-930a-4dd8b2d0afd9">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="StoreId" type="Guid" p1:ValidateRequired="true" p1:Guid="4a016250-eac2-42cd-8994-1594372e6671">
+      <column name="StoreId" not-null="True" sql-type="uniqueidentifier" unique-key="IX_EasyAbpEShopStoresStoreOwners_OwnerUserId_StoreId" p1:unicode="False" />
+    </property>
+    <property name="OwnerUserId" type="Guid" p1:ValidateRequired="true" p1:Guid="ddb56edb-d266-41e4-b097-124a5e0c7085">
+      <column name="OwnerUserId" not-null="True" sql-type="uniqueidentifier" unique-key="IX_EasyAbpEShopStoresStoreOwners_OwnerUserId_StoreId" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9b104042-86f9-426f-b049-ba2f58a2893a">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="7f4984c4-bb33-442f-882f-2402b8968110">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="49877cb1-b924-4800-b9e4-3cfb8dcb4123">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="17338434-ec43-4c57-a17e-1156ec05930e">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9abe5e4a-6042-4238-a63a-f715a15fb4f1">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8f304f72-72d8-4f0d-b881-5b8f0613c6fb">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ProductView" entity-set="ProductViews" table="EasyAbpEShopProductsProductViews" schema="dbo" p1:Guid="8ac32dc8-2c51-44d1-9646-bc14def9699f">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="df44c110-ca3b-4b78-ae2d-21cbc46ff7d4">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="780999e8-4966-4db6-a2b7-d295e83a1665">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="StoreId" type="Guid" p1:ValidateRequired="true" p1:Guid="febc735b-3afb-4a0e-8047-ed9a44da14bc">
+      <column name="StoreId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ProductGroupName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9d319ec8-79cd-45d7-b598-83858a862da2">
+      <column name="ProductGroupName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductDetailId" type="Guid" p1:ValidateRequired="true" p1:Guid="fd6db8cb-d298-4599-8009-041dd0e4030c">
+      <column name="ProductDetailId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="UniqueName" type="String" p1:nullable="True" p1:ValidateMaxLength="450" p1:ValidateRequired="false" p1:Guid="f4cbea11-017c-442b-821d-74fe7375587b">
+      <column name="UniqueName" not-null="False" length="450" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="DisplayName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2aed2183-5470-46e0-9703-90fd74a6aeb8">
+      <column name="DisplayName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="InventoryStrategy" type="Int32" p1:ValidateRequired="true" p1:Guid="b0c0b16f-2a65-4132-adfd-251b255860c0">
+      <column name="InventoryStrategy" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="MediaResources" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d7481691-9d48-4a7a-b033-3bcf1840f5aa">
+      <column name="MediaResources" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="DisplayOrder" type="Int32" p1:ValidateRequired="true" p1:Guid="3e15e6d1-bea9-47bc-a25a-8e2555539bd1">
+      <column name="DisplayOrder" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IsPublished" type="Boolean" p1:ValidateRequired="true" p1:Guid="a7f673f2-8d91-4b3a-b721-e4d1f0e051bd">
+      <column name="IsPublished" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsStatic" type="Boolean" p1:ValidateRequired="true" p1:Guid="8ceffe06-46bc-429b-a36b-ca9acab9caf7">
+      <column name="IsStatic" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsHidden" type="Boolean" p1:ValidateRequired="true" p1:Guid="94395ff2-62b5-419b-96b9-88c18ff88563">
+      <column name="IsHidden" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="ProductGroupDisplayName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="14aa80df-6422-42a3-a8d7-fd35e7a2bed3">
+      <column name="ProductGroupDisplayName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="MinimumPrice" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0a1c5e51-ae8d-4cd7-8a22-d6a509807c98">
+      <column name="MinimumPrice" not-null="False" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="MaximumPrice" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d5786713-6843-4bba-9fc7-60e041de3506">
+      <column name="MaximumPrice" not-null="False" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="Sold" type="Int64" p1:ValidateRequired="true" p1:Guid="164c3d40-eb94-4935-b566-6f33d2b9e2b4">
+      <column name="Sold" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e4d200d2-3b93-485e-88a8-c7d5b526ace2">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="98bc333f-8da8-4137-a22c-d2860b43650a">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="a404d010-5916-4af6-a2fe-223de2001de6">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7336393e-ca48-4e95-8e1a-318719b4c724">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ProductSku" entity-set="ProductSkus" table="EasyAbpEShopProductsProductSkus" schema="dbo" p1:Guid="69795016-1c46-40a2-a0e0-848c40a2f7e5">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="ca025cf4-d567-4479-97c8-ed178ff1a7c0">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="SerializedAttributeOptionIds" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ef30cb4f-1254-4a54-96b1-95c9db67264b">
+      <column name="SerializedAttributeOptionIds" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Name" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="34df25f6-467e-4dea-96bc-10e43ef589d0">
+      <column name="Name" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Currency" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7a0dfa64-cc5c-408e-8d35-0e854851343a">
+      <column name="Currency" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="OriginalPrice" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="73190fae-36b4-4be3-9228-1237b1ad1c0d">
+      <column name="OriginalPrice" not-null="False" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="Price" type="Decimal" p1:ValidateRequired="true" p1:Guid="4fa4a02f-28d3-4bd7-8c5b-40d5e5d70e71">
+      <column name="Price" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="OrderMinQuantity" type="Int32" p1:ValidateRequired="true" p1:Guid="ef14ebe9-9bdf-4e53-ba32-dc772dbc0c9b">
+      <column name="OrderMinQuantity" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="OrderMaxQuantity" type="Int32" p1:ValidateRequired="true" p1:Guid="0ae41f31-4ada-4333-ac08-2e20bd14e53d">
+      <column name="OrderMaxQuantity" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="PaymentExpireIn" type="Time" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2856349d-822d-4754-9f1c-b9cc9758cbe6">
+      <column name="PaymentExpireIn" not-null="False" sql-type="time" p1:unicode="False" />
+    </property>
+    <property name="MediaResources" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="30c779f9-63ed-4e1a-8443-1e3565d044a8">
+      <column name="MediaResources" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductDetailId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c6192959-b9f2-4029-8587-e1fdce406f4c">
+      <column name="ProductDetailId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="5d3b68d2-151d-40e0-8a08-f954b3ed8e68">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e377120e-eca2-4a54-970b-7e99aa8e6439">
+      <column name="ProductId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="e1631459-4913-431f-863e-6c3cc95c63bb">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f627116a-f8df-414a-981c-db70f7b1f09f">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="dc90246b-dee1-45e2-b5b3-ea85e837198f">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="33803de6-27e6-46e7-9a0f-f6d9f3a21bca">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="e857620b-80e1-47d6-8258-c5c767a14753">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bf252bab-4bcb-45bf-a8ab-22258e8de881">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="27d6b6a6-320e-4c40-bafc-71a7737211f0">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Product" entity-set="Products" table="EasyAbpEShopProductsProducts" schema="dbo" p1:Guid="764d5a8f-7cde-4dd1-af9c-c07dd9341ff6">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="45f90400-4cf2-47c2-be86-03d15a5d8996">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="78b4f551-29e1-4812-8bc3-af032d0b3a60">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="StoreId" type="Guid" p1:ValidateRequired="true" p1:Guid="132cad94-c19f-4d72-bd4f-94776838463c">
+      <column name="StoreId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ProductGroupName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7999bbbe-e279-4b48-99bd-16899b8cf84b">
+      <column name="ProductGroupName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductDetailId" type="Guid" p1:ValidateRequired="true" p1:Guid="44302afe-9177-48bc-a3f3-29a581107c62">
+      <column name="ProductDetailId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="UniqueName" type="String" p1:nullable="True" p1:ValidateMaxLength="450" p1:ValidateRequired="false" p1:Guid="92be2382-2376-4796-883a-584aadd7442a">
+      <column name="UniqueName" not-null="False" length="450" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="DisplayName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8f612e89-ce65-47f9-adb8-f4b7d6e6fa89">
+      <column name="DisplayName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="InventoryStrategy" type="Int32" p1:ValidateRequired="true" p1:Guid="84c8300e-8c3d-47e4-bae8-d863a30a920c">
+      <column name="InventoryStrategy" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="MediaResources" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="52c5c89d-f099-4003-b593-356070e8427b">
+      <column name="MediaResources" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="DisplayOrder" type="Int32" p1:ValidateRequired="true" p1:Guid="1750668d-7159-4546-9ab6-3c12ac84475a">
+      <column name="DisplayOrder" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IsPublished" type="Boolean" p1:ValidateRequired="true" p1:Guid="e2f44f5b-bc4d-403e-9a5b-7ed2bdeb63c3">
+      <column name="IsPublished" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsStatic" type="Boolean" p1:ValidateRequired="true" p1:Guid="3529ed63-c3c2-423d-b6d5-b60c55fcd65f">
+      <column name="IsStatic" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsHidden" type="Boolean" p1:ValidateRequired="true" p1:Guid="858a82c6-1387-4539-908b-e7d554091087">
+      <column name="IsHidden" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="PaymentExpireIn" type="Time" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="16144a89-2873-4b55-b111-3d34584b9a38">
+      <column name="PaymentExpireIn" not-null="False" sql-type="time" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="85397b0f-6387-44d0-a3e1-03a86588c5c4">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="d912ae43-668a-495a-b863-891720892630">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="00a5a878-58a3-4a13-a98d-7a7065c61efc">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ad923b0f-3c26-46a5-b008-6a17cba1051e">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0eddbb31-37b5-4bc5-b413-ac741b0a2200">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7e038fbb-8a42-45b2-b28d-e63e206ba3fb">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="c5d60e41-9d71-4707-b801-ae570b0edecb">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b1623f0c-5a46-4364-89a1-b9598d5773f3">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="caf3c651-6697-4880-b7b7-e8f9768481f5">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ProductInventory" entity-set="ProductInventories" table="EasyAbpEShopProductsProductInventories" schema="dbo" p1:Guid="ab459483-5af2-474d-b292-554bc6b94d38">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="3bd27c69-e1aa-4f0a-a41d-475af4799dcf">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="93e9b561-88db-4cbd-b83b-687c821dd3b2">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ProductId" type="Guid" p1:ValidateRequired="true" p1:Guid="23539ba0-6dc0-4ca0-ac30-67eb0762de3d">
+      <column name="ProductId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ProductSkuId" type="Guid" p1:ValidateRequired="true" p1:Guid="02ac39ff-02cc-4bc6-afc8-64f47c84c6fc">
+      <column name="ProductSkuId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="Inventory" type="Int32" p1:ValidateRequired="true" p1:Guid="59b1f439-0792-4f6c-a864-68e6669483c8">
+      <column name="Inventory" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Sold" type="Int64" p1:ValidateRequired="true" p1:Guid="3eed79ae-34a4-4e89-9487-e95e49e3691b">
+      <column name="Sold" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e4298a94-6376-4d8b-bf63-08c1e6b7040f">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="96dbff6c-48fe-4fd7-aab2-901addef6fb5">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="279af733-d3bb-4e91-bac5-18eb6eed72f1">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7f75e9ff-fb80-4552-bbe8-7c9fd2e21e5a">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6ccb81a9-b4f2-465c-ad19-3d694c0871a7">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c956b053-5a26-4088-b1fa-bf3bc12b9e00">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="2562cbb2-a111-4c98-b31f-70585df5a55f">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="5036c6b5-3b56-4896-9f56-142882751dc3">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1149b1cd-93dc-4739-b7bc-8c24fdf6906f">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ProductHistory" entity-set="ProductHistories" table="EasyAbpEShopProductsProductHistories" schema="dbo" p1:Guid="7a538885-9195-42a4-8012-bf25b4a05882">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="003a979d-224f-4109-b6d4-1058cb7f39b4">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="50faf8e0-4bf9-49bd-ab9d-fe0905e65cb6">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ProductId" type="Guid" p1:ValidateRequired="true" p1:Guid="56558bae-d4f4-4adb-b643-cc94855cbea2">
+      <column name="ProductId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ModificationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="a36d725b-7811-443b-b4eb-a44ef493ec62">
+      <column name="ModificationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="SerializedEntityData" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c37ac62f-ee0a-4699-ab7f-39f21377f71e">
+      <column name="SerializedEntityData" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="566527e6-f012-476d-bd94-1795b6c3f181">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="5a9faf61-2db1-4090-88a3-29b6ea2073f4">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+  </class>
+  <class name="ProductDetail" entity-set="ProductDetails" table="EasyAbpEShopProductsProductDetails" schema="dbo" p1:Guid="98ac9a0c-f70e-420f-a8e4-1ca5f06b3408">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="382d97d1-4ce1-4486-92b8-cded853971a5">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="15ee8035-4e97-47dc-9abc-a8172f701047">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="StoreId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="37139842-01a2-4efe-a0c2-a6ca6058cb8e">
+      <column name="StoreId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2014a6f0-029b-4299-907d-1c62e01ec408">
+      <column name="Description" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3cf7fb44-ed97-4e1f-af01-bf32cbf3b63c">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="1ba44e81-ecfe-4abe-8fa5-c4acbdaec989">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="427ab93f-2baf-4ca9-a26d-8f8c5398e7b6">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="48cf676b-de85-4d19-b825-7ac84bd3af36">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1002e7ec-9668-41a8-87f7-11aa6cc5235b">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6db320be-ab36-443c-8a24-301cd595b25b">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="76a9235a-5b6a-4408-9410-0e8a97aa7295">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="996ce328-f653-4573-a9ab-21e02347a914">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="950b4c6d-c273-42b5-b2b2-98f49043f635">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ProductDetailHistory" entity-set="ProductDetailHistories" table="EasyAbpEShopProductsProductDetailHistories" schema="dbo" p1:Guid="53a842ec-83b5-441c-ad7f-ad64628b3c04">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="3af53cf8-f4dc-48a7-8635-d22d1425c0ff">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bccb3172-fd43-491e-807a-c30345528b64">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ProductDetailId" type="Guid" p1:ValidateRequired="true" p1:Guid="9943f11d-3d91-46e6-a8d8-d6efaf1e85c1">
+      <column name="ProductDetailId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ModificationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="eae03d9a-2bc2-46d1-9a0a-44ba0ff73a04">
+      <column name="ModificationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="SerializedEntityData" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3230b17f-9b8b-45e3-8e60-69cc69922c71">
+      <column name="SerializedEntityData" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4ce12e72-61fd-4a25-b7b5-01a50dfd6dde">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="e1235be1-1837-48c4-a515-2716779de8fa">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+  </class>
+  <class name="ProductCategory" entity-set="ProductCategories" table="EasyAbpEShopProductsProductCategories" schema="dbo" p1:Guid="d1a8ecb4-2769-4437-bda0-71085f831c85">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="5edaf947-8769-4a0b-945d-2bca3257d31f">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3b50056a-4c16-41de-af3d-fd855b7e823c">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CategoryId" type="Guid" p1:ValidateRequired="true" p1:Guid="9f6b6a9d-b6f9-4d92-9d68-a240443c8203">
+      <column name="CategoryId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ProductId" type="Guid" p1:ValidateRequired="true" p1:Guid="280dbf1a-5796-47dc-a661-40433e0faca4">
+      <column name="ProductId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DisplayOrder" type="Int32" p1:ValidateRequired="true" p1:Guid="58ca7988-efaf-41ef-9c20-058687713014">
+      <column name="DisplayOrder" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="63b01774-e375-4c77-88e8-78b5cb943459">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="c2f96587-4dab-49b2-a3bb-1f02d9002f0e">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="8d54a279-0344-4c3b-8e63-2455fec8db3b">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e068c4b4-0000-4fc5-85f1-f921a2f58683">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="974279ff-c032-4edd-adb6-3eb2c4a39eef">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="eab302fa-11b0-453e-a57f-e32f8d3827f1">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ProductAttribute" entity-set="ProductAttributes" table="EasyAbpEShopProductsProductAttributes" schema="dbo" p1:Guid="7b665ca0-08d2-4771-b548-440119b0b489">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="f6bd0bd0-5031-4252-a34b-aadb99a7e5ed">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="DisplayName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d898db05-067d-4938-a2bf-b2b861a4058b">
+      <column name="DisplayName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f9d02010-0f7f-4879-a578-1b96b4dca0b7">
+      <column name="Description" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="DisplayOrder" type="Int32" p1:ValidateRequired="true" p1:Guid="fd6be140-82ee-4bec-a1bc-30e1367802de">
+      <column name="DisplayOrder" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e109367f-5eb5-4a35-8d65-fb2d33a5c263">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bc696989-298e-474a-9d9d-c46ab5777def">
+      <column name="ProductId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="58e02429-df7e-4b18-bb59-6cdb40008376">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ecb8a899-670b-445c-a991-c0e243d2f194">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="985625ab-0f42-4899-bcbe-819a3aaa59ae">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b8712f25-0610-4ace-80a3-5d8a4fd5defb">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="005c098e-ef52-4f8d-88ca-2c7b897ab9b7">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9e0d8a15-1e62-463d-b45c-9c5dfa08f093">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6e39a749-4ddf-4c2a-be4e-b96f14855dc9">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ProductAttributeOption" entity-set="ProductAttributeOptions" table="EasyAbpEShopProductsProductAttributeOptions" schema="dbo" p1:Guid="f2e42da7-daeb-464f-be6c-9e8e2ef7dd26">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="9ded41be-12d5-4b59-954e-a19638d97419">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="DisplayName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bddee61b-7a07-433c-a88a-86ff468867d5">
+      <column name="DisplayName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bfe4f6b0-a2b1-4c5d-afb2-a9dbd639a133">
+      <column name="Description" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="DisplayOrder" type="Int32" p1:ValidateRequired="true" p1:Guid="3bd8dd45-ff72-4f76-bc46-d073c85a7446">
+      <column name="DisplayOrder" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="847db85a-5a39-4b4a-b3fb-67cf2d3e5236">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductAttributeId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="73e62f13-5806-419e-8f31-781eba515691">
+      <column name="ProductAttributeId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="baf6cecc-ae81-4db1-b55b-f73711312c6e">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d73911e4-12bc-4304-a5c5-fff8d2d36948">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="153405cd-166e-438a-9dba-05c77e1fd6ef">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3d5d047b-73bb-4a8e-9860-819676732f01">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="1523529a-823f-4509-905f-337237936f01">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="98bb1bc4-d27b-446f-8978-0a618b8fd979">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="af3f6fc6-b0e3-44f9-9b89-6d5a2afd603c">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Category" entity-set="Categories" table="EasyAbpEShopProductsCategories" schema="dbo" p1:Guid="3dae7d99-d69c-4d7c-9652-df4506481531">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="0a2fa61f-dd89-4165-9c8b-a84bb6528d01">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="95dc0408-a35c-4396-8215-ce020eb09d14">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="UniqueName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4b3a4f89-97ec-439a-9486-ab977787007a">
+      <column name="UniqueName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7d6be23e-e1f0-4d46-b989-bf9fa17fa1cc">
+      <column name="Description" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="MediaResources" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a94e82bb-d9f8-4899-a3c0-da7e774b08dc">
+      <column name="MediaResources" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="IsHidden" type="Boolean" p1:ValidateRequired="true" p1:Guid="8c8a7fab-3a25-4dec-a694-7c0a96b765b8">
+      <column name="IsHidden" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DisplayName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1430c80b-40b4-4390-afd8-460cfd66c563">
+      <column name="DisplayName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Code" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3cda1ac1-4778-4e84-9de3-dace18f7a900">
+      <column name="Code" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Level" type="Int32" p1:ValidateRequired="true" p1:Guid="7290b0bf-b852-46da-a654-0b4070743f6a">
+      <column name="Level" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ParentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8c9c6629-e6c4-4819-a674-e5d19f2e8322">
+      <column name="ParentId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d2fec825-0dd5-4ae9-9ecc-6f491e099244">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="3c2ce43f-1eeb-4ef9-8f0e-05fbeefaf1df">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="55d67464-dfec-40a5-9ade-fbe908e8ecb3">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7f8cfb0e-142b-480e-bc98-c4d1d199bb74">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9712d312-8eba-4f82-b22d-7ea35c171af1">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="01be686f-24ad-4458-8c9f-52aca83048be">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b4a770e8-adbe-416f-8501-9bfeea4aa76c">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="42178ec8-ac46-443d-8717-70ec747fbea2">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e20d2c27-6a82-420c-9151-9a62712aad9e">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Refund" entity-set="Refunds" table="EasyAbpEShopPaymentsRefunds" schema="dbo" p1:Guid="943802e0-638d-45a6-a545-46813bf8e612">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="3050ccba-2990-45ad-aa05-2925b81807b9">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="49cb3bb4-b5b3-45bf-a822-c6ded26809e2">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="PaymentId" type="Guid" p1:ValidateRequired="true" p1:Guid="3388f299-ea76-48c7-a589-69b799901dc6">
+      <column name="PaymentId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="RefundPaymentMethod" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a3fd22ec-bcdd-45ac-93e9-1cda95b6fda8">
+      <column name="RefundPaymentMethod" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ExternalTradingCode" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f4f74b84-bef6-455a-ac37-b1d3807f46bb">
+      <column name="ExternalTradingCode" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Currency" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="de31fc4d-87e8-4f59-9277-2056af7f77f8">
+      <column name="Currency" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="RefundAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="b661b27d-3c8b-4580-9e02-248d174eeb0b">
+      <column name="RefundAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="DisplayReason" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e1ac6721-2290-4150-a888-983f722cbcc6">
+      <column name="DisplayReason" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="CustomerRemark" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ba0c6b64-ee64-4a28-b1dc-5d3396a51032">
+      <column name="CustomerRemark" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="StaffRemark" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2cb2ef65-6ac0-4e8b-8f9a-5b3be6c3c44a">
+      <column name="StaffRemark" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="CompletedTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6167465c-bf0c-4bf6-9e41-13a28de3f6f6">
+      <column name="CompletedTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CanceledTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="84fff6b1-5bc5-4d7e-a578-07488771da4d">
+      <column name="CanceledTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3f676a30-8366-4cd8-a2b1-5b9f8f0c7670">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="1e71db35-1e0a-41d6-9e4d-ed5578c2c5c5">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="a50a3354-1bc6-4228-b3f1-b98a5dc0a745">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="97004d1e-4ef7-4556-8c82-7202d6d8c3ae">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1c467dd7-1bc0-432f-bdbe-9b05a6697e1a">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="90fff4d0-94b5-4c62-9e80-eb89aa33b071">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="f9bb3759-e4ca-41bd-a0a9-ac1be735efa7">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9e979b70-6435-43ee-a8b4-5f57026e9157">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="56a6a792-3cb0-4501-9331-05f445d024c6">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="RefundItem" entity-set="RefundItems" table="EasyAbpEShopPaymentsRefundItems" schema="dbo" p1:Guid="6f2f29c1-ce28-43dc-b743-6cbe5a23904e">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="8922c35e-1c31-4558-9bf9-a0f908d4129f">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="PaymentItemId" type="Guid" p1:ValidateRequired="true" p1:Guid="97e57d7e-d307-48a9-be60-769d231cc453">
+      <column name="PaymentItemId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="RefundAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="fe5ccffd-21f1-4973-be10-bfcfed78c600">
+      <column name="RefundAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="CustomerRemark" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ba0f0a72-dce8-404a-a5e9-4044b2848d36">
+      <column name="CustomerRemark" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="StaffRemark" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f5817f24-7adf-445c-9efb-66123d4263f9">
+      <column name="StaffRemark" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d3ec6316-f8c3-48bd-8a9c-a7fdfad9c7b9">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="StoreId" type="Guid" p1:ValidateRequired="true" p1:Guid="6fea12fa-d685-4817-8c83-cc55afcf22e9">
+      <column name="StoreId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="OrderId" type="Guid" p1:ValidateRequired="true" p1:Guid="2a287848-fec5-41ee-af61-40b2f06ad318">
+      <column name="OrderId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="RefundId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8e200bc8-8326-49db-a36a-a6da024ebc59">
+      <column name="RefundId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="f6647d94-fc40-4a8d-9262-b58b65171823">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="746b3e88-f20d-45c1-92b9-e45c9c4eb358">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4dbefc34-0ee6-49fe-8766-b3e28dafef86">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="dd0b2a3d-72ca-4e8a-8739-ebcfedcafe99">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="239c8fb8-72c5-4803-9aca-34ce80e9ab29">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="118f3b90-fc3a-4459-85da-29c0cf02be79">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a9c74035-4cbe-4e3d-afef-982b46eb4b2c">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="RefundItemOrderLine" entity-set="RefundItemOrderLines" table="EasyAbpEShopPaymentsRefundItemOrderLines" schema="dbo" p1:Guid="93ace922-8941-4820-bb14-12f56494a884">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="43c80f1b-58ac-47fb-960f-e065e4370afd">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="OrderLineId" type="Guid" p1:ValidateRequired="true" p1:Guid="b81cbefb-1ac8-47e4-a199-15b18eeb3e58">
+      <column name="OrderLineId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="RefundedQuantity" type="Int32" p1:ValidateRequired="true" p1:Guid="4406ee0d-4829-4c17-89e5-e5987cc63ea4">
+      <column name="RefundedQuantity" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="RefundAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="67f7812e-5fd6-4215-903c-ab230242cfdd">
+      <column name="RefundAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="RefundItemId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6b03f533-ab43-44fe-978b-30f1ef0fe5fd">
+      <column name="RefundItemId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Payment" entity-set="Payments" table="EasyAbpEShopPaymentsPayments" schema="dbo" p1:Guid="46ea831f-b289-4ddb-a1f2-56f407e4ae26">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="5a4732e9-b97c-4686-b3e4-923d8ed19116">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a1defa92-6721-42e0-9f03-78bc18d66905">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="UserId" type="Guid" p1:ValidateRequired="true" p1:Guid="2d5d661f-e790-48f6-a550-ce8e2c399fd1">
+      <column name="UserId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="PaymentMethod" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4c213813-93b6-4295-a7ef-cdb4fbc9013a">
+      <column name="PaymentMethod" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="PayeeAccount" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="79d6206d-735e-42ac-baf0-074da1f5f339">
+      <column name="PayeeAccount" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ExternalTradingCode" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="06c86263-5156-4ab8-875d-afd634ee6522">
+      <column name="ExternalTradingCode" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Currency" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a73c88fc-726c-4533-87e9-3cb6d16cf173">
+      <column name="Currency" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="OriginalPaymentAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="ecbc9cc8-dd0b-4499-9b14-49b2e126eb5a">
+      <column name="OriginalPaymentAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="PaymentDiscount" type="Decimal" p1:ValidateRequired="true" p1:Guid="dfd83b93-a3b2-4f4a-a4be-eb2ff9ea9403">
+      <column name="PaymentDiscount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="ActualPaymentAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="a2dea65a-29b5-46ec-8af6-d11ebbf0caed">
+      <column name="ActualPaymentAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="RefundAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="7b1198c3-cfbc-4234-999c-2add1ba471e3">
+      <column name="RefundAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="PendingRefundAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="10b3006e-1196-4d81-ae3e-e679ac041c01">
+      <column name="PendingRefundAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="CompletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a9f10135-5bd5-4df0-82e2-49ed6d5c3199">
+      <column name="CompletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CanceledTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d287d16e-fa0f-414d-8a71-6396c6db7e09">
+      <column name="CanceledTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f6d53e0e-11c7-49c6-b14a-7920989ff9cc">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="ca9314bc-1669-4ad2-b266-f8e147c1cff1">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="2e46d121-af69-4adc-8dee-704fef294093">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8cd056d9-88ca-49fd-a751-f734fb022a29">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="902ba9c2-1752-4112-917d-85857c19462e">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="09a46b2f-4f08-4eeb-8ed8-b8f0d9ec41c8">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="39d7ff13-9459-48e9-ad3b-f18d6c0280a9">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="70efd937-310c-4ba6-8e0f-a44d06ebbc86">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ee37bbdf-c14c-4856-9666-358c7ddc0edd">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="PaymentItem" entity-set="PaymentItems" table="EasyAbpEShopPaymentsPaymentItems" schema="dbo" p1:Guid="79797d67-7661-475d-9a90-f7abb9ff62b3">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="e2c90bfa-5bf3-4ebb-882b-595bdcb37717">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="ItemType" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e7866106-b838-4164-9e16-6c2165979543">
+      <column name="ItemType" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ItemKey" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8a474d90-2e47-4392-88fe-381a0ca5523c">
+      <column name="ItemKey" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="OriginalPaymentAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="72bc392a-a835-42f5-8f1b-8ae1279111dd">
+      <column name="OriginalPaymentAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="PaymentDiscount" type="Decimal" p1:ValidateRequired="true" p1:Guid="8b15bce9-9e9a-4f61-941b-f86e0152f4fa">
+      <column name="PaymentDiscount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="ActualPaymentAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="21ddf512-add4-4c54-a7e9-dbd238d2b9e8">
+      <column name="ActualPaymentAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="RefundAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="c854112d-a29e-45ab-a90f-e10c7ac96b82">
+      <column name="RefundAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="PendingRefundAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="59ffa3a7-178d-4961-8c7c-f8cba1d22b4c">
+      <column name="PendingRefundAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="893825d8-16cc-4850-909b-36ef606be337">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="StoreId" type="Guid" p1:ValidateRequired="true" p1:Guid="b245f582-2b3d-4550-87ae-82f7f8602214">
+      <column name="StoreId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="PaymentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1f585b98-4355-4838-9d55-0320f37e03bb">
+      <column name="PaymentId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="744ba3ef-b3e3-4461-976e-0b1c8ef22ee6">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1a341d03-6e4a-4bd3-998e-1553dd322625">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3321a9a8-736a-4845-9fe1-8fad56dea44f">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="58bdfe39-0da7-4cb4-a0b5-9b75ea0b748f">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="d4a674d5-3fef-462e-89fb-b81a650fecf7">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2349a4c9-17ce-4498-ba68-3dfccaace073">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="07776cfd-2c69-49db-8940-42ee15081eff">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Order" entity-set="Orders" table="EasyAbpEShopOrdersOrders" schema="dbo" p1:Guid="850df655-4b94-4e83-b73e-148a6dd53758">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="95b822ff-051d-4a37-9aff-ba04eb708da6">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="27ecc356-356c-45db-bea1-4b34d9bad81f">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="StoreId" type="Guid" p1:ValidateRequired="true" p1:Guid="cd057c06-d4c7-431f-ab93-7ed46dca448e">
+      <column name="StoreId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="OrderNumber" type="String" p1:nullable="True" p1:ValidateMaxLength="450" p1:ValidateRequired="false" p1:Guid="3c015efc-50c7-4171-9877-273127fc8f92">
+      <column name="OrderNumber" not-null="False" length="450" sql-type="nvarchar" unique="True" p1:unicode="True" />
+    </property>
+    <property name="CustomerUserId" type="Guid" p1:ValidateRequired="true" p1:Guid="771fce1d-348d-41c6-8e13-18218c016014">
+      <column name="CustomerUserId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="OrderStatus" type="Int32" p1:ValidateRequired="true" p1:Guid="10d5244d-b908-4e17-ade6-80004c350409">
+      <column name="OrderStatus" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Currency" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ba0de894-2284-4bc6-8ecb-fbd6a10c24b2">
+      <column name="Currency" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductTotalPrice" type="Decimal" p1:ValidateRequired="true" p1:Guid="76ab0ebd-bf40-4cbf-8b53-1424afd04c62">
+      <column name="ProductTotalPrice" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="TotalDiscount" type="Decimal" p1:ValidateRequired="true" p1:Guid="db5aa3a8-b30b-4aea-8fa6-5b547e164014">
+      <column name="TotalDiscount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="TotalPrice" type="Decimal" p1:ValidateRequired="true" p1:Guid="532f3870-8e66-4e7f-bf60-5ca23303bc17">
+      <column name="TotalPrice" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="ActualTotalPrice" type="Decimal" p1:ValidateRequired="true" p1:Guid="36ce5c09-1a50-40a1-b40c-0f74b9c3cd2e">
+      <column name="ActualTotalPrice" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="RefundAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="63987067-3773-4694-8bff-ef390af7400b">
+      <column name="RefundAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="CustomerRemark" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fcdf35f2-1e93-46df-9bb5-8bd63ec96d8e">
+      <column name="CustomerRemark" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="StaffRemark" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9ae83192-7742-4550-8a2e-fefb23a6ba50">
+      <column name="StaffRemark" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="PaymentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="acd1cf81-ab67-4682-a910-20844b2596d4">
+      <column name="PaymentId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="PaidTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="dcaea45a-dec1-4c3b-80c1-06878b4a9a2e">
+      <column name="PaidTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CompletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="eeee580e-5954-4f4e-91b3-c2f7a7b792e7">
+      <column name="CompletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CanceledTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="419e50b2-859e-4a07-ab30-f5bceb97ac56">
+      <column name="CanceledTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CancellationReason" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="01b6080f-9c10-4c2f-85b1-3bebec66026b">
+      <column name="CancellationReason" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ReducedInventoryAfterPlacingTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="dbedd311-505f-4ce1-ba82-07b9ada58892">
+      <column name="ReducedInventoryAfterPlacingTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="ReducedInventoryAfterPaymentTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ca2b4931-a7a3-416a-bc3e-f4f2cade8838">
+      <column name="ReducedInventoryAfterPaymentTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="PaymentExpiration" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="372f1cb6-2895-4fb9-8a95-06545d194949">
+      <column name="PaymentExpiration" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="64c7a7ae-92df-44df-9b4e-702049aca6ec">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="dc91a184-a744-4a32-bd38-2e0d1cd81005">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="d7a0536b-bc49-4993-af5d-df84a09123a7">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="972cd1e7-d2d4-4d84-b7df-c9b328e47595">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="04c6b530-a63a-4986-99a6-0d8549d0a5b2">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="535c5b14-46c7-4009-892e-e678db5bb362">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="f5c2e5ec-9ccc-48ff-aad2-bbc166199890">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="228dc1c0-11ff-4814-9a3a-e8e05af2f471">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b9f23e33-a9c3-457b-b6e1-9500dfa64995">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="OrderLine" entity-set="OrderLines" table="EasyAbpEShopOrdersOrderLines" schema="dbo" p1:Guid="7b7c0a7c-b60b-4833-b680-e8e3b3df047d">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="34e4972f-4277-42ba-ba15-c9f77ad7e1d1">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="ProductId" type="Guid" p1:ValidateRequired="true" p1:Guid="822c3e75-a4fb-4789-95fb-7231d3a457cb">
+      <column name="ProductId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ProductSkuId" type="Guid" p1:ValidateRequired="true" p1:Guid="01477dbe-e039-4720-b1ea-524011c4d014">
+      <column name="ProductSkuId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ProductModificationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="b588613a-cbea-4816-9646-059c296b74bc">
+      <column name="ProductModificationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="ProductDetailModificationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="aa7f2cbc-c883-4b8b-80b1-2a98d725654c">
+      <column name="ProductDetailModificationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="ProductGroupName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f2ffd6e0-df97-4391-8837-0f366ba3d778">
+      <column name="ProductGroupName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductGroupDisplayName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="78267451-3b0c-4d93-96c0-439e6a8286a3">
+      <column name="ProductGroupDisplayName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductUniqueName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="417cbe46-a641-441d-b8d5-0e5d1ad94f30">
+      <column name="ProductUniqueName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ProductDisplayName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9c00a755-7a60-445e-9f56-9f83cde0f57e">
+      <column name="ProductDisplayName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="SkuName" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e1406711-5fd9-4c5e-9301-115d59309cb4">
+      <column name="SkuName" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="SkuDescription" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="edb30bb5-76f8-40ed-9da9-fdd481dc85cd">
+      <column name="SkuDescription" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="MediaResources" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8d07064e-8c96-4787-8e4b-6d986af18540">
+      <column name="MediaResources" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Currency" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2b583f3e-cebb-4a94-949e-98c27fd7483e">
+      <column name="Currency" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="UnitPrice" type="Decimal" p1:ValidateRequired="true" p1:Guid="f437d739-3914-4443-89ec-206fe165d85a">
+      <column name="UnitPrice" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="TotalPrice" type="Decimal" p1:ValidateRequired="true" p1:Guid="3042e072-797a-4c1a-b575-0d8422bf93e5">
+      <column name="TotalPrice" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="TotalDiscount" type="Decimal" p1:ValidateRequired="true" p1:Guid="2cb8f003-2127-49f1-a1c0-d9145720f693">
+      <column name="TotalDiscount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="ActualTotalPrice" type="Decimal" p1:ValidateRequired="true" p1:Guid="7e495863-f4cc-49fb-bdb0-720764b0de71">
+      <column name="ActualTotalPrice" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="Quantity" type="Int32" p1:ValidateRequired="true" p1:Guid="24dbbf10-8158-4d02-bfb3-2ab08502a834">
+      <column name="Quantity" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="RefundedQuantity" type="Int32" p1:ValidateRequired="true" p1:Guid="181ea735-f437-4142-9f80-3927a50859d4">
+      <column name="RefundedQuantity" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="RefundAmount" type="Decimal" p1:ValidateRequired="true" p1:Guid="0d24f625-9ac4-4e31-905a-efb02c601f61">
+      <column name="RefundAmount" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e8a9a1c9-583f-4100-b14d-8f2e4056df51">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="OrderId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1943d29a-845c-47b4-b968-351fd1175788">
+      <column name="OrderId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="5e1650ea-69a2-450c-9e6b-1fd9ad88adfe">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7a959e8b-92af-4c19-b1c5-c161a9659bd0">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3f68a6ca-9ac3-4c4a-8ce2-cb1cc0e92b1d">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ce68065d-645c-495a-b122-e91eda56f9ad">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="8216fc4e-e9fa-405b-b69a-6afc5a7b4e37">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="959d29f4-30fb-4646-b03b-8866a9e57c5c">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1972cf39-1a77-4cce-b0cc-dfad343a2d65">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="OrderExtraFee" entity-set="OrderExtraFees" table="EasyAbpEShopOrdersOrderExtraFees" schema="dbo" p1:Guid="a91d0cf2-3ce8-4322-a437-92658356049d">
+    <composite-id>
+      <key-property name="OrderId" type="Guid" p1:ValidateRequired="true" p1:Guid="95d3a3c5-07f5-4303-935d-e6b0d91e38dc">
+        <column name="OrderId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+      </key-property>
+      <key-property name="Name" type="String" primary-key-index="1" p1:ValidateMaxLength="450" p1:ValidateRequired="true" p1:Guid="d04b9ea1-0b1d-45d5-8bf0-0b6b11413ef2">
+        <column name="Name" not-null="True" length="450" sql-type="nvarchar" p1:unicode="True" />
+      </key-property>
+      <key-property name="Key" type="String" primary-key-index="2" p1:ValidateMaxLength="450" p1:ValidateRequired="true" p1:Guid="8bc02065-3d0f-42b0-8b8f-dedc22505adb">
+        <column name="`Key`" not-null="True" length="450" sql-type="nvarchar" p1:unicode="True" />
+      </key-property>
+    </composite-id>
+    <property name="Fee" type="Decimal" p1:ValidateRequired="true" p1:Guid="900fbcf6-ff58-4e24-9692-5aed75309598">
+      <column name="Fee" not-null="True" precision="20" scale="8" sql-type="decimal" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="OrderPaidEto" entity-set="OrderPaidEtos" p1:Guid="a1dc3679-edca-43a6-94c1-88f7529cbbd1" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="82b944d3-cd35-4eff-b0a5-3af31d49f8a6">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="a599b0a4-d3b8-40a7-8cc6-503c6776b46e">
+      <column name="" />
+    </property>
+    <property name="Order" type="String" p1:ValidateRequired="true" p1:Guid="35458022-8e58-4699-99a1-eaca0e4e26e9">
+      <column name="" />
+    </property>
+    <property name="PaymentId" type="String" p1:ValidateRequired="true" p1:Guid="1c82e9ab-005b-4674-bbf1-725b454db03b">
+      <column name="" />
+    </property>
+    <property name="PaymentItemId" type="String" p1:ValidateRequired="true" p1:Guid="949d5604-9eff-4b24-b91a-0ea339ae5620">
+      <column name="" />
+    </property>
+    <property name="OrderPaidEventHandlerId" type="String" p1:ValidateRequired="true" p1:Guid="c19ca6a9-0d8b-4e99-b346-2317402ce6cf">
+      <column name="" not-null="False" />
+    </property>
+  </class>
+  <class name="OrderPaidEventHandler" entity-set="OrderPaidEventHandlers" p1:Guid="e7ace95b-b611-4ebe-8611-ebeaec9046cb" p1:ShapeColor="-4144897">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="ae5d60de-f320-496d-9c53-692f211c63cc">
+      <column name="" />
+    </id>
+    <property name="ProductInventoryReductionAfterOrderPaidResultEtoId" type="String" p1:ValidateRequired="true" p1:Guid="99319630-80ce-4cfc-822d-bfe9d56c7fa4">
+      <column name="" not-null="False" />
+    </property>
+  </class>
+  <class name="ProductInventoryReductionAfterOrderPaidResultEto" entity-set="ProductInventoryReductionAfterOrderPaidResultEtos" p1:Guid="a2080810-fb8e-4db3-b5fe-8812477addbd" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="2d0e72fa-56d3-475f-9ee4-59bbe581b786">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="9c37069f-101e-4e31-bd21-a9a93f6a6e93">
+      <column name="" />
+    </property>
+    <property name="OrderId" type="String" p1:ValidateRequired="true" p1:Guid="03145224-f770-49ac-a189-9440e2d1773f">
+      <column name="" />
+    </property>
+    <property name="PaymentId" type="String" p1:ValidateRequired="true" p1:Guid="6738a808-1aae-49d9-9f6c-c1fa225e735a">
+      <column name="" />
+    </property>
+    <property name="PaymentItemId" type="String" p1:ValidateRequired="true" p1:Guid="dc17195a-4fa0-4665-9850-0da1b58dae0f">
+      <column name="" />
+    </property>
+    <property name="IsSuccess" type="String" p1:ValidateRequired="true" p1:Guid="91d84da6-029b-4003-b37c-61eb1ddfe1e5">
+      <column name="" />
+    </property>
+  </class>
+  <class name="ProductInventoryReductionEventHandler" entity-set="ProductInventoryReductionEventHandlers" p1:Guid="ff59313f-ebf6-41c1-93b0-a6e3f4cffc2b" p1:ShapeColor="-4144897">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="a7dd90ca-c5ee-471e-b25d-eb81577f2833">
+      <column name="" />
+    </id>
+  </class>
+  <class name="CompleteOrderEto" entity-set="CompleteOrderEtos" p1:Guid="b83e9767-c715-449f-8713-34133463bf50" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="23b9b03f-688d-41a6-9e37-bc4bae30d66c">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="4abf043b-41d5-4faa-840f-0cdadc42ef7d">
+      <column name="" />
+    </property>
+    <property name="OrderId" type="String" p1:ValidateRequired="true" p1:Guid="45534133-7342-445f-9f0a-f0b5bc4e524e">
+      <column name="" />
+    </property>
+  </class>
+  <class name="CompleteOrderEventHandler" entity-set="CompleteOrderEventHandlers" p1:Guid="4d7e8b9a-fb29-4503-a3e4-51873430b4ff" p1:ShapeColor="-4144897">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="1ec34972-b629-4e1d-893a-d0c4bf0617a2">
+      <column name="" />
+    </id>
+  </class>
+  <class name="OrderCanceledEto" entity-set="OrderCanceledEtos" p1:Guid="24f9cc1c-1235-4e23-85e1-dcdc1ef902c5" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="5137d67d-ded4-4356-889a-982ed242dcc7">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="a5c062a7-1f5f-488a-939a-bfee0ab976a1">
+      <column name="" />
+    </property>
+    <property name="Order" type="String" p1:ValidateRequired="true" p1:Guid="f0204da1-f331-487d-b6be-951427cc59ea">
+      <column name="" />
+    </property>
+  </class>
+  <class name="OrderCompletedEto" entity-set="OrderCompletedEtos" p1:Guid="0d9395d5-668a-4fc0-b0b1-b0b1b9a89010" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="d70905ee-eadc-4a48-9be3-dea0767d8429">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="28aec6fb-2db5-42a1-88e3-cb19b672f0f6">
+      <column name="" />
+    </property>
+    <property name="Order" type="String" p1:ValidateRequired="true" p1:Guid="503dce3d-1d36-4c0d-a092-37b403815ba6">
+      <column name="" />
+    </property>
+  </class>
+  <class name="OrderCompletedEventHandler" entity-set="OrderCompletedEventHandlers" p1:Guid="a6927d0b-46fb-45d5-b636-736a743f4683" p1:ShapeColor="-4144897">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="a4ef2351-c617-413c-bb53-8f1820e0cf0f">
+      <column name="" />
+    </id>
+  </class>
+  <class name="OrderRefundedEto" entity-set="OrderRefundedEtos" p1:Guid="e669f648-dda1-42ff-9dae-d24bdab6e42b" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="7c3fdb87-7f19-4215-8079-7cb3d18457eb">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="7224e147-35a8-4c86-8a8d-3229c0b28d15">
+      <column name="" />
+    </property>
+    <property name="Order" type="String" p1:ValidateRequired="true" p1:Guid="62af867e-610c-4c27-b70c-ab5fca001fb5">
+      <column name="" />
+    </property>
+    <property name="Refund" type="String" p1:ValidateRequired="true" p1:Guid="3ba128a4-8837-4911-a919-c4b14132b294">
+      <column name="" />
+    </property>
+  </class>
+  <class name="OrderRefundedEventHandler" entity-set="OrderRefundedEventHandlers" p1:Guid="f6b3ff7b-f501-4a0c-b778-420902ab5d10" p1:ShapeColor="-4144897">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="1fea810d-96c6-42bb-a250-47a4fdeb2d6b">
+      <column name="" />
+    </id>
+  </class>
+  <class name="EShopPaymentCompletedEto" entity-set="EShopPaymentCompletedEtos" p1:Guid="0344a5d2-44c7-47ba-9e8f-69b61d1a5061" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="1fda67a0-4b30-4ea0-86ca-e7db025635fe">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="fd157797-2038-449c-b67f-118583921f7f">
+      <column name="" />
+    </property>
+    <property name="Payment" type="String" p1:ValidateRequired="true" p1:Guid="1bde1b86-50cc-4613-a21d-bf55982df6b6">
+      <column name="" />
+    </property>
+  </class>
+  <class name="PaymentCompletedEventHandler" entity-set="PaymentCompletedEventHandlers" p1:Guid="00283f34-fb39-4fcd-b27d-f927509110f4" p1:ShapeColor="-4144897">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="f60ad49f-804c-4274-834e-edb7cacccae4">
+      <column name="" />
+    </id>
+    <property name="OrderPaidEtoId" type="String" p1:ValidateRequired="true" p1:Guid="0a971b84-c676-46ca-89db-b1c46315b223">
+      <column name="" not-null="False" />
+    </property>
+  </class>
+  <class name="EShopPaymentCanceledEto" entity-set="EShopPaymentCanceledEtos" p1:Guid="f847ec9d-8ebf-499b-941c-28ad8f550446" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="1a605cd1-15b2-4ac1-9d56-7d890bf540bf">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="3ccfe98b-bbeb-4081-881c-eb9c3a817206">
+      <column name="" />
+    </property>
+    <property name="Payment" type="String" p1:ValidateRequired="true" p1:Guid="1088fd19-871e-4fd5-a38e-4cd8545ef885">
+      <column name="" />
+    </property>
+  </class>
+  <class name="PaymentCanceledEventHandler" entity-set="PaymentCanceledEventHandlers" p1:Guid="d763a97f-2231-431e-ad90-8176414ed2b1" p1:ShapeColor="-4144897">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="32f53b5a-baf8-421a-8f62-2fb2afe98915">
+      <column name="" />
+    </id>
+  </class>
+  <class name="EShopRefundCompletedEto" entity-set="EShopRefundCompletedEtos" p1:Guid="3bf48615-ca08-4d30-a9b0-bee867f7e780" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="b31ac596-6656-43f8-8c21-895afb1b7d43">
+      <column name="" />
+    </id>
+  </class>
+  <class name="RefundCompletedEventHandler" entity-set="RefundCompletedEventHandlers" p1:Guid="76d0f724-4aaa-467e-854e-7b786e9c5fce" p1:ShapeColor="-4144897">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="e2af394d-9d97-437e-a85a-ed17be3a875d">
+      <column name="" />
+    </id>
+  </class>
+  <class name="ProductInventoryChangedEto" entity-set="ProductInventoryChangedEtos" p1:Guid="0dd98bb0-f39d-4697-8a90-31b67f176c62" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="077c50c2-1123-4fed-8703-4620d19bc5b5">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="a58d817f-e057-48f3-9b7d-54008f109d5f">
+      <column name="" />
+    </property>
+    <property name="StoreId" type="String" p1:ValidateRequired="true" p1:Guid="8e543bc6-962d-4b72-90c7-94866154370e">
+      <column name="" />
+    </property>
+    <property name="ProductId" type="String" p1:ValidateRequired="true" p1:Guid="526a0f12-9749-41c1-bb1f-51a8da9db620">
+      <column name="" />
+    </property>
+    <property name="ProductSkuId" type="String" p1:ValidateRequired="true" p1:Guid="a5b9c1bf-5721-4c48-b0d1-67e39189b165">
+      <column name="" />
+    </property>
+    <property name="OriginalInventory" type="String" p1:ValidateRequired="true" p1:Guid="8e5b97cc-ca8f-4cf3-98a1-7f3b280f0c1e">
+      <column name="" />
+    </property>
+    <property name="NewInventory" type="String" p1:ValidateRequired="true" p1:Guid="afff9b40-563e-4dbb-8487-984b3eae591b">
+      <column name="" />
+    </property>
+    <property name="Sold" type="String" p1:ValidateRequired="true" p1:Guid="00663b89-eb2e-4534-b69a-aae3ff9a8c99">
+      <column name="" />
+    </property>
+  </class>
+  <class name="ProductViewSoldDataUpdater" entity-set="ProductViewSoldDataUpdaters" p1:Guid="17d07d28-d737-440d-ac06-02bb0ac077e3" p1:ShapeColor="-4144897">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="48475105-e304-4348-a474-acd5b086b621">
+      <column name="" />
+    </id>
+  </class>
+  <class name="ProductInventoryReductionAfterOrderPlacedResultEto" entity-set="ProductInventoryReductionAfterOrderPlacedResultEtos" p1:Guid="fb6eb01c-1d09-45e3-8712-88a7322e7aa5" p1:ShapeColor="-16256">
+    <id name="Id" type="String" p1:ValidateRequired="true" p1:Guid="ef8f81ed-028d-4962-9f1c-36e0ec64f6b2">
+      <column name="" />
+    </id>
+    <property name="TenantId" type="String" p1:ValidateRequired="true" p1:Guid="4a6e18e1-9757-49c3-b7ab-8f0f4c79e05c">
+      <column name="" />
+    </property>
+    <property name="OrderId" type="String" p1:ValidateRequired="true" p1:Guid="91ce3d29-4a19-4c55-9ef5-285b676ace3d">
+      <column name="" />
+    </property>
+    <property name="IsSuccess" type="String" p1:ValidateRequired="true" p1:Guid="2e0ca471-e7c8-4d57-91ad-eb9eaf490a0b">
+      <column name="" />
+    </property>
+  </class>
+  <associations>
+    <association name="EasyAbpEShopOrdersOrder_EasyAbpEShopOrdersOrderExtraFee" cardinality="OneToMany" on-delete="Cascade" p1:Guid="7468be45-9176-4ea6-b451-b6cdd580be82">
+      <end1 multiplicity="One" name="EasyAbpEShopOrdersOrder" class="OrderExtraFee" relation-class="Order" constrained="True" lazy="False" p1:Guid="fec28c3d-4ecf-4ef8-b578-809d2ad648ac">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EasyAbpEShopOrdersOrderExtraFees" class="Order" relation-class="OrderExtraFee" lazy="False" p1:Guid="2ff5cbd2-ee86-4f82-9bd8-40945329245e">
+        <property name="OrderId" />
+      </end2>
+    </association>
+    <association name="EasyAbpEShopOrdersOrder_EasyAbpEShopOrdersOrderLine" cardinality="OneToMany" p1:Guid="500e33f5-82a3-48eb-9637-90bffd708326">
+      <end1 multiplicity="ZeroOrOne" name="EasyAbpEShopOrdersOrder" class="OrderLine" relation-class="Order" constrained="True" lazy="False" p1:Guid="6d078ca9-58f2-41a1-a04c-025bdaeabb7e">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EasyAbpEShopOrdersOrderLines" class="Order" relation-class="OrderLine" lazy="False" p1:Guid="70341f61-3cff-4a36-9164-97dd880b24ed">
+        <property name="OrderId" />
+      </end2>
+    </association>
+    <association name="EasyAbpEShopPaymentsPayment_EasyAbpEShopPaymentsPaymentItem" cardinality="OneToMany" p1:Guid="0851ab02-1ac7-4ba9-aa81-fa90e8fdd739">
+      <end1 multiplicity="ZeroOrOne" name="EasyAbpEShopPaymentsPayment" class="PaymentItem" relation-class="Payment" constrained="True" lazy="False" p1:Guid="e639ec3f-bf77-4972-8ca2-ebce39d844ec">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EasyAbpEShopPaymentsPaymentItems" class="Payment" relation-class="PaymentItem" lazy="False" p1:Guid="57d3af69-0082-45ea-90b6-99a8d20fe167">
+        <property name="PaymentId" />
+      </end2>
+    </association>
+    <association name="EasyAbpEShopPaymentsRefundItem_EasyAbpEShopPaymentsRefundItemOrderLine" cardinality="OneToMany" p1:Guid="a5fa9f64-ac70-4d8a-b362-883e86b6907c">
+      <end1 multiplicity="ZeroOrOne" name="EasyAbpEShopPaymentsRefundItem" class="RefundItemOrderLine" relation-class="RefundItem" constrained="True" lazy="False" p1:Guid="dfdab266-97fa-4e45-a5f8-4f94d3ef13fd">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EasyAbpEShopPaymentsRefundItemOrderLines" class="RefundItem" relation-class="RefundItemOrderLine" lazy="False" p1:Guid="13254e34-390f-4e9d-aeb0-20b467e1c470">
+        <property name="RefundItemId" />
+      </end2>
+    </association>
+    <association name="EasyAbpEShopPaymentsRefund_EasyAbpEShopPaymentsRefundItem" cardinality="OneToMany" p1:Guid="dd49b0f4-94fc-41b9-a660-67b7336dfba9">
+      <end1 multiplicity="ZeroOrOne" name="EasyAbpEShopPaymentsRefund" class="RefundItem" relation-class="Refund" constrained="True" lazy="False" p1:Guid="ceea9a77-cf68-4834-b3d7-de23d6090e76">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EasyAbpEShopPaymentsRefundItems" class="Refund" relation-class="RefundItem" lazy="False" p1:Guid="248ad036-eb15-4708-8076-4571cad59d74">
+        <property name="RefundId" />
+      </end2>
+    </association>
+    <association name="EasyAbpEShopProductsCategory_EasyAbpEShopProductsCategory" cardinality="OneToMany" p1:Guid="5f63b078-8b20-418c-a13f-82af593d8ef6">
+      <end1 multiplicity="ZeroOrOne" name="EasyAbpEShopProductsCategory_ParentId" class="Category" relation-class="Category" constrained="True" lazy="False" p1:Guid="f32b3db5-83ef-4d30-94a6-382f7e079cd8">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EasyAbpEShopProductsCategories_ParentId" class="Category" relation-class="Category" lazy="False" p1:Guid="d5bfe2a1-bc5a-4f49-9d8f-15d726f08756">
+        <property name="ParentId" />
+      </end2>
+    </association>
+    <association name="EasyAbpEShopProductsProductAttribute_EasyAbpEShopProductsProductAttributeOption" cardinality="OneToMany" p1:Guid="22bf2282-5263-48ee-98d7-16d48629fbde">
+      <end1 multiplicity="ZeroOrOne" name="EasyAbpEShopProductsProductAttribute" class="ProductAttributeOption" relation-class="ProductAttribute" constrained="True" lazy="False" p1:Guid="99725cbe-f161-4868-b72b-5776f15910ae">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EasyAbpEShopProductsProductAttributeOptions" class="ProductAttribute" relation-class="ProductAttributeOption" lazy="False" p1:Guid="18c8fdbf-4274-4ebd-a3b7-5883eec039f8">
+        <property name="ProductAttributeId" />
+      </end2>
+    </association>
+    <association name="EasyAbpEShopProductsProduct_EasyAbpEShopProductsProductAttribute" cardinality="OneToMany" p1:Guid="66f67c23-3832-4491-85f9-ed9db55669b4">
+      <end1 multiplicity="ZeroOrOne" name="EasyAbpEShopProductsProduct" class="ProductAttribute" relation-class="Product" constrained="True" lazy="False" p1:Guid="6bda7a5a-bf00-48fd-9d72-22015ef7d77a">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EasyAbpEShopProductsProductAttributes" class="Product" relation-class="ProductAttribute" lazy="False" p1:Guid="8e2b3858-e183-48d9-bb6b-e1e77ec0d1dd">
+        <property name="ProductId" />
+      </end2>
+    </association>
+    <association name="EasyAbpEShopProductsProduct_EasyAbpEShopProductsProductSku" cardinality="OneToMany" p1:Guid="fbe98488-7830-4aba-bf4b-40edfb77d38b">
+      <end1 multiplicity="ZeroOrOne" name="EasyAbpEShopProductsProduct" class="ProductSku" relation-class="Product" constrained="True" lazy="False" p1:Guid="490e6721-605e-4586-b474-67caf8070a59">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EasyAbpEShopProductsProductSkus" class="Product" relation-class="ProductSku" lazy="False" p1:Guid="d894ce9f-9e7d-466a-b8e0-510c4a266b76">
+        <property name="ProductId" />
+      </end2>
+    </association>
+    <association name="OrderPaidEto_OrderPaidEventHandler" cardinality="OneToOne" p1:Guid="aa6b648b-256f-401f-b393-22983c3bd072">
+      <end1 multiplicity="One" name="OrderPaidEto" class="OrderPaidEventHandler" relation-class="OrderPaidEto" generate="False" constrained="True" lazy="False" p1:Guid="43ec355e-bcb9-427a-ac3a-aaf19be62b5c">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="OrderPaidEventHandler" class="OrderPaidEto" relation-class="OrderPaidEventHandler" constrained="False" lazy="False" p1:Guid="4eec1884-23e0-4a9d-ab6e-fa82963c53cb">
+        <property name="Id" />
+      </end2>
+    </association>
+    <association name="ProductInventoryReductionAfterOrderPaidResultEto_OrderPaidEventHandler" cardinality="OneToMany" p1:Guid="9af03982-c2cd-417d-a7a1-6fb4d4e20ab5">
+      <end1 multiplicity="One" name="ProductInventoryReductionAfterOrderPaidResultEto" class="OrderPaidEventHandler" relation-class="ProductInventoryReductionAfterOrderPaidResultEto" constrained="True" lazy="False" p1:Guid="9e147771-788c-4670-8158-1b403349eb90">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="OrderPaidEventHandlers" class="ProductInventoryReductionAfterOrderPaidResultEto" relation-class="OrderPaidEventHandler" generate="False" lazy="False" p1:Guid="6b5527fd-3173-4e84-a1c7-94c0e9cdb7f5">
+        <property name="ProductInventoryReductionAfterOrderPaidResultEtoId" />
+      </end2>
+    </association>
+    <association name="ProductInventoryReductionAfterOrderPaidResultEto_ProductInventoryReductionEventHandler" cardinality="OneToOne" p1:Guid="2b2fcac6-b60c-464f-9bba-3b97de92fe2d">
+      <end1 multiplicity="One" name="ProductInventoryReductionAfterOrderPaidResultEto" class="ProductInventoryReductionEventHandler" relation-class="ProductInventoryReductionAfterOrderPaidResultEto" generate="False" constrained="True" lazy="False" p1:Guid="c634359b-8b00-459d-8651-0daaefc2062d">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="ProductInventoryReductionEventHandler" class="ProductInventoryReductionAfterOrderPaidResultEto" relation-class="ProductInventoryReductionEventHandler" constrained="False" lazy="False" p1:Guid="dfe2f012-0f8d-4894-90bf-c2b9f5ce7ac1">
+        <property name="Id" />
+      </end2>
+    </association>
+    <association name="CompleteOrderEto_CompleteOrderEventHandler" cardinality="OneToOne" p1:Guid="59b9502e-107c-48df-bf59-762a3e9c44ac">
+      <end1 multiplicity="One" name="CompleteOrderEto" class="CompleteOrderEventHandler" relation-class="CompleteOrderEto" generate="False" constrained="True" lazy="False" p1:Guid="90b75f39-8f9d-412a-b904-16165a685615">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="CompleteOrderEventHandler" class="CompleteOrderEto" relation-class="CompleteOrderEventHandler" constrained="False" lazy="False" p1:Guid="4a2fd57d-7adf-4b7f-bc5b-11ba3c7b8f30">
+        <property name="Id" />
+      </end2>
+    </association>
+    <association name="OrderCompletedEto_OrderCompletedEventHandler" cardinality="OneToOne" p1:Guid="e780dda0-6a43-4430-9052-a2ee2095a51d">
+      <end1 multiplicity="One" name="OrderCompletedEto" class="OrderCompletedEventHandler" relation-class="OrderCompletedEto" generate="False" constrained="True" lazy="False" p1:Guid="dcf51959-e7a0-4ac5-a3a6-12d17d4223ca">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="OrderCompletedEventHandler" class="OrderCompletedEto" relation-class="OrderCompletedEventHandler" constrained="False" lazy="False" p1:Guid="4de3fbee-8e61-43db-8dfd-e77c15da27c2">
+        <property name="Id" />
+      </end2>
+    </association>
+    <association name="OrderRefundedEto_OrderRefundedEventHandler" cardinality="OneToOne" p1:Guid="1f400179-ce7b-4eea-b919-6ee2628943db">
+      <end1 multiplicity="One" name="OrderRefundedEto" class="OrderRefundedEventHandler" relation-class="OrderRefundedEto" generate="False" constrained="True" lazy="False" p1:Guid="588b89ff-e674-43fa-a349-391ababfdef5">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="OrderRefundedEventHandler" class="OrderRefundedEto" relation-class="OrderRefundedEventHandler" constrained="False" lazy="False" p1:Guid="8ad2417f-0087-4842-aebf-98fbaddef738">
+        <property name="Id" />
+      </end2>
+    </association>
+    <association name="EShopPaymentCompletedEto_PaymentCompletedEventHandler" cardinality="OneToOne" p1:Guid="145068d5-92ae-40e1-a035-cdb61d7d562f">
+      <end1 multiplicity="One" name="EShopPaymentCompletedEto" class="PaymentCompletedEventHandler" relation-class="EShopPaymentCompletedEto" generate="False" constrained="True" lazy="False" p1:Guid="2faf4854-1abe-44e3-a501-436f3d2e5568">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="PaymentCompletedEventHandler" class="EShopPaymentCompletedEto" relation-class="PaymentCompletedEventHandler" constrained="False" lazy="False" p1:Guid="53ddec19-948a-4315-be45-664602b25d09">
+        <property name="Id" />
+      </end2>
+    </association>
+    <association name="OrderPaidEto_PaymentCompletedEventHandler" cardinality="OneToMany" p1:Guid="046f1ca6-1bbe-43fb-8f2a-49b73e46ffd1">
+      <end1 multiplicity="One" name="OrderPaidEto" class="PaymentCompletedEventHandler" relation-class="OrderPaidEto" constrained="True" lazy="False" p1:Guid="ca21de98-e610-44e3-89c8-b443b2cd95da">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="PaymentCompletedEventHandlers" class="OrderPaidEto" relation-class="PaymentCompletedEventHandler" generate="False" lazy="False" p1:Guid="37ddfaa1-31e8-4b05-8150-46f849fb0a53">
+        <property name="OrderPaidEtoId" />
+      </end2>
+    </association>
+    <association name="EShopPaymentCanceledEto_PaymentCanceledEventHandler" cardinality="OneToOne" p1:Guid="00a63f81-2017-4a4b-9ef0-ec6c6bb6d404">
+      <end1 multiplicity="One" name="EShopPaymentCanceledEto" class="PaymentCanceledEventHandler" relation-class="EShopPaymentCanceledEto" generate="False" constrained="True" lazy="False" p1:Guid="2170d961-497e-4335-8483-80ed087fc2f2">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="PaymentCanceledEventHandler" class="EShopPaymentCanceledEto" relation-class="PaymentCanceledEventHandler" constrained="False" lazy="False" p1:Guid="9e7b9fa5-43a0-4093-8172-4616098fc23c">
+        <property name="Id" />
+      </end2>
+    </association>
+    <association name="EShopRefundCompletedEto_RefundCompletedEventHandler" cardinality="OneToOne" p1:Guid="9e38a180-ec67-45db-b3aa-98b8bccbeee4">
+      <end1 multiplicity="One" name="EShopRefundCompletedEto" class="RefundCompletedEventHandler" relation-class="EShopRefundCompletedEto" generate="False" constrained="True" lazy="False" p1:Guid="9c2a63a2-8eeb-4f08-adf4-49c15265cfc6">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="RefundCompletedEventHandler" class="EShopRefundCompletedEto" relation-class="RefundCompletedEventHandler" constrained="False" lazy="False" p1:Guid="1fc3ded1-4fe0-4868-bb04-1c3141193928">
+        <property name="Id" />
+      </end2>
+    </association>
+    <association name="ProductInventoryChangedEto_ProductViewSoldDataUpdater" cardinality="OneToOne" p1:Guid="511949ad-44fe-4254-bddd-d370eb90749f">
+      <end1 multiplicity="One" name="ProductInventoryChangedEto" class="ProductViewSoldDataUpdater" relation-class="ProductInventoryChangedEto" generate="False" constrained="True" lazy="False" p1:Guid="335bf52f-f1b3-461d-8fc3-3d80fa84fe91">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="ProductViewSoldDataUpdater" class="ProductInventoryChangedEto" relation-class="ProductViewSoldDataUpdater" constrained="False" lazy="False" p1:Guid="e686c970-3e19-42a0-85ad-e4d106a73425">
+        <property name="Id" />
+      </end2>
+    </association>
+    <association name="ProductInventoryReductionAfterOrderPlacedResultEto_ProductInventoryReductionEventHandler" cardinality="OneToOne" p1:Guid="342dfc77-4383-43ac-aff9-3e2d2882fa31">
+      <end1 multiplicity="One" name="ProductInventoryReductionAfterOrderPlacedResultEto" class="ProductInventoryReductionEventHandler" relation-class="ProductInventoryReductionAfterOrderPlacedResultEto" generate="False" constrained="True" lazy="False" p1:Guid="0277dba8-a6a6-4e0b-941e-ed7aa21d3e3e">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="One" name="ProductInventoryReductionEventHandler" class="ProductInventoryReductionAfterOrderPlacedResultEto" relation-class="ProductInventoryReductionEventHandler" constrained="False" lazy="False" p1:Guid="c906cf34-9ce1-420f-9fc5-e27b56e73609">
+        <property name="Id" />
+      </end2>
+    </association>
+  </associations>
+</efcore>

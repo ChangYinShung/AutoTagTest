@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Payment.EcPay": {
+      "path": "FS.Payment.EcPay.abpmdl.json"
+    }
+  }
+}

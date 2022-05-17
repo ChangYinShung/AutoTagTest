@@ -1,0 +1,133 @@
+﻿@using System.Globalization
+@using Microsoft.Extensions.Options
+@using Volo.Abp.AspNetCore.Mvc.AntiForgery
+@using Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.MainNavbar
+@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@using Volo.Abp.Ui.Branding
+@using Volo.Abp.AspNetCore.Mvc.UI.Widgets.Components.WidgetScripts
+@using Volo.Abp.AspNetCore.Mvc.UI.Widgets.Components.WidgetStyles
+@using Volo.Abp.Localization
+@using Volo.Abp.Settings
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Bundling
+
+@inject IAbpAntiForgeryManager AbpAntiForgeryManager
+@inject IBrandingProvider BrandingProvider
+@inject ISettingProvider SettingProvider
+
+<!DOCTYPE html>
+<html lang="zh-Hant-tw">
+
+<head>
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Head.First, StandardLayouts.Public)
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="@ViewBag.Description" name="description">
+    <meta content="@ViewBag.Keywords" name="keywords">
+    <meta content="@ViewBag.Author" name="author">
+    @*FB Share Tag*@
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.Image" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fav icon -->
+    <link href="/CFTA/favicon.png" rel="shortcut icon">
+    <!-- Font Family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <abp-style-bundle name="@ViewBag.SkinStyles" />
+
+    @await Component.InvokeAsync(typeof(WidgetStylesViewComponent))
+
+    @await RenderSectionAsync("styles",false)
+
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Head.Last, StandardLayouts.Public)
+    <style>
+        .tap-top {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            z-index: 99;
+            color: #fff;
+            text-align: center;
+            background: #000;
+            border-radius: 100%;
+            font-size: 22px;
+            cursor: pointer;
+            line-height: 2.2;
+            display: none;
+            border: 1px solid #fff
+        }
+    </style>
+
+</head>
+
+<body data-offset="@ViewBag?.DataOffset" data-spy="scroll" data-bs-target=".navbar" class="">
+    @*@await Component.InvokeLayoutHookAsync(LayoutHooks.Body.First, StandardLayouts.Public)*@
+    <!--loader start-->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!--loader end-->
+    <!--Nav start-->
+    <header class="@ViewBag?.HeaderClass">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    @(await Component.InvokeAsync<MainNavbarViewComponent>())
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="AbpContentToolbar">
+        <div class="text-end mb-2">
+            @RenderSection("content_toolbar", false)
+        </div>
+    </div>
+
+    @if (ViewBag?.HasBackground)
+    {
+        <div style="background-image: url('./assets/img/cfta/BackgroundImage.png') !important;">
+            @RenderBody()
+        </div>
+    }
+    else
+    {
+
+        @RenderBody()
+    }
+
+    @await Html.PartialAsync("_Footer")
+    <!-- Tap on Top-->
+    <div class="tap-top">
+        <div><i class="fa fa-angle-double-up"></i></div>
+    </div>
+
+    <environment exclude="Development">
+        @await Html.PartialAsync("_Facebook")
+    </environment>
+    <abp-script-bundle name="@ViewBag.SkinScript" />
+    <script src="~/Abp/ApplicationConfigurationScript"></script>
+    <script src="~/Abp/ServiceProxyScript"></script>
+    @await RenderSectionAsync("scripts",false)
+    @await Component.InvokeAsync(typeof(WidgetScriptsViewComponent))
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Body.Last, StandardLayouts.Public)
+
+</body>
+
+</html>

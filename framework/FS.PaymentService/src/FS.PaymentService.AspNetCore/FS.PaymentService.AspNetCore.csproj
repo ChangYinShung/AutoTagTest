@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.EShopManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.EcPay\src\FS.EcPay.HttpClient\FS.EcPay.HttpClient.csproj" />
+    <ProjectReference Include="..\..\..\FS.Tspg\src\FS.Tspg.HttpClient\FS.Tspg.HttpClient.csproj" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Tspg.Domain.Shared": {
+      "path": "src/FS.Tspg.Domain.Shared/FS.Tspg.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.Domain": {
+      "path": "src/FS.Tspg.Domain/FS.Tspg.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.Application.Contracts": {
+      "path": "src/FS.Tspg.Application.Contracts/FS.Tspg.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.Application": {
+      "path": "src/FS.Tspg.Application/FS.Tspg.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.EntityFrameworkCore": {
+      "path": "src/FS.Tspg.EntityFrameworkCore/FS.Tspg.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.MongoDB": {
+      "path": "src/FS.Tspg.MongoDB/FS.Tspg.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.HttpApi": {
+      "path": "src/FS.Tspg.HttpApi/FS.Tspg.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.HttpApi.Client": {
+      "path": "src/FS.Tspg.HttpApi.Client/FS.Tspg.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.TestBase": {
+      "path": "test/FS.Tspg.TestBase/FS.Tspg.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Tspg.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Tspg.EntityFrameworkCore.Tests/FS.Tspg.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Tspg.MongoDB.Tests": {
+      "path": "test/FS.Tspg.MongoDB.Tests/FS.Tspg.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Tspg.Domain.Tests": {
+      "path": "test/FS.Tspg.Domain.Tests/FS.Tspg.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Tspg.Application.Tests": {
+      "path": "test/FS.Tspg.Application.Tests/FS.Tspg.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Tspg.HttpApi.Host": {
+      "path": "host/FS.Tspg.HttpApi.Host/FS.Tspg.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Tspg.Web": {
+      "path": "src/FS.Tspg.Web/FS.Tspg.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Tspg.HttpApi.Client.ConsoleTestApp/FS.Tspg.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Tspg.Web.Host": {
+      "path": "host/FS.Tspg.Web.Host/FS.Tspg.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Tspg.IdentityServer": {
+      "path": "host/FS.Tspg.IdentityServer/FS.Tspg.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Tspg.Host.Shared": {
+      "path": "host/FS.Tspg.Host.Shared/FS.Tspg.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Tspg.Web.Unified": {
+      "path": "host/FS.Tspg.Web.Unified/FS.Tspg.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Tspg.Blazor": {
+      "path": "src/FS.Tspg.Blazor/FS.Tspg.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.Blazor.Host": {
+      "path": "host/FS.Tspg.Blazor.Host/FS.Tspg.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Tspg.Blazor.Server": {
+      "path": "src/FS.Tspg.Blazor.Server/FS.Tspg.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.Blazor.WebAssembly": {
+      "path": "src/FS.Tspg.Blazor.WebAssembly/FS.Tspg.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Tspg.Blazor.Server.Host": {
+      "path": "host/FS.Tspg.Blazor.Server.Host/FS.Tspg.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

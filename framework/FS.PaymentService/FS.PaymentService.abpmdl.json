@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.PaymentService.Domain.Shared": {
+      "path": "src/FS.PaymentService.Domain.Shared/FS.PaymentService.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.Domain": {
+      "path": "src/FS.PaymentService.Domain/FS.PaymentService.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.Application.Contracts": {
+      "path": "src/FS.PaymentService.Application.Contracts/FS.PaymentService.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.Application": {
+      "path": "src/FS.PaymentService.Application/FS.PaymentService.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.EntityFrameworkCore": {
+      "path": "src/FS.PaymentService.EntityFrameworkCore/FS.PaymentService.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.MongoDB": {
+      "path": "src/FS.PaymentService.MongoDB/FS.PaymentService.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.HttpApi": {
+      "path": "src/FS.PaymentService.HttpApi/FS.PaymentService.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.HttpApi.Client": {
+      "path": "src/FS.PaymentService.HttpApi.Client/FS.PaymentService.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.TestBase": {
+      "path": "test/FS.PaymentService.TestBase/FS.PaymentService.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.PaymentService.EntityFrameworkCore.Tests": {
+      "path": "test/FS.PaymentService.EntityFrameworkCore.Tests/FS.PaymentService.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.PaymentService.MongoDB.Tests": {
+      "path": "test/FS.PaymentService.MongoDB.Tests/FS.PaymentService.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.PaymentService.Domain.Tests": {
+      "path": "test/FS.PaymentService.Domain.Tests/FS.PaymentService.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.PaymentService.Application.Tests": {
+      "path": "test/FS.PaymentService.Application.Tests/FS.PaymentService.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.PaymentService.HttpApi.Host": {
+      "path": "host/FS.PaymentService.HttpApi.Host/FS.PaymentService.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.PaymentService.Web": {
+      "path": "src/FS.PaymentService.Web/FS.PaymentService.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.PaymentService.HttpApi.Client.ConsoleTestApp/FS.PaymentService.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.PaymentService.Web.Host": {
+      "path": "host/FS.PaymentService.Web.Host/FS.PaymentService.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.PaymentService.IdentityServer": {
+      "path": "host/FS.PaymentService.IdentityServer/FS.PaymentService.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.PaymentService.Host.Shared": {
+      "path": "host/FS.PaymentService.Host.Shared/FS.PaymentService.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.PaymentService.Web.Unified": {
+      "path": "host/FS.PaymentService.Web.Unified/FS.PaymentService.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.PaymentService.Blazor": {
+      "path": "src/FS.PaymentService.Blazor/FS.PaymentService.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.Blazor.Host": {
+      "path": "host/FS.PaymentService.Blazor.Host/FS.PaymentService.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.PaymentService.Blazor.Server": {
+      "path": "src/FS.PaymentService.Blazor.Server/FS.PaymentService.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.Blazor.WebAssembly": {
+      "path": "src/FS.PaymentService.Blazor.WebAssembly/FS.PaymentService.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.PaymentService.Blazor.Server.Host": {
+      "path": "host/FS.PaymentService.Blazor.Server.Host/FS.PaymentService.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

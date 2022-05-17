@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Abp.Emailing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EntityFrameworkCore\EmailingDbContext.cs" />
+    <Compile Remove="EntityFrameworkCore\EmailingDbContextModelCreatingExtensions.cs" />
+    <Compile Remove="EntityFrameworkCore\IEmailingDbContext.cs" />
+    <Compile Remove="_Generated\FS.Abp.Emailing\EntityFrameworkCore\EfCoreMailMessageRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Abp.Emailing\EntityFrameworkCore\MailMessage.Configuration.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.Abp.Emailing.Domain\FS.Abp.Emailing.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FS.Abp.Emailing\EmailingStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp.Emailing\EmailingStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.Abp.Emailing</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp.Emailing\EntityFrameworkCore\EfCoreMailMessageTemplateRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp.Emailing\EntityFrameworkCore\EmailingDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp.Emailing\EntityFrameworkCore\EmailingDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp.Emailing\EntityFrameworkCore\IEmailingDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp.Emailing\EntityFrameworkCore\MailMessageTemplate.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

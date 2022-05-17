@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Abp.Emailing</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_Generated\FS.Abp.Emailing\Dtos\MailMessageDto.Generated.cs" />
+	  <Compile Remove="_Generated\FS.Abp.Emailing\Dtos\MailMessageDtoValidator.Generated.cs" />
+	  <Compile Remove="_Generated\FS.Abp.Emailing\IMailMessageCrudAppService.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\FS.Abp.Emailing.Domain.Shared\FS.Abp.Emailing.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="_Generated\FS.Abp.Emailing\Dtos\MailMessageTemplateDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Abp.Emailing\Dtos\MailMessageTemplateDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Abp.Emailing\IMailMessageTemplateCrudAppService.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>FS.Abp.Emailing</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+</Project>

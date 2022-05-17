@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.EShopManagement": {
+      "path": "FS.EShopManagement.abpmdl.json"
+    }
+  }
+}

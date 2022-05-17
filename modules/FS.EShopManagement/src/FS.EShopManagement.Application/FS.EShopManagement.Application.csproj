@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.EShopManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.EcPay\src\FS.EcPay.Core\FS.EcPay.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\projects\EasyAbp.EShop\modules\EasyAbp.EShop.Orders\src\EasyAbp.EShop.Orders.Application\EasyAbp.EShop.Orders.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\projects\EasyAbp.EShop\modules\EasyAbp.EShop.Payments\src\EasyAbp.EShop.Payments.Application\EasyAbp.EShop.Payments.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\projects\EasyAbp.EShop\modules\EasyAbp.EShop.Products\src\EasyAbp.EShop.Products.Application\EasyAbp.EShop.Products.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\projects\EasyAbp.EShop\modules\EasyAbp.EShop.Stores\src\EasyAbp.EShop.Stores.Application\EasyAbp.EShop.Stores.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\projects\EasyAbp.PaymentService\modules\EasyAbp.PaymentService\src\EasyAbp.PaymentService.Application\EasyAbp.PaymentService.Application.csproj" />
+    <ProjectReference Include="..\FS.EShopManagement.Admin.Application\FS.EShopManagement.Admin.Application.csproj" />
+    <ProjectReference Include="..\FS.EShopManagement.Application.Contracts\FS.EShopManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.EShopManagement.Domain\FS.EShopManagement.Domain.csproj" />
+    <ProjectReference Include="..\FS.EShopManagement.Public.Application\FS.EShopManagement.Public.Application.csproj" />
+  </ItemGroup>
+
+</Project>

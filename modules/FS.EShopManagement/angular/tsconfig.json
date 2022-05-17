@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s/e-shop-management": [
+        "projects/e-shop-management/src/public-api.ts"
+      ],
+      "@f-s/e-shop-management/config": [
+        "projects/e-shop-management/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/e-shop-management/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/e-shop-management/src/lib/proxy/*"]
+    }
+  }
+}

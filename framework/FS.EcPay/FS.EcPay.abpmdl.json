@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.EcPay.Domain.Shared": {
+      "path": "src/FS.EcPay.Domain.Shared/FS.EcPay.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.Domain": {
+      "path": "src/FS.EcPay.Domain/FS.EcPay.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.Application.Contracts": {
+      "path": "src/FS.EcPay.Application.Contracts/FS.EcPay.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.Application": {
+      "path": "src/FS.EcPay.Application/FS.EcPay.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.EntityFrameworkCore": {
+      "path": "src/FS.EcPay.EntityFrameworkCore/FS.EcPay.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.MongoDB": {
+      "path": "src/FS.EcPay.MongoDB/FS.EcPay.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.HttpApi": {
+      "path": "src/FS.EcPay.HttpApi/FS.EcPay.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.HttpApi.Client": {
+      "path": "src/FS.EcPay.HttpApi.Client/FS.EcPay.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.TestBase": {
+      "path": "test/FS.EcPay.TestBase/FS.EcPay.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EcPay.EntityFrameworkCore.Tests": {
+      "path": "test/FS.EcPay.EntityFrameworkCore.Tests/FS.EcPay.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EcPay.MongoDB.Tests": {
+      "path": "test/FS.EcPay.MongoDB.Tests/FS.EcPay.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EcPay.Domain.Tests": {
+      "path": "test/FS.EcPay.Domain.Tests/FS.EcPay.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EcPay.Application.Tests": {
+      "path": "test/FS.EcPay.Application.Tests/FS.EcPay.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EcPay.HttpApi.Host": {
+      "path": "host/FS.EcPay.HttpApi.Host/FS.EcPay.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EcPay.Web": {
+      "path": "src/FS.EcPay.Web/FS.EcPay.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.EcPay.HttpApi.Client.ConsoleTestApp/FS.EcPay.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.EcPay.Web.Host": {
+      "path": "host/FS.EcPay.Web.Host/FS.EcPay.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EcPay.IdentityServer": {
+      "path": "host/FS.EcPay.IdentityServer/FS.EcPay.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EcPay.Host.Shared": {
+      "path": "host/FS.EcPay.Host.Shared/FS.EcPay.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EcPay.Web.Unified": {
+      "path": "host/FS.EcPay.Web.Unified/FS.EcPay.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EcPay.Blazor": {
+      "path": "src/FS.EcPay.Blazor/FS.EcPay.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.Blazor.Host": {
+      "path": "host/FS.EcPay.Blazor.Host/FS.EcPay.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.EcPay.Blazor.Server": {
+      "path": "src/FS.EcPay.Blazor.Server/FS.EcPay.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.Blazor.WebAssembly": {
+      "path": "src/FS.EcPay.Blazor.WebAssembly/FS.EcPay.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.EcPay.Blazor.Server.Host": {
+      "path": "host/FS.EcPay.Blazor.Server.Host/FS.EcPay.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Tspg": {
+      "path": "FS.Tspg.abpmdl.json"
+    }
+  }
+}

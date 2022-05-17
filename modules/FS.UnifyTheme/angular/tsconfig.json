@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s/unify-theme": [
+        "projects/unify-theme/src/public-api.ts"
+      ],
+      "@f-s/unify-theme/config": [
+        "projects/unify-theme/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/unify-theme/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/unify-theme/src/lib/proxy/*"]
+    }
+  }
+}

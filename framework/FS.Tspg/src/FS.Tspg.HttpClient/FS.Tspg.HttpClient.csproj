@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Tspg</RootNamespace>
+		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Json" Version="$(AbpVersion)" />
+		<PackageReference Include="HttpTracer" Version="2.1.1" />
+		<PackageReference Include="RestSharp" Version="107.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\FS.Tspg.Core\FS.Tspg.Core.csproj" />
+	</ItemGroup>
+
+</Project>

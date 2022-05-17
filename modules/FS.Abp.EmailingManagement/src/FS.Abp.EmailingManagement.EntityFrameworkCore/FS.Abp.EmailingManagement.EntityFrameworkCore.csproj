@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Abp.EmailingManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EntityFrameworkCore\EmailingManagementDbContext.cs" />
+    <Compile Remove="EntityFrameworkCore\EmailingManagementDbContextModelCreatingExtensions.cs" />
+    <Compile Remove="EntityFrameworkCore\IEmailingManagementDbContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Emailing\src\FS.Abp.Emailing.EntityFrameworkCore\FS.Abp.Emailing.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.Abp.EmailingManagement.Domain\FS.Abp.EmailingManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Abp.EmailingManagement\EntityFrameworkCore\EmailingManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp.EmailingManagement\EntityFrameworkCore\EmailingManagementDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp.EmailingManagement\EntityFrameworkCore\IEmailingManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

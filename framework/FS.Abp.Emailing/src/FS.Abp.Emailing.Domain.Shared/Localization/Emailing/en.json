@@ -1,0 +1,7 @@
+{
+  "culture": "en",
+  "texts": {
+    "Emailing:Emailing:TemplateNoDefinModelType": "Template : {templateName} did't define ModelType",
+    "Emailing:Emailing:ModelTypeNotMatch": "Template : {templateName} define {templateModelType} ModelType,but paramter is {modelType}"
+  }
+}

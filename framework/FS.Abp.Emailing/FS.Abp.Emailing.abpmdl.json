@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Abp.Emailing.Domain.Shared": {
+      "path": "src/FS.Abp.Emailing.Domain.Shared/FS.Abp.Emailing.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.Domain": {
+      "path": "src/FS.Abp.Emailing.Domain/FS.Abp.Emailing.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.Application.Contracts": {
+      "path": "src/FS.Abp.Emailing.Application.Contracts/FS.Abp.Emailing.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.Application": {
+      "path": "src/FS.Abp.Emailing.Application/FS.Abp.Emailing.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.EntityFrameworkCore": {
+      "path": "src/FS.Abp.Emailing.EntityFrameworkCore/FS.Abp.Emailing.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.MongoDB": {
+      "path": "src/FS.Abp.Emailing.MongoDB/FS.Abp.Emailing.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.HttpApi": {
+      "path": "src/FS.Abp.Emailing.HttpApi/FS.Abp.Emailing.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.HttpApi.Client": {
+      "path": "src/FS.Abp.Emailing.HttpApi.Client/FS.Abp.Emailing.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.TestBase": {
+      "path": "test/FS.Abp.Emailing.TestBase/FS.Abp.Emailing.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Emailing.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Abp.Emailing.EntityFrameworkCore.Tests/FS.Abp.Emailing.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Emailing.MongoDB.Tests": {
+      "path": "test/FS.Abp.Emailing.MongoDB.Tests/FS.Abp.Emailing.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Emailing.Domain.Tests": {
+      "path": "test/FS.Abp.Emailing.Domain.Tests/FS.Abp.Emailing.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Emailing.Application.Tests": {
+      "path": "test/FS.Abp.Emailing.Application.Tests/FS.Abp.Emailing.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Emailing.HttpApi.Host": {
+      "path": "host/FS.Abp.Emailing.HttpApi.Host/FS.Abp.Emailing.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Emailing.Web": {
+      "path": "src/FS.Abp.Emailing.Web/FS.Abp.Emailing.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Abp.Emailing.HttpApi.Client.ConsoleTestApp/FS.Abp.Emailing.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Emailing.Web.Host": {
+      "path": "host/FS.Abp.Emailing.Web.Host/FS.Abp.Emailing.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Emailing.IdentityServer": {
+      "path": "host/FS.Abp.Emailing.IdentityServer/FS.Abp.Emailing.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Emailing.Host.Shared": {
+      "path": "host/FS.Abp.Emailing.Host.Shared/FS.Abp.Emailing.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Emailing.Web.Unified": {
+      "path": "host/FS.Abp.Emailing.Web.Unified/FS.Abp.Emailing.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Emailing.Blazor": {
+      "path": "src/FS.Abp.Emailing.Blazor/FS.Abp.Emailing.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.Blazor.Host": {
+      "path": "host/FS.Abp.Emailing.Blazor.Host/FS.Abp.Emailing.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Emailing.Blazor.Server": {
+      "path": "src/FS.Abp.Emailing.Blazor.Server/FS.Abp.Emailing.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.Blazor.WebAssembly": {
+      "path": "src/FS.Abp.Emailing.Blazor.WebAssembly/FS.Abp.Emailing.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Emailing.Blazor.Server.Host": {
+      "path": "host/FS.Abp.Emailing.Blazor.Server.Host/FS.Abp.Emailing.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}
