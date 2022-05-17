@@ -15,7 +15,7 @@ jobs:
     - name: build all
       id: buildAction
       run: |
-        /ci/build-all.ps1 -Passthru
+        ./ci/build-all.ps1 -Passthru
       shell:  pwsh
       continue-on-error: true
 
