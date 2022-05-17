@@ -1,0 +1,3 @@
+[submodule "projects/BookubgService"]
+	path = projects/BookubgService
+	url = https://github.com/EasyAbp/BookingService.git
