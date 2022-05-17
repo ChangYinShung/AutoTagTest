@@ -1,3 +1,6 @@
 [submodule "projects/BookubgService"]
 	path = projects/BookubgService
 	url = https://github.com/EasyAbp/BookingService.git
+[submodule "tools/entitydeveloper"]
+	path = tools/entitydeveloper
+	url = https://github.com/fs-tw/entitydeveloper.git
