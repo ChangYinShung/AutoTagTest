@@ -4,7 +4,7 @@ $rootFolder = (Get-Item -Path "./" -Verbose).FullName
 
 # List of solutions
 $solutionPaths = (
-    "../applications/MSG/MGS/aspnet-core"
+    "../applications/MSG"
 )
 
 #Write-Host $solutionPaths
