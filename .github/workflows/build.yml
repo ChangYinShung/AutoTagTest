@@ -25,4 +25,4 @@ jobs:
       if : steps.buildAction.outcome != 'success'
       with:
         token: ${{ secrets.LINE_NOTIFY_TOKEN }}
-        message: 'LINE Notify test message'
+        message: 'Github get an error while build'
