@@ -1,0 +1,106 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+		<TypeScriptSourceMap>False</TypeScriptSourceMap>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+		<TypeScriptSourceMap>False</TypeScriptSourceMap>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+		<RootNamespace>CFTA</RootNamespace>
+		<PreserveCompilationReferences>true</PreserveCompilationReferences>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+
+		<ProjectReference Include="..\..\..\..\..\framework\FS.Abp.AspNetCore.Mvc.UI.Theme.Unice\src\FS.Abp.AspNetCore.Mvc.UI.Theme.Unice.csproj" />
+
+		<ProjectReference Include="..\..\..\..\..\framework\FS.Abp.Swashbuckle\src\FS.Abp.Swashbuckle\FS.Abp.Swashbuckle.csproj" />
+
+		<ProjectReference Include="..\..\..\..\..\framework\FS.EcPay\src\FS.EcPay.Core\FS.EcPay.Core.csproj" />
+
+		<ProjectReference Include="..\..\..\..\..\framework\FS.Tspg\src\FS.Tspg.Core\FS.Tspg.Core.csproj" />
+
+		<ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.AspNetCore\FS.CmsKitManagement.AspNetCore.csproj" />
+
+		<ProjectReference Include="..\..\..\..\..\modules\FS.EntityManagement\src\FS.EntityManagement.AspNetCore\FS.EntityManagement.AspNetCore.csproj" />
+
+		<ProjectReference Include="..\..\..\..\..\modules\FS.EShopManagement\src\FS.EShopManagement.AspNetCore\FS.EShopManagement.AspNetCore.csproj" />
+
+		<ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.AspNetCore\FS.FormManagement.AspNetCore.csproj" />
+
+		<ProjectReference Include="..\..\..\..\..\modules\FS.SocialManagement\src\FS.SocialManagement.AspNetCore\FS.SocialManagement.AspNetCore.csproj" />
+		<ProjectReference Include="..\CFTA.Application\CFTA.Application.csproj" />
+		<ProjectReference Include="..\CFTA.EntityFrameworkCore\CFTA.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\CFTA.HttpApi\CFTA.HttpApi.csproj" />
+		<ProjectReference Include="..\CFTA.Public.ContentDefinitions\CFTA.Public.ContentDefinitions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="6.0.3" />
+		<PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="$(AbpVersion)" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI" Version="6.0.1-rc2.4" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.1-rc2.4" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="6.0.1-rc2.4" />
+		<PackageReference Include="Serilog.AspNetCore" Version="4.0.0" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Autofac" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.EventBus.RabbitMQ" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Swashbuckle" Version="$(AbpVersion)" />
+
+		<PackageReference Include="Volo.Abp.Account.Pro.Public.Web.IdentityServer" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.Account.Pro.Public.Web.Impersonation" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton" Version="$(VoloVersion)" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="$(MicrosoftPackageVersion)" />
+	</ItemGroup>
+	<!--FS : replace angular appsetting.json by EnvironmentName-->
+	<ItemGroup>
+		<ResolvedFileToPublish Include="wwwroot/remote-env.$(EnvironmentName).json">
+			<RelativePath>wwwroot/%(RecursiveDir)remote-env%(Extension)</RelativePath>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</ResolvedFileToPublish>
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+		<Compile Remove="Logs\**" />
+		<Content Remove="Logs\**" />
+		<EmbeddedResource Remove="Logs\**" />
+		<None Remove="Logs\**" />
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+		<Content Update="appsettings.Development.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+
+
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties appsettings_1json__JsonSchema="" />
+		</VisualStudio>
+	</ProjectExtensions>
+
+</Project>

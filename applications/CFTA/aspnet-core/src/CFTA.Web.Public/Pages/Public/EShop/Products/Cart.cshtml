@@ -1,0 +1,15 @@
+﻿@page "/e-shop/products/cart"
+@using CFTA.Web.Public.Pages.Components.ProductCartWidget
+@model CFTA.Web.Public.Pages.Public.EShop.Products.CartModel
+@{
+}
+
+<!-- section start -->
+<section class="cart-section ">
+    <div class="container">
+        @{
+            @await Component.InvokeAsync(typeof(ProductCartWidgetViewComponent))
+        }
+    </div>
+</section>
+<!-- Section ends -->

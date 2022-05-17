@@ -1,0 +1,840 @@
+﻿@page
+@model CFTA.Web.Public.Pages.ShopModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using CFTA.Localization
+@inject IHtmlLocalizer<CFTAResource> L
+@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@using Volo.Abp.Users
+@inject ICurrentUser CurrentUser
+@inject IThemeManager ThemeManager
+@{
+}
+
+<div class="layout-ecommerce">
+
+    <section class="ecommerce ecommerce-home">
+        <div class="ecommerce-home-slider owl-carousel owl-theme">
+            <div class="item">
+                <img alt="#" class="bg-img" src="/unice/assets/images/ecommerce/1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-6 col-sm-8">
+                            <div class="contain">
+                                <div>
+                                    <h1>Exclusive Offer</h1>
+                                    <p>
+                                        I must explain to you how all this mistaken idea of denouncing pleasure and
+                                        praising pain was born and I will give you a complete account of the system.
+                                    </p>
+                                    <a class="btn btn-default primary-btn  radius-0" href="#">View all</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img alt="#" class="bg-img" src="/unice/assets/images/ecommerce/2.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-6 col-sm-8">
+                            <div class="contain">
+                                <div>
+                                    <h1>Big collection</h1>
+                                    <p>
+                                        I must explain to you how all this mistaken idea of denouncing pleasure and
+                                        praising pain was born and I will give you a complete account of the system.
+                                    </p>
+                                    <a class="btn btn-default primary-btn  radius-0" href="#">View all</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ecommerce collection">
+        <div class="container">
+            <div class="row banner-three">
+                <div class="col-md-4">
+                    <div class="main-wrapper">
+                        <img alt="#" class="bg-img" src="/unice/assets/images/inner-page/collection/3.jpg">
+                        <div class="banner-contain">
+                            <a class="btn btn-default primary-btn  radius-0" href="#">View all</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="main-wrapper">
+                        <img alt="#" class="bg-img" src="/unice/assets/images/inner-page/collection/5.jpg">
+                        <div class="banner-contain">
+                            <a class="btn btn-default primary-btn  radius-0" href="#">View all</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="main-wrapper">
+                        <img alt="#" class="bg-img" src="/unice/assets/images/inner-page/collection/6.jpg">
+                        <div class="banner-contain">
+                            <a class="btn btn-default primary-btn  radius-0" href="#">View all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ecommerce feature-product">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-md-8">
+                    <div class="title title2">
+                        <div class="sub-title">
+                            <div>
+                                <h2 class="title-text">Newest Product</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="product-slider owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="product-box">
+                                <a class="badge badge-light" href="#">On sale</a>
+                                <div class="img-wrapper">
+                                    <div class="front">
+                                        <a href="#">
+                                            <img alt=""
+                                                 class="img-fluid" src="/unice/assets/images/inner-page/category/2.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="#">
+                                            <img alt=""
+                                                 class="img-fluid" src="/unice/assets/images/inner-page/category/4.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href="#" title="Add to cart">
+                                            <i aria-hidden="true"
+                                               class="fa fa-shopping-cart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" title="Add to Wishlist">
+                                            <i aria-hidden="true"
+                                               class="fa fa-heart-o"></i>
+                                        </a>
+                                        <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                            <i aria-hidden="true" class="fa fa-search"></i>
+                                        </a> <a href="compare.html"
+                                                title="Compare">
+                                            <i aria-hidden="true" class="fa fa-refresh"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <a href="product-page(no-sidebar).html">
+                                        <h6>
+                                            Slim Fit Cotton
+                                            Shirt
+                                        </h6>
+                                    </a>
+                                    <h4>$500.00</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="product-box">
+                                <div class="img-wrapper">
+                                    <a class="badge badge-dark" href="#">50% off</a>
+                                    <div class="front">
+                                        <a href="#">
+                                            <img alt="" class="img-fluid"
+                                                 src="/unice/assets/images/inner-page/category/5.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="#">
+                                            <img alt="" class="img-fluid"
+                                                 src="/unice/assets/images/inner-page/category/1.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href="#" title="Add to cart">
+                                            <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" title="Add to Wishlist">
+                                            <i aria-hidden="true" class="fa fa-heart-o"></i>
+                                        </a>
+                                        <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                            <i aria-hidden="true" class="fa fa-search"></i>
+                                        </a>
+                                        <a href="compare.html" title="Compare">
+                                            <i aria-hidden="true" class="fa fa-refresh"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <div>
+                                        <a href="product-page(no-sidebar).html"><h6>Slim Fit Cotton Shirt</h6></a>
+                                        <h4>$500.00</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="product-box">
+                                <div class="img-wrapper">
+                                    <div class="front">
+                                        <a href="#">
+                                            <img alt=""
+                                                 class="img-fluid" src="/unice/assets/images/inner-page/category/3.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="#">
+                                            <img alt=""
+                                                 class="img-fluid" src="/unice/assets/images/inner-page/category/2.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href="#" title="Add to cart">
+                                            <i aria-hidden="true"
+                                               class="fa fa-shopping-cart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" title="Add to Wishlist">
+                                            <i aria-hidden="true"
+                                               class="fa fa-heart-o"></i>
+                                        </a>
+                                        <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                            <i aria-hidden="true" class="fa fa-search"></i>
+                                        </a> <a href="compare.html"
+                                                title="Compare">
+                                            <i aria-hidden="true" class="fa fa-refresh"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <a href="product-page(no-sidebar).html">
+                                        <h6>
+                                            Slim Fit Cotton
+                                            Shirt
+                                        </h6>
+                                    </a>
+                                    <h4>$500.00</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="product-box">
+                                <a class="badge badge-dark" href="#">Sale</a>
+                                <div class="img-wrapper">
+                                    <div class="front">
+                                        <a href="#">
+                                            <img alt=""
+                                                 class="img-fluid" src="/unice/assets/images/inner-page/category/4.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="#">
+                                            <img alt=""
+                                                 class="img-fluid" src="/unice/assets/images/inner-page/category/1.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href="#" title="Add to cart">
+                                            <i aria-hidden="true"
+                                               class="fa fa-shopping-cart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" title="Add to Wishlist">
+                                            <i aria-hidden="true"
+                                               class="fa fa-heart-o"></i>
+                                        </a>
+                                        <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                            <i aria-hidden="true" class="fa fa-search"></i>
+                                        </a> <a href="compare.html"
+                                                title="Compare">
+                                            <i aria-hidden="true" class="fa fa-refresh"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <a href="product-page(no-sidebar).html">
+                                        <h6>
+                                            Slim Fit Cotton
+                                            Shirt
+                                        </h6>
+                                    </a>
+                                    <h4>$500.00</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="product-box">
+                                <a class="badge badge-success" href="#">5% off</a>
+                                <div class="img-wrapper">
+                                    <div class="front">
+                                        <a href="#">
+                                            <img alt=""
+                                                 class="img-fluid" src="/unice/assets/images/inner-page/category/2.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="#">
+                                            <img alt=""
+                                                 class="img-fluid" src="/unice/assets/images/inner-page/category/2.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href="#" title="Add to cart">
+                                            <i aria-hidden="true"
+                                               class="fa fa-shopping-cart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" title="Add to Wishlist">
+                                            <i aria-hidden="true"
+                                               class="fa fa-heart-o"></i>
+                                        </a>
+                                        <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                            <i aria-hidden="true" class="fa fa-search"></i>
+                                        </a> <a href="compare.html"
+                                                title="Compare">
+                                            <i aria-hidden="true" class="fa fa-refresh"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <a href="product-page(no-sidebar).html">
+                                        <h6>
+                                            Slim Fit Cotton
+                                            Shirt
+                                        </h6>
+                                    </a>
+                                    <h4>$500.00</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="parallax-banner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 p-0">
+                    <div class="full-banner">
+                        <img alt="full banner" class="bg-img" src="/unice/assets/images/ecommerce/full-banner.jpg">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="banner-contain">
+                        <div>
+                            <h2>Creative Collection</h2>
+                            <p>
+                                I must explain to you how all this mistaken idea of denouncing pleasure and praising
+                                pain was born and I will give you a complete account of the system.
+                            </p>
+                            <a class="btn btn-default primary-btn  radius-0 mt-3" href="#">View all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ecommerce-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="title title2">
+                        <div class="sub-title">
+                            <div>
+                                <h2 class="title-text">Special Products</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 filter-section">
+                    <div class="filter-container isotopeFilters">
+                        <ul class="list-inline filter">
+                            <li class="active"><a data-filter="*" href="#">All</a></li>
+                            <li><a data-filter=".new" href="#">New</a></li>
+                            <li><a data-filter=".trending" href="#">Trending</a></li>
+                            <li><a data-filter=".branding" href="#">Western</a></li>
+                            <li><a data-filter=".Traditional" href="#">Traditional</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="isotopeContainer row">
+                <div class="col-lg-3 col-sm-6 isotopeSelector branding new ">
+                    <div class="product-box">
+                        <a class="badge badge-success" href="#">On sale</a>
+                        <div class="img-wrapper">
+                            <div class="front">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/2.jpg">
+                                </a>
+                            </div>
+                            <div class="back">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/4.jpg">
+                                </a>
+                            </div>
+                            <div class="cart-info cart-wrap">
+                                <a href="#" title="Add to cart">
+                                    <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                </a>
+                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                    <i aria-hidden="true"
+                                       class="fa fa-heart-o"></i>
+                                </a> <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                </a> <a href="compare.html"
+                                        title="Compare">
+                                    <i aria-hidden="true" class="fa fa-refresh"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <a href="product-page(no-sidebar).html">
+                                <h6>
+                                    Slim Fit Cotton
+                                    Shirt
+                                </h6>
+                            </a>
+                            <h4>$500.00</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 isotopeSelector trending branding">
+                    <div class="product-box">
+                        <a class="badge badge-dark" href="#">50%</a>
+                        <div class="img-wrapper">
+                            <div class="front">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/13.jpg">
+                                </a>
+                            </div>
+                            <div class="back">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/2.jpg">
+                                </a>
+                            </div>
+                            <div class="cart-info cart-wrap">
+                                <a href="#" title="Add to cart">
+                                    <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                </a>
+                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                    <i aria-hidden="true"
+                                       class="fa fa-heart-o"></i>
+                                </a> <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                </a> <a href="compare.html"
+                                        title="Compare">
+                                    <i aria-hidden="true" class="fa fa-refresh"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <a href="product-page(no-sidebar).html">
+                                <h6>
+                                    Slim Fit Cotton
+                                    Shirt
+                                </h6>
+                            </a>
+                            <h4>$500.00</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 isotopeSelector branding new trending">
+                    <div class="product-box">
+                        <a class="badge badge-light" href="#">On sale</a>
+                        <div class="img-wrapper">
+                            <div class="front">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/4.jpg">
+                                </a>
+                            </div>
+                            <div class="back">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/1.jpg">
+                                </a>
+                            </div>
+                            <div class="cart-info cart-wrap">
+                                <a href="#" title="Add to cart">
+                                    <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                </a>
+                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                    <i aria-hidden="true"
+                                       class="fa fa-heart-o"></i>
+                                </a> <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                </a> <a href="compare.html"
+                                        title="Compare">
+                                    <i aria-hidden="true" class="fa fa-refresh"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <a href="product-page(no-sidebar).html">
+                                <h6>
+                                    Slim Fit Cotton
+                                    Shirt
+                                </h6>
+                            </a>
+                            <h4>$500.00</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 isotopeSelector trending Traditional">
+                    <div class="product-box">
+                        <a class="badge badge-light" href="#">On sale</a>
+                        <div class="img-wrapper">
+                            <div class="front">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/12.jpg">
+                                </a>
+                            </div>
+                            <div class="back">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/2.jpg">
+                                </a>
+                            </div>
+                            <div class="cart-info cart-wrap">
+                                <a href="#" title="Add to cart">
+                                    <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                </a>
+                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                    <i aria-hidden="true"
+                                       class="fa fa-heart-o"></i>
+                                </a> <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                </a> <a href="compare.html"
+                                        title="Compare">
+                                    <i aria-hidden="true" class="fa fa-refresh"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <a href="product-page(no-sidebar).html">
+                                <h6>
+                                    Slim Fit Cotton
+                                    Shirt
+                                </h6>
+                            </a>
+                            <h4>$500.00</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 isotopeSelector new Traditional">
+                    <div class="product-box">
+                        <div class="img-wrapper">
+                            <div class="front">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/11.jpg">
+                                </a>
+                            </div>
+                            <div class="back">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/2.jpg">
+                                </a>
+                            </div>
+                            <div class="cart-info cart-wrap">
+                                <a href="#" title="Add to cart">
+                                    <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                </a>
+                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                    <i aria-hidden="true"
+                                       class="fa fa-heart-o"></i>
+                                </a> <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                </a> <a href="compare.html"
+                                        title="Compare">
+                                    <i aria-hidden="true" class="fa fa-refresh"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <a href="product-page(no-sidebar).html">
+                                <h6>
+                                    Slim Fit Cotton
+                                    Shirt
+                                </h6>
+                            </a>
+                            <h4>$500.00</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 isotopeSelector new Traditional">
+                    <div class="product-box">
+                        <div class="img-wrapper">
+                            <div class="front">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/5.jpg">
+                                </a>
+                            </div>
+                            <div class="back">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/2.jpg">
+                                </a>
+                            </div>
+                            <div class="cart-info cart-wrap">
+                                <a href="#" title="Add to cart">
+                                    <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                </a>
+                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                    <i aria-hidden="true"
+                                       class="fa fa-heart-o"></i>
+                                </a> <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                </a> <a href="compare.html"
+                                        title="Compare">
+                                    <i aria-hidden="true" class="fa fa-refresh"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <a href="product-page(no-sidebar).html">
+                                <h6>
+                                    Slim Fit Cotton
+                                    Shirt
+                                </h6>
+                            </a>
+                            <h4>$500.00</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 isotopeSelector trending branding">
+                    <div class="product-box">
+                        <a class="badge badge-dark" href="#">Trending</a>
+                        <div class="img-wrapper">
+                            <div class="front">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/3.jpg">
+                                </a>
+                            </div>
+                            <div class="back">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/2.jpg">
+                                </a>
+                            </div>
+                            <div class="cart-info cart-wrap">
+                                <a href="#" title="Add to cart">
+                                    <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                </a>
+                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                    <i aria-hidden="true"
+                                       class="fa fa-heart-o"></i>
+                                </a> <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                </a> <a href="compare.html"
+                                        title="Compare">
+                                    <i aria-hidden="true" class="fa fa-refresh"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <a href="product-page(no-sidebar).html">
+                                <h6>
+                                    Slim Fit Cotton
+                                    Shirt
+                                </h6>
+                            </a>
+                            <h4>$500.00</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 isotopeSelector Traditional">
+                    <div class="product-box">
+                        <div class="img-wrapper">
+                            <div class="front">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/1.jpg">
+                                </a>
+                            </div>
+                            <div class="back">
+                                <a href="#">
+                                    <img alt="" class="img-fluid"
+                                         src="/unice/assets/images/inner-page/category/2.jpg">
+                                </a>
+                            </div>
+                            <div class="cart-info cart-wrap">
+                                <a href="#" title="Add to cart">
+                                    <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                </a>
+                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                    <i aria-hidden="true"
+                                       class="fa fa-heart-o"></i>
+                                </a> <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                </a> <a href="compare.html"
+                                        title="Compare">
+                                    <i aria-hidden="true" class="fa fa-refresh"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <a href="product-page(no-sidebar).html">
+                                <h6>
+                                    Slim Fit Cotton
+                                    Shirt
+                                </h6>
+                            </a>
+                            <h4>$500.00</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="down-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 p-0">
+                    <div class="small-banner">
+                        <img alt="full banner" class="bg-img" src="/unice/assets/images/ecommerce/full-banner2.jpg">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="banner-contain">
+                        <div>
+                            <h3>Buy it and get 50% discount</h3>
+                            <a class="btn btn-default primary-btn  radius-0 mt-3" href="#">View all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-md-8">
+                    <div class="title title2">
+                        <div class="sub-title">
+                            <div>
+                                <h2 class="title-text">Recent Story</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="agency blog blog-sec">
+                        <div class="blog-slider owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="blog-agency">
+                                    <div class="blog-contain">
+                                        <img alt="" class="img-fluid" src="/unice/assets/images/agency/blog/23.png">
+                                        <div class="img-container center-content">
+                                            <div class="center-content">
+                                                <div class="blog-info">
+                                                    <div class="m-b-20">
+                                                        <div class="center-text">
+                                                            <i aria-hidden="true" class="fa fa-clock-o m-r-10"></i>
+                                                            <h6 class="m-r-25 font-blog">June 19, 2019</h6>
+                                                            <i aria-hidden="true" class="fa fa-map-marker m-r-10"></i>
+                                                            <h6 class="font-blog">Phonics ,Newyork</h6>
+                                                        </div>
+                                                    </div>
+                                                    <h5 class="blog-head font-600">Twice profit than before you</h5>
+                                                    <p class="para2">
+                                                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                        industry. Lorem Ipsum has been.
+                                                    </p>
+                                                    <div class="btn-bottom m-t-20">
+                                                        <a class="text-uppercase" href="#">read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="blog-agency">
+                                    <div class="blog-contain">
+                                        <img alt="" class="img-fluid" src="/unice/assets/images/agency/blog/12.jpg">
+                                        <div class="img-container center-content">
+                                            <div class="center-content">
+                                                <div class="blog-info">
+                                                    <div class="m-b-20">
+                                                        <div class="center-text">
+                                                            <i aria-hidden="true" class="fa fa-clock-o m-r-10"></i>
+                                                            <h6 class="m-r-25 font-blog">June 19, 2019</h6>
+                                                            <i aria-hidden="true" class="fa fa-map-marker m-r-10"></i>
+                                                            <h6 class="font-blog">Phonics ,Newyork</h6>
+                                                        </div>
+                                                    </div>
+                                                    <h5 class="blog-head font-600">Twice profit than before you</h5>
+                                                    <p class="para2">
+                                                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                        industry. Lorem Ipsum has been.
+                                                    </p>
+                                                    <div class="btn-bottom m-t-20">
+                                                        <a class="text-uppercase" href="#">read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="blog-agency">
+                                    <div class="blog-contain">
+                                        <img alt="" class="img-fluid" src="/unice/assets/images/agency/blog/10.jpg">
+                                        <div class="img-container center-content">
+                                            <div class="center-content">
+                                                <div class="blog-info">
+                                                    <div class="m-b-20">
+                                                        <div class="center-text">
+                                                            <i aria-hidden="true" class="fa fa-clock-o m-r-10"></i>
+                                                            <h6 class="m-r-25 font-blog">June 19, 2019</h6>
+                                                            <i aria-hidden="true" class="fa fa-map-marker m-r-10"></i>
+                                                            <h6 class="font-blog">Phonics ,Newyork</h6>
+                                                        </div>
+                                                    </div>
+                                                    <h5 class="blog-head font-600">Twice profit than before you</h5>
+                                                    <p class="para2">
+                                                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                        industry. Lorem Ipsum has been.
+                                                    </p>
+                                                    <div class="btn-bottom m-t-20">
+                                                        <a class="text-uppercase" href="#">read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,47 @@
+﻿@page "/public/cms-kit/pages/page/{Slug}"
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.CmsKit.Localization
+@using Volo.CmsKit.Public.Web.Pages.CmsKit.Shared.Components.Pages
+@using Volo.CmsKit.Public.Web.Renderers
+
+
+@model Volo.CmsKit.Public.Web.Pages.Public.CmsKit.Pages.IndexModel
+
+@inject IHtmlLocalizer<CmsKitResource> L
+@inject IMarkdownToHtmlRenderer MarkdownRenderer
+
+@section styles{
+    
+    <abp-style src="/Pages/Public/CmsKit/Pages/index.css" />
+
+    <style>
+        @Html.Raw(Model.Page.Style)
+    </style>
+}
+
+@section scripts{
+    <script>
+        @Html.Raw(Model.Page.Script)
+    </script>
+}
+
+@*@await Component.InvokeAsync(typeof(DefaultPageViewComponent),
+    new
+    {
+        pageId = Model.Page.Id,
+        title = Model.Page.Title,
+        content = Model.Page.Content
+    })*@
+
+<section class="blog blog-sec" style="padding-top:9em">
+    <div class="container">
+       <div class="row">
+         <div class="col-12">    
+            @if (!Model.Page.Content.IsNullOrEmpty())
+            {   
+                    @Html.Raw(Model.Page.Content)
+            }
+         </div>
+       </div>
+    </div>
+</section>

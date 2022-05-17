@@ -1,0 +1,238 @@
+@using CFTA.Web.Public.Pages.Components.ProductListWidget
+@model ProductListWidgetViewModel
+
+<div class="row" id="vue-product-list">
+    <div ref="input"
+         data-storeId="@Model.StoreId"
+         data-media-descriptor-api-url="@Model.MediaDescriptorApiUrl"
+         data-back-numbers="@Model.BackNumbers"></div>
+
+    <div class="col-sm-3 collection-filter">
+        <div class="collection-filter-block">
+            <!-- 搜尋欄 -->
+            <div class="collection-collapse-block">
+                <form class="d-flex">
+                    <input class="form-control me-2"
+                           type="search"
+                           placeholder="搜尋"
+                           aria-label="Search"
+                           v-model="filter" />
+
+                    <button class="btn btn-outline-success" type="button" v-on:click="changePage(1)">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- 商品類型 -->
+            <div class="collection-collapse-block open">
+                <h3 class="collapse-block-title">商品種類</h3>
+                <div class="collection-collapse-block-content">
+                    <div class="collection-brand-filter">
+                        <div class="custom-control custom-checkbox collection-filter-checkbox"
+                             v-for="(item, i) in categoryList">
+                            <input class="custom-control-input categoryCheckBox" type="checkbox"
+                                   v-bind:id="'category_' + item.id"
+                                   v-bind:name="'category_' + item.id"
+                                   v-model="item.check"
+                                   v-on:change="getProductList()" />
+                            <label class="custom-control-label" v-bind:for="'category_' + item.id">{{item.displayName}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="collection-content col">
+        <div class="page-main-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="tab-product m-0 p-0">
+                        <!-- Tab Title -->
+                        <ul class="nav nav-tabs nav-material" id="top-tab" role="tablist">
+                            <li class="nav-item">
+                                <a aria-selected="true" class="nav-link active" data-bs-toggle="tab" href="#top-product-list"
+                                   id="top-product-list-tab" role="tab">
+                                    <i class="icofont icofont-ui-home"></i>產品列表
+                                </a>
+                                <div class="material-border"></div>
+                            </li>
+                        </ul>
+                        <div class="tab-content nav-material" id="top-tabContent">
+                            <!-- Tab Content -->
+                            <!-- 產品列表 -->
+                            <div aria-labelledby="top-product-list-tab" class="tab-pane fade show active" id="top-product-list" role="tabpanel">
+                                <div>
+                                    <div class="collection-product-wrapper">
+                                        <div class="product-wrapper-grid product-load-more">
+                                            <div class="row">
+                                                <!-- 商品列表 -->
+                                                <div class="col-xl-4 col-md-6 col-grid-box four" style="display: block"
+                                                     v-for="(productView, i) in productViews">
+
+                                                    <div class="product-box m-0">
+                                                        <div class="img-wrapper">
+                                                            <div class="front d-flex justify-content-center">
+                                                                <img alt="" class="img-fluid" v-bind:src="productView.productMediaResourceUrl" />
+                                                            </div>
+
+                                                            <!-- 快速動作 -->
+                                                            @*<div class="cart-info cart-wrap">
+                                                                <a href="#" title="Add to cart">
+                                                                <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                                                </a>
+                                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                                <i aria-hidden="true" class="fa fa-heart-o"></i>
+                                                                </a>
+                                                                <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                                                <i aria-hidden="true" class="fa fa-search"></i>
+                                                                </a>
+                                                                <a href="./CFTA_product_page.html" title="Compare">
+                                                                <i aria-hidden="true" class="fa fa-refresh"></i>
+                                                                </a>
+                                                                </div>*@
+                                                        </div>
+                                                        <div class="product-detail">
+                                                            <div>
+                                                                <h4>{{productView.productName}}</h4>
+                                                            </div>
+                                                            <a class="btn btn-default primary-btn radius-0"
+                                                               v-on:click="setProductModel(productView)"
+                                                               href="#">加入購物車</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick-view modal popup start-->
+    <template v-if="productModel">
+        <div aria-hidden="true"
+             class="modal fade bd-example-modal-lg theme-modal"
+             id="quick-view"
+             role="dialog"
+             tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content quick-view-modal">
+                    <div class="modal-body">
+                        <button aria-label="Close"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                type="button"></button>
+                        <div class="row">
+                            <div class="col-lg-6 col-xs-12 align-self-center">
+                                <div class="quick-view-img d-flex justify-content-center">
+                                    <img alt=""
+                                         class="img-fluid"
+                                         v-bind:src="productModel.productMediaResourceUrl" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 rtl-text">
+                                <div class="product-right">
+                                    <h2>{{productModel.productName}}</h2>
+                                    <h3>{{productModel.skuCurrency}}$ {{ productAmount | commaFormat }}元</h3>
+                                    <!-- 選顏色 -->
+                                    <!-- <ul class="color-variant d-flex">
+                                        <li class="bg-light0"></li>
+                                        <li class="bg-light1"></li>
+                                        <li class="bg-light2"></li>
+                                    </ul> -->
+                                    <!--<div class="border-product">
+                                        <h6 class="product-title">商品描述</h6>
+                                        <p v-html="productModel.productDetail"></p>
+                                    </div>-->
+                                    <!-- 選尺寸 -->
+                                    <div class="product-description border-product">
+                                        <div class="size-box">
+                                            <ul class="d-flex" v-for="(attribute) in productModel.attributes">
+                                                {{ attribute.name }} :
+                                                <li :class="productModel.selectOptions[attribute.id] == option.id ? {active:true} : ''"
+                                                    v-for="(option) in attribute.options"
+                                                    v-on:click="setSelectAttrOptionIds(attribute.id, option.id)">
+                                                    <a>
+                                                        {{ option.name }}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h6 class="product-title">球衣背號選擇</h6>
+                                        <div class="checkout-page">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div>
+                                                            <div class="checkout-form">
+                                                                <form>
+                                                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                                        <select v-model="productModel.selectBackNumber" v-on:change="selectProductRemarkOptions(productModel)">
+                                                                            <option v-for="remarkOption in productRemarkOptions" v-bind:value="remarkOption.Name">
+                                                                                <span v-if="remarkOption.Type == 'normal'">#</span>
+                                                                                {{remarkOption.Name}}
+                                                                            </option>
+                                                                        </select>
+
+                                                                        <input class="form-control" type="text"
+                                                                            v-if="productModel.showInput"
+                                                                            v-model="productModel.remark" />
+																		<p v-if="productModel.extraFee == 0">不含臂章、含LOGO及台鋼集團</p>
+                                                                        <p v-if="productModel.extraFee == 300">不含臂章，其他和球員球衣相同</p>
+                                                                        <p v-if="productModel.extraFee == 600">不含臂章、固定含LOGO及台鋼集團</p>
+                                                                        <p v-if="productModel.showInput">上面請填:名字/背號</p>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="product-title">數量</h6>
+                                        <div>
+                                            <input class="form-control" type="number" placeholder="數量"
+                                                   min="1"
+                                                   v-model="productModel.quantity"
+                                                   v-bind:max="productModel.maxQuantity" />
+                                            <span v-if="productModel.showInventory">剩餘庫存數 {{ productModel.inventories }} 件</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-buttons">
+                                        <a class="btn btn-default primary-btn radius-0" href="#"
+                                           v-on:click="addCart(productModel,$event)">加入購物車</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                商品描述
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="border-product">
+                                                    <div style="white-space:pre-wrap" v-html="productModel.productDetail"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </template>
+    <!-- Quick-view modal popup end-->
+</div>

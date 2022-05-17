@@ -1,0 +1,18 @@
+﻿td {
+    min-width: unset !important;
+    text-align:center;
+}
+tr{
+    text-align:center;
+}
+
+.money {
+    text-align: right;
+}
+
+.cart-section tfoot tr td {
+    padding-right: 8px;
+}
+.product-right .size-box ul li.active {
+    background-color: #9dddeb;
+}

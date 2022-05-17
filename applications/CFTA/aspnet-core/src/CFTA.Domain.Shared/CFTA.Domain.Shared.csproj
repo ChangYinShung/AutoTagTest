@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>CFTA</RootNamespace>
+		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Identity.Pro.Domain.Shared" Version="513.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.IdentityServer.Domain.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.BackgroundJobs.Domain.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AuditLogging.Domain.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.BlobStoring.Database.Domain.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Identity.Pro.Domain.Shared" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.LanguageManagement.Domain.Shared" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.FileManagement.Domain.Shared" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Saas.Domain.Shared" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.TextTemplateManagement.Domain.Shared" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.LeptonTheme.Management.Domain.Shared" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.CmsKit.Pro.Domain.Shared" Version="$(VoloVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Localization\CFTA\*.json" />
+		<Content Remove="Localization\CFTA\*.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\modules\FS.EntityManagement\src\FS.EntityManagement.Domain.Shared\FS.EntityManagement.Domain.Shared.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\modules\FS.EShopManagement\src\FS.EShopManagement.Domain.Shared\FS.EShopManagement.Domain.Shared.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.Domain.Shared\FS.FormManagement.Domain.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,28 @@
+﻿using Microsoft.CodeAnalysis;
+using Volo.Abp.Modularity;
+using Volo.Abp.TextTemplating.Razor;
+using Volo.Abp.VirtualFileSystem;
+
+
+namespace CFTA.Public.ContentDefinitions
+{
+
+    [DependsOn(
+        typeof(Volo.Abp.TextTemplating.Razor.AbpTextTemplatingRazorModule)
+    )]
+    public class CFTAPublicContentDefinitionsModule : AbpModule
+    {
+        public override void ConfigureServices(ServiceConfigurationContext context)
+        {
+            Configure<AbpRazorTemplateCSharpCompilerOptions>(options =>
+            {
+                options.References.Add(MetadataReference.CreateFromFile(typeof(CFTAPublicContentDefinitionsModule).Assembly.Location));
+            });
+            Configure<AbpVirtualFileSystemOptions>(options =>
+            {
+                options.FileSets.AddEmbedded<CFTAPublicContentDefinitionsModule>();
+            });
+
+        }
+    }
+}

@@ -1,0 +1,52 @@
+@using CFTA.Web.Public.Components.PagerWidget;
+
+
+
+<div class="pagination_sec">
+    <div class="content_detail__pagination cdp">
+        <ul>
+            <li class="@(Model.havePrePage ? "" : "disabled")"">
+                <a class="prev" href="@(Model.prePageUrl)"><i aria-hidden="true" class="fa fa-angle-double-left" (click)="previous()"></i></a>
+            </li>
+            <li><a class="cdp_i active" href="javascript:void(0)">@(Model.nowPageNo)</a></li>
+            <li class="@(Model.haveNextPage ? "" : "disabled")">
+                <a class="next" href="@(Model.nextPageUrl)"><i aria-hidden="true" class="fa fa-angle-double-right"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+@*
+<div style="text-align:center;">
+    <nav class="g-mb-50" aria-label="Page Navigation" style="margin:0 auto;">
+        <ul class="list-inline">
+            <li class="list-inline-item @(Model.havePrePage ? "" : "disabled")" ">
+                <a class="u-pagination-v1__item u-pagination-v1-5 rounded g-pa-4-13"
+                   href="@(Model.prePageUrl)" aria-label="Previous" (click)="previous()">
+                    <span aria-hidden="true">
+                        <i class="fa fa-angle-left"></i>
+                    </span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+
+            <li class="list-inline-item">
+                <a class="u-pagination-v1__item u-pagination-v1-5 u-pagination-v1-5--active rounded g-pa-4-11"
+                   href="javascript:void(0)">@(Model.nowPageNo)</a>
+            </li>
+
+            <li class="list-inline-item @(Model.haveNextPage ? "" : "disabled")" ">
+                <a class="u-pagination-v1__item u-pagination-v1-5 rounded g-pa-4-13"
+                   href="@(Model.nextPageUrl)" aria-label="Next" (click)="next()">
+                    <span aria-hidden="true">
+                        <i class="fa fa-angle-right"></i>
+                    </span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>*@

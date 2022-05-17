@@ -1,0 +1,153 @@
+﻿@page
+@model CFTA.Web.Public.Pages.CmsKitManagement.Blogs.IndexModel
+@using Volo.Abp.Users
+@inject ICurrentUser CurrentUser
+
+@section scripts{
+<script src="/unice/assets/js/isotope.min.js" type="text/javascript"></script>
+<script src="/unice/assets/js/portfolio.js" type="text/javascript"></script>
+}
+@section styles{
+<style>
+    .disabled {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+</style>
+}
+
+
+
+
+
+
+
+
+
+
+
+<
+
+
+@if(String.IsNullOrEmpty(@Model.DisplayStyle)){
+<div style="background-image: url('./assets/img/cfta/BackgroundImage.png') !important;">
+    <!-- Blog Minimal Blocks -->
+    <section class="blog blog-sec g-pt-70" style="min-height:80vh">
+        <div class="container">
+            <div class="row">
+                <img alt="" class="img-fluid" src="/CFTA/banner.jpg" />
+            </div>
+            <div style="height:1em"></div>
+            <div class="row">
+                <!-- Articles -->
+                <div class="col-lg-12 g-mb-0--lg">
+                    <header class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
+                        <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase">
+                            @Model.CurrentBlog.Name
+                        </h2>
+                    </header>
+                    <table class="table table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>標題</th>
+                                <th>建立日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var post in Model.BlogPostList.Items)
+                            {
+                            <tr>
+                                <td>
+                                    <a href="@Url.Content(String.Format("/blogs/{0}/{1}",Model.CurrentBlog.Slug,post.Slug))">@post.Title</a>
+                                </td>
+                                <td> @post.CreationTime.ToString("yyyy/MM/dd")</td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <!-- Pagination -->
+                    @await Component.InvokeAsync(typeof(CFTA.Web.Public.Components.PagerWidget.PagerWidgetViewComponent),
+                    new { skipCount = Model.SkipCount, maxResultCount = Model.MaxResultCount, totalCount = (int)Model.BlogPostList.TotalCount })
+                </div>
+                <!-- End Articles -->
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Minimal Blocks -->
+</div>
+}else{
+<section class="blog blog-sec g-pt-70">
+    <div class="container">
+        <div class="row mb-4">
+            <img alt="" class="img-fluid" src="/CFTA/banner.jpg" />
+        </div>
+        <div class="portfolio-section titles masonray-sec">
+            <div class="filter-section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="title title2 title-inner">
+                                <div class="main-title">
+                                    <h2 class="font-primary text-start main-text text-uppercase m-b-0">
+                                        <span>@Model.CurrentBlog.Name</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="isotopeContainer row">
+                    @foreach (var post in Model.BlogPostList.Items)
+                    {
+                    <div class="col-lg-4 col-md-4 col-sm-6 isotopeSelector @post.ShortDescription">
+                        <div class="">
+                            <div class="border-portfolio">
+
+                                @await Component.InvokeAsync(typeof(CFTA.Web.Public.Components.CoverImageWidget.CoverImageWidgetViewComponent),
+                                new { MediaId = post.CoverImageMediaId, cssClass = "img-fluid" })
+                            </div>
+                        </div>
+                        <div class="portfolio-text">
+                            <h3 class="head-text">@post.Title<br /></h3>
+                            <h6 class="head-sub-text">@post.Content</h6>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            <!-- pagination Start -->
+            @*         <div class="pagination_sec">
+                <div class="content_detail__pagination cdp">
+                <ul>
+                <li>
+                <a class="prev" href="#">
+                <i aria-hidden="true" class="fa fa-angle-double-left"></i>
+                </a>
+                </li>
+                <li><a class="active cdp_i" href="#">1</a></li>
+                <li><a class="cdp_i" href="#">2</a></li>
+                <li><a class="cdp_i" href="#">3</a></li>
+                <li>
+                <a class="next" href="#">
+                <i aria-hidden="true"
+                class="fa fa-angle-double-right"></i>
+                </a>
+                </li>
+                </ul>
+                </div>
+                </div>*@
+            <!-- pagination End -->
+        </div>
+    </div>
+</section>
+
+}
+
+
+
+
+
+

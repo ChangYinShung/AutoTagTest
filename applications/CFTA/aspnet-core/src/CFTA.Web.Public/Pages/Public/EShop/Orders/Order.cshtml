@@ -1,0 +1,264 @@
+﻿@page "/e-shop/orders/order/{OrderId}"
+@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@using Volo.Abp.Users
+@model CFTA.Web.Public.Pages.EShop.Orders.OrderModel
+@inject ICurrentUser CurrentUser
+@inject IThemeManager ThemeManager
+@{
+}
+
+
+@section styles{
+<style>
+    .img-account-profile {
+        height: 10rem;
+    }
+
+    .rounded-circle {
+        border-radius: 50% !important;
+    }
+
+    .card {
+        box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+    }
+
+        .card .card-header {
+            font-weight: 500;
+        }
+
+    .card-header:first-child {
+        border-radius: 0.35rem 0.35rem 0 0;
+    }
+
+    .card-header {
+        padding: 1rem 1.35rem;
+        margin-bottom: 0;
+        background-color: rgba(33, 40, 50, 0.03);
+        border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+    }
+
+    .form-control, .dataTable-input {
+        display: block;
+        width: 100%;
+        padding: 0.875rem 1.125rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1;
+        color: #69707a;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #c5ccd6;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.35rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .nav-borders .nav-link.active {
+        color: #0061f2;
+        border-bottom-color: #0061f2;
+    }
+
+    .nav-borders .nav-link {
+        color: #69707a;
+        border-bottom-width: 0.125rem;
+        border-bottom-style: solid;
+        border-bottom-color: transparent;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+</style>
+}
+@section scripts{
+<script type="text/javascript">
+    $(document).ready(function(){
+       $( "#backAction" ).click(function() {
+           window.history.back();
+
+       });
+    })
+</script>
+}
+
+@functions {
+    //TODO: Duplicate Code
+    string EnumText(EasyAbp.EShop.Orders.Orders.OrderStatus orderStatus)
+    {
+        var result = "";
+        @switch (orderStatus)
+        {
+            @case EasyAbp.EShop.Orders.Orders.OrderStatus.Pending:
+                result = "等待付款";
+                break;
+            @case EasyAbp.EShop.Orders.Orders.OrderStatus.Processing:
+                result = "處理中";
+                break;
+            @case EasyAbp.EShop.Orders.Orders.OrderStatus.Completed:
+                result = "已出貨";
+                break;
+            @case EasyAbp.EShop.Orders.Orders.OrderStatus.Canceled:
+                result = "已取消";
+                break;
+            @default:
+                result = "未知狀態";
+                break;
+        }
+        return result;
+    }
+}
+
+
+<section>
+    <div class="collection-wrapper">
+        <div class="container mt-5 mb-5">
+            
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <button class="btn btn-primary btn-block" id="backAction">返回上一頁</button>
+                    <div style="min-height:1em"></div>
+                    <div class="card">
+                        <div class="text-left logo p-2 px-5"> <img class="img-fluid"  src="@Url.Content("~/CFTA/LogoBrand.png")"> </div>
+                        <div class="invoice p-5">
+                            <h5>交易完成</h5> <span class="font-weight-bold d-block mt-4">您好, @CurrentUser.UserName</span> <span>訂單已成立，服務人員確認後即開始寄出</span>
+                            <div class="payment border-top mt-3 mb-3 border-bottom table-responsive">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="py-2"> <span class="d-block text-muted">訂購人</span> <span>@(Model.OrderDto.ExtraProperties["firstName"]+","+Model.OrderDto.ExtraProperties["lastName"])</span> </div>
+                                            </td>
+                                            <td>
+                                                <div class="py-2"> <span class="d-block text-muted">訂單狀態</span> <span>@EnumText(Model.OrderDto.OrderStatus)</span> </div>
+                                            </td>
+                                            <td>
+                                                <div class="py-2"> <span class="d-block text-muted">訂單日期</span> <span>@Model.OrderDto.CreationTime.ToString("yyyy-MM-dd HH:mm:ss")</span> </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="py-2"> <span class="d-block text-muted">訂單編號</span> <span>@Model.OrderDto.OrderNumber</span> </div>
+                                            </td>
+                                            <td>
+                                                <div class="py-2"> <span class="d-block text-muted">地區</span> <span>@Model.OrderDto.ExtraProperties["country"]</span> </div>
+                                            </td>
+                                            <td>
+                                                <div class="py-2"> <span class="d-block text-muted">地址</span> <span>@Model.OrderDto.ExtraProperties["address"]</span> </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="product border-bottom table-responsive">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        @foreach (var item in Model.OrderDto.OrderLines)
+                                        {
+                                            <tr>
+                                                @*//TODO Get Product Image*@
+                                                @*<td width="20%"> <img src="@item.prodcut" width="90"> </td>*@
+                                                <td width="60%">
+                                                    <span class="font-weight-bold">@item.ProductDisplayName (@item.ExtraProperties["remark"])</span>
+                                                    @*//TODO Should SKU*@
+                                                    <div class="product-qty"> <span class="d-block">數量:@item.Quantity</span></div>
+                                                </td>
+                                                <td width="20%">
+                                                    <div style="text-align:right"> 
+                                                        <span class="font-weight-bold">
+                                                        @(
+                                                            item.Currency + 
+                                                            "$" + 
+                                                            (
+                                                                Convert.ToDecimal(item.ActualTotalPrice) + 
+                                                                Convert.ToDecimal(item.ExtraProperties["TotalExtraFee"] ?? 0)
+                                                            ).ToString("#,##0")
+                                                        )
+                                                        </span> 
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row d-flex justify-content-end">
+                                <div class="col-md-7">
+                                    <table class="table table-borderless">
+                                        <tbody class="totals">
+                                            <tr>
+                                                <td>
+                                                    <div class="text-left"> <span class="text-muted">商品小計:</span> </div>
+                                                </td>
+                                                <td>
+                                                    <div  style="text-align:right"> 
+                                                        <span>
+                                                            @(
+                                                                Model.OrderDto.Currency + 
+                                                                "$" + 
+                                                                (
+                                                                    Convert.ToDecimal(Model.OrderDto.ProductTotalPrice) + 
+                                                                    Model.TotalProductExtraFee
+                                                                ).ToString("#,##0")  
+                                                            )
+                                                        </span> 
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @{
+                                                foreach(var extraFee in Model.OrderDto.OrderExtraFees)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            <div class="text-left"> <span class="text-muted">@extraFee.Name</span> </div>
+                                                        </td>
+                                                        <td>
+                                                            <div  style="text-align:right"> <span>@(Model.OrderDto.Currency + "$" + extraFee.Fee.ToString("#,##0")) </span> </div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                            @*                                    <tr>
+                                                <td>
+                                                <div class="text-left"> <span class="text-muted">Tax Fee</span> </div>
+                                                </td>
+                                                <td>
+                                                <div class="text-right"> <span>$7.65</span> </div>
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                <td>
+                                                <div class="text-left"> <span class="text-muted">Discount</span> </div>
+                                                </td>
+                                                <td>
+                                                <div class="text-right"> <span class="text-success">$168.50</span> </div>
+                                                </td>
+                                                </tr>*@
+                                            <tr class="border-top border-bottom">
+                                                <td>
+                                                    <div class="text-left"> <span class="font-weight-bold">合計</span> </div>
+                                                </td>
+                                                <td>
+                                                    <div style="text-align:right"> <span class="font-weight-bold">@(Model.OrderDto.Currency + "$" + Convert.ToDecimal(Model.OrderDto.ActualTotalPrice).ToString("#,##0"))</span> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <p>我們將快速為您出貨</p>
+                            <p class="font-weight-bold mb-0">感謝訂購與您支持</p> <span>臺南市台灣鋼鐵足球隊 上</span>
+                        </div>
+                        <div class="d-flex justify-content-between footer p-3"> <span>有其他問題? 請至 <a href="@Url.Content("~/pages/shopping-policy-page")"> 官網問題中心</a>或透過<a href="https://www.facebook.com/football.tainan.taiwan/">Facebook 粉絲頁與我們聯繫</a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

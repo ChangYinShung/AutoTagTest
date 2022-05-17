@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+		<RootNamespace>CFTA.Web.Public</RootNamespace>
+		<AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+		<MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+		<PreserveCompilationReferences>true</PreserveCompilationReferences>
+		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Bundling\**" />
+		<Compile Remove="Logs\**" />
+		<Content Remove="Bundling\**" />
+		<Content Remove="Logs\**" />
+		<EmbeddedResource Remove="Bundling\**" />
+		<EmbeddedResource Remove="Logs\**" />
+		<None Remove="Bundling\**" />
+		<None Remove="Logs\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Pages\**\*.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Pages\**\*.css">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Remove="Pages\Components\CountdownWidget\Default.css" />
+		<Content Remove="Pages\Components\CountdownWidget\Default.js" />
+		<Content Remove="Pages\shopList.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Models\**\*.*" Exclude="Models\**\*.cs" />
+		<Content Remove="Models\**\*.*" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Components\**\*.css" />
+    <EmbeddedResource Include="Components\**\*.js" />
+    <EmbeddedResource Include="Pages\Components\**\*.js" />
+    <EmbeddedResource Include="Pages\Components\**\*.css" />
+    <EmbeddedResource Include="wwwroot\**\*.js" />
+    <EmbeddedResource Include="wwwroot\**\*.css" />
+    <Content Remove="Components\**\*.css" />
+    <Content Remove="Components\**\*.js" />
+    <Content Remove="Pages\Components\**\*.js" />
+    <Content Remove="Pages\Components\**\*.css" />
+    <Content Remove="wwwroot\**\*.js" />
+    <Content Remove="wwwroot\**\*.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\Components\ProductCartWidget\Default.js" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="4.1.2" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="4.0.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\..\framework\FS.Abp.AspNetCore.Mvc.UI.Theme.Unice\src\FS.Abp.AspNetCore.Mvc.UI.Theme.Unice.csproj" />
+		<ProjectReference Include="..\..\..\..\..\framework\FS.EcPay\src\FS.EcPay.Core\FS.EcPay.Core.csproj" />
+		<ProjectReference Include="..\..\..\..\..\framework\FS.Tspg\src\FS.Tspg.Core\FS.Tspg.Core.csproj" />
+		<ProjectReference Include="..\..\..\..\..\modules\FS.SocialManagement\src\FS.SocialManagement.AspNetCore\FS.SocialManagement.AspNetCore.csproj" />
+		<ProjectReference Include="..\CFTA.Application\CFTA.Application.csproj" />
+		<ProjectReference Include="..\CFTA.Domain.Shared\CFTA.Domain.Shared.csproj" />
+		<ProjectReference Include="..\CFTA.HttpApi\CFTA.HttpApi.csproj" />
+		<ProjectReference Include="..\CFTA.EntityFrameworkCore\CFTA.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\CFTA.Public.ContentDefinitions\CFTA.Public.ContentDefinitions.csproj" />
+		<PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Autofac" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Http.Client.IdentityModel.Web" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Authentication.OpenIdConnect" Version="$(AbpVersion)" />
+		<!--<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton" Version="$(VoloVersion)" />-->
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.CmsKit.Pro.Public.Web" Version="$(VoloVersion)" />
+	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" package_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+</Project>

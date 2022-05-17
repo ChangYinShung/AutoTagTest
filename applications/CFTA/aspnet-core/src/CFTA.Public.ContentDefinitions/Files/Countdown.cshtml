@@ -1,0 +1,100 @@
+﻿@inherits Volo.Abp.TextTemplating.Razor.RazorTemplatePageBase<CFTA.Public.ContentDefinitions.Files.CountdownModel>
+
+
+
+
+<!-- 比賽開打倒數 start-->
+<section class="event header" id="home">
+    <div class="header3 bg">
+        <div class="event-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 offset-xl-3 col-md-8 offset-md-2">
+                        <div class="center-text">
+                            <div class="text-center w-100">
+                                <div class="h1-margin">
+                                    <h1 class="text-white"
+                                        style="font-size: -webkit-xxx-large;color: #004870 !important;font-family:Microsoft JhengHei;">
+                                        <img style="max-width: 50px"
+                                             src="@Model.LogoUrl" />@Model.Title
+                                    </h1>
+                                </div>
+                                <div class="wedding-time">
+                                    <div class="row">
+                                        <div class="col-sm-3 col-6">
+                                            <div class="event-content wedding-content">
+                                                <div class="count">
+                                                    <div class="counter-container">
+                                                        <h2 class="text-white text-end" style="color:#004870 !important">
+                                                            <span class="days-text" id="days">99</span>
+                                                            <span class="days gradient-text">天</span>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="set-border-left"></div>
+                                                    <div class="set-border-bottom"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6">
+                                            <div class="event-content wedding-content">
+                                                <div class="count" style="border-color: #004870 !important;">
+                                                    <div class="counter-container">
+                                                        <h2 class="text-white text-end" style="color:#004870 !important">
+                                                            <span class="days-text gradient-text"
+                                                                  id="hours">13</span>
+                                                            <span class="days gradient-text">小時</span>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="set-border-left"></div>
+                                                    <div class="set-border-bottom"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6">
+                                            <div class="event-content wedding-content">
+                                                <div class="count">
+                                                    <div class="counter-container">
+                                                        <h2 class="text-white text-end" style="color:#004870 !important">
+                                                            <span class="days-text gradient-text"
+                                                                  id="minutes">30</span>
+                                                            <span class="days gradient-text"> 分</span>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="set-border-left"></div>
+                                                    <div class="set-border-bottom"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6">
+                                            <div class="event-content wedding-content">
+                                                <div class="count">
+                                                    <div class="counter-container">
+                                                        <h2 class="text-white text-end" style="color:#004870 !important">
+                                                            <span class="days-text gradient-text"
+                                                                  id="seconds">00</span>
+                                                            <span class="days gradient-text">秒</span>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="set-border-left"></div>
+                                                    <div class="set-border-bottom"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="text-white zexon" style="color:#004870 !important">
+                                    <i style="color:#004870 !important;"
+                                       aria-hidden="true"
+                                       class="fa fa-map-marker m-r-10 text-white"></i>
+                                    <span style="font-family:Microsoft JhengHei;">@Model.Content</span><br />
+                                    <span style="font-family:Microsoft JhengHei;">@Model.Content</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 比賽開打倒數 end-->

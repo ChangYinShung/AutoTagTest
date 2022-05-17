@@ -1,0 +1,35 @@
+@using Volo.CmsKit.MediaDescriptors
+@using Volo.Abp.BlobStoring
+
+@inject IMediaDescriptorRepository _mediaDescriptorRepository;
+@inject IBlobContainer<MediaContainer> _blobContainer;
+@{
+    /// Media ID 取得圖片Base64，無法取得則拿預設圖Base64
+    async Task<string> getImgBase64(Guid? guid)
+    {
+        MediaDescriptor mediaDescriptor;
+        if (guid.HasValue)
+        {
+            mediaDescriptor = await _mediaDescriptorRepository.GetAsync(guid.Value);
+        }
+        else
+        {
+            List<MediaDescriptor> mediaDescriptors = await _mediaDescriptorRepository.GetListAsync();
+            mediaDescriptor = mediaDescriptors.First();
+        }
+        try
+        {
+            byte[] bytes = await _blobContainer.GetAllBytesAsync(mediaDescriptor.Id.ToString());//圖片的位元組陣列
+            return "data:" + mediaDescriptor.MimeType + ";base64," + Convert.ToBase64String(bytes);
+        }
+        catch (Exception ex)
+        {
+            return "";
+        }
+
+
+
+    }
+}
+
+<img class="@ViewBag.CssClass" src="@await getImgBase64(ViewBag.MediaId)">

@@ -1,0 +1,17 @@
+﻿@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@using FS.Abp.AspNetCore.Mvc.UI.Theme.Unice.Bundling
+@inject IThemeManager ThemeManager
+@{
+    Layout = ThemeManager.CurrentTheme.GetPublicLayout();
+    ViewBag.Title = "臺南市臺灣鋼鐵足球俱樂部";
+    ViewBag.Description = "臺南市臺灣鋼鐵足球隊在臺南市政府及臺南市體育總會足球委員會與鴻鑫企業有限公司還有臺灣鋼鐵集團共同支援下成立。 我們致力於臺灣的足球發展，展翅上騰、無畏無懼就是我們的鋼鐵精神。";
+    ViewBag.Image = "https://cfta-public.stage.furthersoftware.com.tw/CFTA/LogoBrand.png";
+    ViewBag.Author = "豐碩資訊,臺南市臺灣鋼鐵足球俱樂部";
+    ViewBag.Keywords = "豐碩資訊,臺南市臺灣鋼鐵足球俱樂部";
+    //theme
+    ViewBag.HasBackground = true;
+    ViewBag.DataOffset = "50";
+    ViewBag.HeaderClass = "ecommerce nav-fix";
+    ViewBag.SkinScript = UniceThemeBundles.Scripts.Sass;
+    ViewBag.SkinStyles = UniceThemeBundles.Styles.Sass;
+}

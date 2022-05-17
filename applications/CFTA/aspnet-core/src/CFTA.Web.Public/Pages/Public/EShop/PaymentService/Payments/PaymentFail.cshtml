@@ -1,0 +1,55 @@
+﻿@page "/e-shop/payment-service/payment-fail/{errorMessage}"
+@model CFTA.Pages.EShop.PaymentService.Payments.PaymentFailModel
+@{
+}
+@section styles{
+    <style>
+    .header .bg.header3::before {
+        content: "";
+        background-image: radial-gradient(#f4e998, #f0d509);
+        opacity: 0.9;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .header .bg.header3 {
+        background-image: none;
+    }
+    </style>
+}
+
+@section scripts{
+
+}
+
+
+<section class="event header">
+    <div class="header3 bg">
+        <div class="event-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 offset-xl-3 col-md-8 offset-md-2">
+                        <div class="center-text">
+                            <div class="text-center w-100">
+                                <div class="h1-margin">
+                                    <h1 class="text-white"
+                                        style="font-size: -webkit-xxx-large;color: #004870 !important;font-family:Microsoft JhengHei;">
+                                        付款失敗 : @Model.ErrorMessage
+                                    </h1>
+                                </div>
+
+                                <h4 class="text-white zexon" style="color:#004870 !important">
+                                    <i style="color:red"
+                                       aria-hidden="true"
+                                       class="fa fa-times-circle-o m-r-10 "></i>
+                                    <span style="font-family:Microsoft JhengHei;">請重新訂購</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

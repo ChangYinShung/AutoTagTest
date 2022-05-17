@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>CFTA</RootNamespace>
+		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\..\framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper.Core\FS.Abp.Npoi.Mapper.Core.csproj" />
+		<ProjectReference Include="..\CFTA.Domain\CFTA.Domain.csproj" />
+		<ProjectReference Include="..\CFTA.Application.Contracts\CFTA.Application.Contracts.csproj" />
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Files\**\*.*" Exclude="Files\**\*.cs" />
+		<Content Remove="Files\**\*.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Files\CmsKit\CmsKit.bak.xlsx" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_1.江子賢.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_10. Marc.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_12. 陳瑞杰.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_13. 郭博瑋.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_14. 劉和翰.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_16. 林凱恩.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_17. 陳威仁.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_20. 白劭宇.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_21. 馮少祺.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_22. 張豪偉.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_23. 李冠霈.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_27. 何泓諱.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_3. Alim.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_6.蘇德財.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_7. 姚克錡.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_8. Samuel.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_9. 游家煌.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_守門教練. 洪金昌.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_物理治療師. 陳思帆.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_球隊經理. 陳亮辰.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_總教練. 羅智聰.jpg" />
+	  <None Remove="Files\CmsKit\CoverImage\2022-CFTA_領隊. 蕭永福.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Files\Frm\NewFolder\" />
+	</ItemGroup>
+
+
+</Project>

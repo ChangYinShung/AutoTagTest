@@ -1,0 +1,129 @@
+@using CFTA.Web.Public.Pages.Components.ProductCartWidget
+
+<div id="vue-product-cart" class="cart-section">
+    <div>
+        <!-- Cart Items -->
+        <table class="table cart-table table-responsive-xs">
+            <thead>
+                <tr class="table-head">
+                    <th>商品圖片</th>
+                    <th>商品名稱</th>
+                    <th>價錢</th>
+                    <th>數量</th>
+                    <th>球衣背號</th>
+                    <th>刪除</th>
+                    <th>總共</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, i) in shopCarts">
+                    <td>
+                        <img style="width:60px" class="img-fluid" v-bind:src="item.mediaResources" />
+                    </td>
+                    <td>
+                        <a href="#">
+                            {{ item.productSkuName }}
+
+                        </a>
+                        <div class="mobile-cart-content">
+                            <div class="col-xs-3">
+                            <p>{{item.remark}}</p>
+                            <p v-if="item.extraFee > 0">需額外支付︰ {{ currency }} ${{item.extraFee | commaFormat}}</p>
+                            <input type="hidden" v-bind:name="'skuItems[' + i + '].Remark'" v-model="item.remark" />
+                            <input type="hidden" v-bind:name="'skuItems[' + i + '].ExtraFee'" v-model="item.extraFee" />
+                        </div>
+                        </div>
+                        <div class="mobile-cart-content">
+                            <div class="col-xs-3">
+                                <div class="qty-box">
+                                    <div class="input-group">
+                                        <input v-on:click="onQuantityChange(item)"
+                                               class="form-control input-number"
+                                               min="1"
+                                               type="number"
+                                               v-bind:id="'FullScreenQuantity_' + i"
+                                               v-bind:name="'skuItems[' + i + '].FullScreenQuantity'"
+                                               v-model="item.quantity">
+
+                                        <input type="hidden" v-bind:id="'skuItemsQuantity_' + i" v-bind:name="'skuItems[' + i + '].Quantity'" v-model="item.quantity" />
+                                        <input type="hidden" v-bind:name="'skuItems[' + i + '].ProductId'" v-model="item.productId" />
+                                        <input type="hidden" v-bind:name="'skuItems[' + i + '].ProductSkuId'" v-model="item.productSkuId" />
+                                        <input type="hidden" v-bind:name="'skuItems[' + i + '].StoreId'" v-model="item.storeId" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="col-xs-3">
+                                <h2 class="td-color">{{item.remark}}</h2>
+                            </div>
+                            <div class="col-xs-3 money">
+                                <h2 class="td-color">{{ item.skuCurrency }}$ {{item.price}}</h2>
+                            </div>-->
+                            <div class="col-xs-3">
+                                <h2 class="td-color">
+                                    <a class="icon" v-on:click="deleteFormData(i)">
+                                        <i aria-hidden="true" class="fa fa-times"></i>
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="money">
+                        @*//單價*@
+                        <h2>{{ item.skuCurrency }} ${{item.price | commaFormat}}</h2>
+                    </td>
+                    <td>
+                        <div class="qty-box">
+                            <div class="input-group">
+                                <input v-on:click="onQuantityChange(item)"
+                                       class="form-control input-number"
+                                       min="1"
+                                       type="number"
+                                       v-bind:id="'FullScreenQuantity_' + i"
+                                       v-bind:name="'skuItems[' + i + '].FullScreenQuantity'"
+                                       v-model="item.quantity">
+
+                                <input type="hidden" v-bind:id="'skuItemsQuantity_' + i" v-bind:name="'skuItems[' + i + '].Quantity'" v-model="item.quantity" />
+                                <input type="hidden" v-bind:name="'skuItems[' + i + '].ProductId'" v-model="item.productId" />
+                                <input type="hidden" v-bind:name="'skuItems[' + i + '].ProductSkuId'" v-model="item.productSkuId" />
+                                <input type="hidden" v-bind:name="'skuItems[' + i + '].StoreId'" v-model="item.storeId" />
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p>{{item.remark}}</p>
+                        <p v-if="item.extraFee > 0">需額外支付︰ {{ currency }}$ {{item.extraFee | commaFormat}}</p>
+                        <input type="hidden" v-bind:name="'skuItems[' + i + '].Remark'" v-model="item.remark" />
+                        <input type="hidden" v-bind:name="'skuItems[' + i + '].ExtraFee'" v-model="item.extraFee" />
+                    </td>
+                    <td>
+                        <a class="icon" v-on:click="deleteFormData(i)">
+                            <i aria-hidden="true" class="fa fa-times"></i>
+                        </a>
+                    </td>
+                    <td>
+                        @*//商品小計*@
+                        <h2 class="td-color money" v-bind:id="'amount_' + i" v-bind:name="'skuItems[' + i + '].Amount'">{{ item.skuCurrency }}$ {{item.amount | commaFormat}}</h2>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Total -->
+        <table class="table cart-table table-responsive-md">
+            <tfoot>
+                <tr>
+                    <td>
+                        <h2 id="total">總計 : {{ currency }} ${{total | commaFormat}}</h2>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- 送出訂單 -->
+        <div class="row cart-buttons">
+            <a class="btn btn-default primary-btn radius-0" href="/e-shop/products/checkout">
+                送訂單
+            </a>
+        </div>
+    </div>
+</div>

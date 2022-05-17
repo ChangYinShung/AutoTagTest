@@ -1,0 +1,12 @@
+﻿td {
+    min-width: unset !important;
+}
+
+.money {
+    text-align: right;
+}
+
+.cart-section tfoot tr td {
+    padding-right: 8px;
+}
+

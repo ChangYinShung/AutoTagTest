@@ -1,0 +1,92 @@
+﻿@inherits Volo.Abp.TextTemplating.Razor.RazorTemplatePageBase<CFTA.Public.ContentDefinitions.Files.FooterModel>
+@{
+    var hasFacebook = Model.FacebookUrl.IsNullOrEmpty() ? false : true;
+    var hasTwitterUrl = Model.TwitterUrl.IsNullOrEmpty() ? false : true;
+    var hasYoutubeUrl = Model.YoutubeUrl.IsNullOrEmpty() ? false : true;
+    var hasInstagramUrl = Model.InstagramUrl.IsNullOrEmpty() ? false : true;
+}
+
+
+
+
+<!--footer start-->
+<footer class="resume copyright copyright-bg dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="link link-horizontal">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 g-mb-40 g-mb-0--lg">
+                                <div class="center-text">
+                                    <div class="text-start">
+                                        <div class="format-head-text">
+                                            <h3 class="about-font-header gradient-text">
+                                                @Model.Title
+                                            </h3>
+                                        </div>
+                                        <div class="format-sub-text mb-0">
+                                            <p class="p-light about-para">
+                                                @Model.Content
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            </div>
+            <div class="col-12">
+                <div class="text-center">
+                    <div class="social-link link-horizontal">
+                        <ul class="justify-content-center">
+                            @if (hasFacebook)
+                            {
+                                <li>
+                                    <a class="copyright-text" href="@Model.FacebookUrl">
+                                        <i aria-hidden="true" class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                            }
+
+                            @if (hasTwitterUrl)
+                            {
+                                <li>
+                                    <a class="copyright-text" href="@Model.TwitterUrl">
+                                        <i aria-hidden="true" class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                            }
+                            @if (hasYoutubeUrl)
+                            {
+                                <li>
+                                    <a class="copyright-text" href="@Model.YoutubeUrl">
+                                        <i aria-hidden="true" class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                            }
+                            @if (hasInstagramUrl)
+                            {
+                                <li>
+                                    <a class="copyright-text" href="@Model.InstagramUrl">
+                                        <i aria-hidden="true" class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="m-l-auto center-para">
+                    <h6 class="copyright-text text-center">
+                        @Model.Copyright
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer end-->

@@ -1,0 +1,101 @@
+@model CFTA.Web.Public.Components.CountdownWidget.CountdownWidgetViewModel
+<div style="background-image: url('./assets/images/CFTA/BackgroundImage.png') !important;">
+    <!-- 比賽開打倒數 start-->
+    <section class="event header" id="home">
+        <div >
+            <div class="event-content" >
+                <div class="container"  style="background-image:url(@Url.Content("~/CFTA/2022-CFTA_BACKGROUND_1920x1080.jpg"));background-repeat: no-repeat;
+  background-size: cover;" >
+                    <div class="row">
+                        <div class="col-xl-8 offset-xl-3 col-md-8 offset-md-2">
+                            <div class="center-text" style="margin-top:0;height:70vh">
+                                <div class="text-center w-100">
+                                    <div class="h1-margin">
+                                        <h1 class="text-white"
+                                            style="color: #004870 !important;font-family:Microsoft JhengHei;font-weight:bold">
+                                            <img style="max-width: 50px"
+                                                 src="@Model.LogoUrl" />@Model.Title                                            
+                                        </h1>
+                                    </div>
+                                    <div class="wedding-time">
+                                        <div class="row">
+                                            <div class="col-sm-3 col-6">
+                                                <div class="event-content wedding-content">
+                                                    <div class="count"style="border-color: #004870 !important;" >
+                                                        <div class="counter-container">
+                                                            <h2 class="text-white text-end" style="color:#004870 !important">
+                                                                <span class="days-text" id="days">99</span>
+                                                                <span class="days gradient-text">天</span>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="set-border-left" style="border-left:5px solid #004870"></div>
+                                                        <div class="set-border-bottom" style="border-bottom:5px solid #004870"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-6">
+                                                <div class="event-content wedding-content">
+                                                    <div class="count" style="border-color: #004870 !important;">
+                                                        <div class="counter-container">
+                                                            <h2 class="text-white text-end" style="color:#004870 !important">
+                                                                <span class="days-text gradient-text"
+                                                                      id="hours">13</span>
+                                                                <span class="days gradient-text">小時</span>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="set-border-left" style="border-left:5px solid #004870"></div>
+                                                        <div class="set-border-bottom" style="border-bottom:5px solid #004870"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-6">
+                                                <div class="event-content wedding-content">
+                                                    <div class="count" style="border-color: #004870 !important;">
+                                                        <div class="counter-container">
+                                                            <h2 class="text-white text-end" style="color:#004870 !important">
+                                                                <span class="days-text gradient-text"
+                                                                      id="minutes">30</span>
+                                                                <span class="days gradient-text"> 分</span>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="set-border-left" style="border-left:5px solid #004870"></div>
+                                                        <div class="set-border-bottom" style="border-bottom:5px solid #004870"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-6">
+                                                <div class="event-content wedding-content">
+                                                    <div class="count">
+                                                        <div class="counter-container">
+                                                            <h2 class="text-white text-end" style="color:#004870 !important">
+                                                                <span class="days-text gradient-text"
+                                                                      id="seconds">00</span>
+                                                                <span class="days gradient-text">秒</span>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="set-border-left" style="border-left:5px solid #004870"></div>
+                                                        <div class="set-border-bottom" style="border-bottom:5px solid #004870"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="text-white zexon" style="color:#004870 !important">
+                                        <span style="font-family:Microsoft JhengHei;">時間：5/7 15:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <br />
+                                        <span style="font-family:Microsoft JhengHei;">對手:臺灣石虎FC&nbsp;&nbsp;</span>
+                                        <br />
+                                        <span style="font-family:Microsoft JhengHei;">地點：臺南市立永華足球場</span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- 比賽開打倒數 end-->
+</div>
+

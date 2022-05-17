@@ -1,0 +1,142 @@
+@using CFTA.Web.Public.Pages.Components.ProductCheckoutWidget
+@model ProductCheckoutWidgetModel
+
+<div class="row" id="vue-product-checkout">
+    <div ref="input"
+         data-zip-codes="@Model.ZipCodes"
+         data-payment-gateways="@Model.PaymentGateways"></div>
+
+    <div class="checkout-form">
+        <form id="form" method="post" v-bind:action="formAction">
+            <div class="row">
+                <!-- 基本資料 -->
+                <div class="col-lg-6 col-sm-12 col-xs-12">
+                    <div class="checkout-title">
+                        <h3>個人資料</h3>
+                    </div>
+                    <div class="row check-out">
+                        <div class="form-group col-sm-6 col-xs-12">
+                            <div class="field-label">姓氏 <span v-if="formData.firstName == ''" style="color:red;">*</span></div>
+                            <input required name="firstName" type="text" v-model="formData.firstName">
+                        </div>
+                        <div class="form-group col-sm-6 col-xs-12">
+                            <div class="field-label">名字 <span v-if="formData.lastName == ''" style="color:red;">*</span></div>
+                            <input required name="lastName" type="text" v-model="formData.lastName">
+                        </div>
+                        <div class="form-group col-sm-6 col-xs-12">
+                            <div class="field-label">手機 <span v-if="formData.phone == ''" style="color:red;">*</span></div>
+                            <input required name="phone" type="text" v-model="formData.phone">
+                        </div>
+                        <div class="form-group col-sm-6 col-xs-12">
+                            <div class="field-label">電子郵件(請盡量避免使用Yahoo帳號) <span v-if="formData.email == ''" style="color:red;">*</span></div>
+                            <input required name="email" type="email" v-model="formData.email">
+                        </div>
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <div class="field-label">國家</div>
+                            <select id="Country" name="country" v-model="formData.country">
+                                <option>Taiwan</option>
+                                @*<option>Hong Kong</option>*@
+                            </select>
+                        </div>
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <div class="field-label">縣市 <span v-if="formData.nonTaiwanCity == '' && !isTaiwan" style="color:red;">*</span></div>
+                            <div v-if="!isTaiwan">
+                                <input required name="nonTaiwanCity" type="text" v-model="formData.nonTaiwanCity">
+                            </div>
+                            <div v-else style="display: flex">
+                                <select id="TaiwanCity" name="taiwanCity" style="width: 50%"
+                                        v-on:change="onCityChange()"
+                                        v-model="formData.selectZipCode.city">
+                                    <option v-for="(city) in citys">{{ city }}</option>
+                                </select>
+                                <select id="TaiwanAreaSelect" name="taiwanAreaSelect" style="width: 50%"
+                                        v-on:change="onAreaChange()"
+                                        v-model="formData.selectZipCode.zipcode_area">
+                                    <option v-for="(area) in areas">{{ area.displayName }}</option>
+                                </select>
+                                <input type="hidden" id="taiwanZipCode" v-model="formData.taiwanZipCode" name="taiwanZipCode" />
+                                <input type="hidden" id="taiwanArea" v-model="formData.taiwanArea" name="taiwanArea" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <div class="field-label">地址 <span v-if="formData.address == ''" style="color:red;">*</span></div>
+                            <input required name="address" placeholder="住宅地址" type="text" v-model="formData.address">
+                        </div>
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <div class="field-label">備註</div>
+                            <textarea style="height: 100px" name="remark" placeholder="訂單備註" v-model="formData.remark"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 產品資訊 -->
+                <div class="col-lg-6 col-sm-12 col-xs-12">
+                    <div class="checkout-details">
+                        <div class="order-box">
+                            <div class="title-box">
+                                <div>商品 <span>總共</span></div>
+                            </div>
+                            <ul class="qty">
+                                <li v-for="(cart, i) in shopCarts">
+                                    {{ cart.productSkuName }} * {{ cart.quantity }}
+                                    <br />{{ cart.remark }}
+                                    <span :style="fontStyles">{{ cart.skuCurrency }}$ {{ cart.amount | commaFormat }}</span>
+
+                                    <input type="hidden" v-bind:name="'skuItems[' + i + '].skuId'" v-bind:value="cart.productSkuId" />
+                                    <input type="hidden" v-bind:name="'skuItems[' + i + '].productId'" v-bind:value="cart.productId" />
+                                    <input type="hidden" v-bind:name="'skuItems[' + i + '].quantity'" v-bind:value="cart.quantity" />
+                                    <input type="hidden" v-bind:name="'skuItems[' + i + '].remarkExtraFee'" v-bind:value="cart.extraFee" />
+                                    <input type="hidden" v-bind:name="'skuItems[' + i + '].remark'" v-bind:value="cart.remark" />
+                                    <input type="hidden" v-bind:name="'skuItems[' + i + '].storeId'" v-bind:value="cart.storeId" />
+                                    <input type="hidden" v-bind:name="'skuItems[' + i + '].skuName'" v-bind:value="cart.productSkuName + ' - ' + cart.remark" />
+                                </li>
+                            </ul>
+                            <ul class="sub-total">
+                                <li>小計 <span class="count" :style="fontStyles">{{ currency }}$ {{ subtotal | commaFormat }}</span></li>
+                                <li>運費 <span id="Shipping" class="count" :style="fontStyles">{{ currency }}$ {{ shipping | commaFormat }}</span></li>
+                            </ul>
+                            <ul class="total">
+                                <li>總計 <span id="Total" class="count" :style="fontStyles">{{ currency }}$ {{ total | commaFormat }}</span></li>
+                            </ul>
+                        </div>
+                        <div class="payment-box">
+                            <div class="upper-box">
+                                <h4>付款方式</h4>
+                                <div class="payment-options">
+                                    <ul>
+                                        <li v-for="(gateway, key, index) in paymentGateways">
+                                            <div class="radio-option">
+                                                <input v-model="formData.paymentGateway"
+                                                       v-bind:id="key"
+                                                       v-bind:value="key"
+                                                       name="paymentGroup"
+                                                       type="radio">
+                                                <label v-bind:for="key">{{ gateway.DisplayName }}</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <label for="payment-3">
+                                        <span class="image">
+                                            <img alt="" src="/unice/assets/images/inner-page/paypal.png">
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p v-if="toggle == false" style="color:red;" class="m-1">*</p>
+                                    <input required type="checkbox" v-model="toggle" id="shpNotes" class="m-1" />
+                                    <label for="shpNotes">購買前請閱讀<span><a href="@Url.Content("~/pages/shopping-policy-page")" target="_blank">購物須知</a></span></label>
+                                    <button type="submit" class="btn btn-default primary-btn radius-0 ms-auto" style="color: white" :disabled="disabled"
+                                            v-on:click="clearLocalStorage()">
+                                        結帳
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

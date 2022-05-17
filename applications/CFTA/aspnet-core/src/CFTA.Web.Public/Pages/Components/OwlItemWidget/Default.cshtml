@@ -1,0 +1,121 @@
+@using Volo.CmsKit.MediaDescriptors
+@using Volo.Abp.BlobStoring
+
+@inject IMediaDescriptorRepository _mediaDescriptorRepository;
+@inject IBlobContainer<MediaContainer> _blobContainer;
+@model CFTA.Web.Public.Components.OwlItemWidget.OwlItemCountdownWidgetViewModel
+@{
+    ViewBag.DisplayStyle = "Profile";
+    /// Media ID 取得圖片Base64，無法取得則拿預設圖Base64
+    async Task<string> getImgBase64(Guid? guid)
+    {
+        MediaDescriptor mediaDescriptor;
+        if (guid.HasValue)
+        {
+            mediaDescriptor = await _mediaDescriptorRepository.GetAsync(guid.Value);
+        }
+        else
+        {
+            List<MediaDescriptor> mediaDescriptors = await _mediaDescriptorRepository.GetListAsync();
+            mediaDescriptor = mediaDescriptors.First();
+        }
+        try
+        {
+            byte[] bytes = await _blobContainer.GetAllBytesAsync(mediaDescriptor.Id.ToString());//圖片的位元組陣列
+            return "data:" + mediaDescriptor.MimeType + ";base64," + Convert.ToBase64String(bytes);
+        }
+        catch (Exception ex)
+        {
+            return "";
+        }
+
+
+
+
+
+    }
+}
+
+
+
+
+@switch (Model.DisplayStyle)
+{
+    @case CFTA.Web.Public.Components.OwlItemWidget.DisplayStyleEnum.Profile:
+        <div class="item">
+            <div class="isotopeSelector">
+                <div class="overlay">
+                    <div class="border-portfolio">
+                        <a class="zoom_gallery"
+                   data-source="http://500px.com/photo/32736307"
+                   href="@await getImgBase64(Model.MediaId)"
+                   title="@Model.Title">
+                            <div class="overlay-background">
+                                <i aria-hidden="true" class="fa fa-plus"></i>
+                            </div>
+                            <img class="@Model.CssClass" src="@await getImgBase64(Model.MediaId)">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        break;
+    @case CFTA.Web.Public.Components.OwlItemWidget.DisplayStyleEnum.Artist:
+        <div class="item">
+            <a href="@Model.LinkUrl" target="_blank">
+                <div class="album-artist text-center">
+                    <img alt=""
+                 class="img-fluid set-relative overlay-img" style="max-height:350px"
+                 src="@await getImgBase64(Model.MediaId)" />
+                    <div>
+                        <div class="overlay-box2"></div>
+                    </div>
+                    <div class="set-abs bottom-0 w-100 text-start set-z-index">
+                        <div class="singers">
+                            <div class="m-b-10">
+                                <h5 class="name text-dark">@Model.Title</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="set-abs cds">
+                        <img alt=""
+                     class="cd-animation"
+                     src="./CFTA/football.png" />
+                        @*<img alt=""
+                            class="elipse"
+                            src="./assets/images/music/artist/Ellipse.png" />*@
+                    </div>
+                </div>
+            </a>
+        </div>
+        break;
+
+    @case CFTA.Web.Public.Components.OwlItemWidget.DisplayStyleEnum.Banner:
+        <div class="item">
+            <img alt="@Model.Title"
+         class="@Model.CssClass"
+         style="max-height:320px"
+         src="@await getImgBase64(Model.MediaId)" />
+        </div>
+        break;
+    @case CFTA.Web.Public.Components.OwlItemWidget.DisplayStyleEnum.SportsProfile:
+        <div class="item">
+            <div class="isotopeSelector">
+                <div class="overlay">
+                    <div class="border-portfolio">
+                        <img class="@Model.CssClass" src="@await getImgBase64(Model.MediaId)">
+                    </div>
+                </div>
+                <div class="portfolio-text">
+                    <h3 class="head-text">@Model.Title<br /></h3>
+                </div>
+            </div>
+        </div>
+        break;
+
+
+}
+
+
+

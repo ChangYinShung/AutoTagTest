@@ -1,0 +1,41 @@
+﻿@page 
+@model CFTA.Web.Public.Pages.CmsKitManagement.Blogs.BlogsPostModel
+@using Volo.Abp.Users
+@using System.Globalization
+@using System
+
+@inject ICurrentUser CurrentUser
+    <!-- section start -->
+    <section class="agency blog-sec blog-sidebar single_blog_item">
+        
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+             
+            <div class="blog-block">
+
+              <div class="blog-box">
+
+                <div class="overflow-hidden">
+                    @await Component.InvokeAsync(typeof(CFTA.Web.Public.Components.CoverImageWidget.CoverImageWidgetViewComponent),
+                      new { MediaId = Model.BlogPostPublicDto.CoverImageMediaId, cssClass = "img-fluid blur-up lazyload" })
+                </div>
+              </div>
+            </div>
+            <div class="blog-text m-t-20">
+             <a class="btn btn-primary" href="javascript:history.back()">返回上一頁</a>
+             <br />
+              <h6>建立日期 : @Model.BlogPostPublicDto.CreationTime.ToString("yyyy-MM-dd HH:mm:ss"),@Model.BlogPostPublicDto.Author.Name</h6>
+                <h3 class="blog-head">@Model.BlogPostPublicDto.Title</h3>
+              <div class="blog-divider"></div>
+              <div class="blog-description">
+                 @Html.Raw(Model.BlogPostPublicDto.Content)
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section start -->

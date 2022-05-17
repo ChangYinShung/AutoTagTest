@@ -1,0 +1,28 @@
+﻿@inherits Volo.Abp.TextTemplating.Razor.RazorTemplatePageBase<CFTA.Public.ContentDefinitions.Files.AboutUsModel>
+      <section class="gym format" >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-4" style="background-color:#01294d" >
+              <div class="center-text">
+                <div class="text-center">
+                  <div class="format-head-text">
+                    <h3 class="about-font-header gradient-text">@Model.Title</h3>
+                  </div>
+                  <div class="format-sub-text mb-0">
+                    <p class="p-light about-para">
+                      @Model.Content
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-8" style="text-align:center">
+              <img
+                class="img-fluid" style="max-height:300px"
+                src="@Model.FileUrl"
+                alt="@Model.Title"
+              />
+            </div>
+          </div>
+        </div>
+      </section>

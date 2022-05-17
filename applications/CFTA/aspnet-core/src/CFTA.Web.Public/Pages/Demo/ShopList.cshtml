@@ -1,0 +1,166 @@
+﻿@page
+@model CFTA.Web.Public.Pages.Demo.ShopListModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using CFTA.Localization
+@inject IHtmlLocalizer<CFTAResource> L
+@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@using Volo.Abp.Users
+@inject ICurrentUser CurrentUser
+@inject IThemeManager ThemeManager
+
+@{
+}
+
+@section scripts {
+    <script src="/unice/assets/js/category.js"></script>
+    <script src="/Pages/Demo/shopList.js"></script>
+}
+
+
+<!-- section start -->
+<section>
+    <div class="collection-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 collection-filter">
+                    <!-- side-bar colleps block stat -->
+                    <div class="collection-filter-block">
+                        <!-- brand filter start -->
+
+                        <div class="collection-mobile-back">
+                            <span class="filter-back">
+                                <i aria-hidden="true" class="fa fa-angle-left"></i> back
+                            </span>
+                        </div>
+                        <!-- 搜尋欄 -->
+                        <div class="collection-collapse-block">
+                            <form class="d-flex">
+                                <input class="form-control me-2"
+                                       type="search"
+                                       placeholder="搜尋"
+                                       aria-label="Search" />
+                                <button class="btn btn-outline-success" id="shopListSearchBtn">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <!-- 商品類型 start-->
+                        <div class="collection-collapse-block open">
+                            <h3 class="collapse-block-title">商品種類</h3>
+                            <div class="collection-collapse-block-content">
+                                <div class="collection-brand-filter">
+                                    @for (int i = 0, imax = Model.CategoryList.Count; i < imax; i++)
+                                    {
+                                       <div class="custom-control custom-checkbox collection-filter-checkbox">
+                                          <input class="custom-control-input categoryCheckBox" id="zara" type="checkbox" value="@Model.CategoryList[i].Id"/>
+                                          <label class="custom-control-label" for="zara" >@Model.CategoryList[i].DisplayName</label>
+                                       </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 商品類型 end-->
+                    </div>
+                    <!-- side-bar single product slider end -->
+                </div>
+                <div class="collection-content col">
+                    <div class="page-main-content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="collection-product-wrapper">
+                                    <div class="product-top-filter">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <div class="filter-main-btn">
+                                                    <span class="filter-btn btn btn-default primary-btn radius-0">
+                                                        <i aria-hidden="true" class="fa fa-filter"></i>
+                                                        Filter
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="product-filter-content">
+                                                    <div class="search-count">
+                                                        <h5>@($"Showing Products {(Model.CurrentPage - 1) * Model.PageSize + 1}-{(Model.CurrentPage - 1) * Model.PageSize + Model.PageSize} of {Model.ProductViewList.TotalCount} Result")</h5>
+                                                    </div>
+                                                    <div class="product-page-filter">
+                                                        <select id="shopListSortSelect">
+                                                            <option value="0">
+                                                                种类升序
+                                                            </option>
+                                                            <option value="1">
+                                                                种类降序
+                                                            </option>
+                                                            <option value="2">
+                                                                价格升序
+                                                            </option>
+                                                            <option value="3">
+                                                                价格降序
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-wrapper-grid product-load-more">
+                                        <div class="row">
+                                            @for (int i = 0, imax = Model.ProductViewList.Items.Count; i < imax; i++)
+                                            {
+                                                var productView = Model.ProductViewList.Items[i];
+                                                <div class="col-xl-3 col-md-6 col-grid-box four">
+                                                    <div class="product-box">
+                                                        <div class="img-wrapper">
+                                                            <div class="front">
+                                                                <a href="@($"/Demo/ShopProductDetail?ProductId={productView.Id}")">
+                                                                    <img alt="" class="img-fluid" src="../assets/images/CFTA/product/球員黃.png" />
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="cart-info cart-wrap">
+                                                                <a href="#" title="Add to cart">
+                                                                    <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+                                                                </a>
+                                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                                    <i aria-hidden="true" class="fa fa-heart-o"></i>
+                                                                </a>
+                                                                <a data-bs-target="#quick-view" data-bs-toggle="modal" href="#" title="Quick View">
+                                                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                                                </a>
+                                                                <a href="./CFTA_product_page.html" title="Compare">
+                                                                    <i aria-hidden="true" class="fa fa-refresh"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-detail">
+                                                            <div>
+                                                                <a href="@($"/Demo/ShopProductDetail?ProductId={productView.Id}")"><h6>@productView.DisplayName</h6></a>
+                                                                <p></p>
+                                                                <h4>@(productView.MinimumPrice == productView.MaximumPrice ? $"NT${productView.MinimumPrice}元" : $"NT${productView.MinimumPrice}元-{productView.MaximumPrice}元")</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                    @if (Model.ProductViewList.TotalCount > 0)
+                                    {
+                                        <abp-row>
+                                            <abp-column>
+                                                <abp-paginator model="Model.PagerModel" />
+                                            </abp-column>
+                                        </abp-row>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section End -->

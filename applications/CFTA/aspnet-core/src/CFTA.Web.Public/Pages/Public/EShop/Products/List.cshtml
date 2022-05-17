@@ -1,0 +1,63 @@
+﻿@page "/e-shop/products/list"
+@model CFTA.Web.Public.Pages.EShop.Products.ListModel
+@using CFTA.Web.Public.Pages.Components.ProductListWidget
+@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@inject IThemeManager ThemeManager
+
+@{
+    
+}
+
+@section scripts{
+<script type="text/javascript">
+    var abp = abp || {};
+    abp.appPath = '@Model.ApiUrl';
+
+
+    $( document ).ready(function() {
+        /*=====================13.filter js==========================*/
+        $('.filter-btn').on('click', function (e) {
+            $('.collection-filter').css("left", "-15px");
+        });
+        $('.filter-back').on('click', function (e) {
+            $('.collection-filter').css("left", "-365px");
+        });
+        // sidebar popup
+        $('.sidebar-popup').on('click', function (e) {
+            $('.open-popup').toggleClass('open');
+            $('.collection-filter').css("left", "-15px");
+        });
+        $('.filter-back').on('click', function (e) {
+            $('.collection-filter').css("left", "-365px");
+            $('.sidebar-popup').trigger('click');
+        });
+
+        $('.collapse-block-title').on('click', function(e) {
+        e.preventDefault;
+        var speed = 300;
+        var thisItem = $(this).parent(),
+            nextLevel = $(this).next('.collection-collapse-block-content');
+        if (thisItem.hasClass('open')){
+            thisItem.removeClass('open');
+            nextLevel.slideUp(speed);
+        }
+        else {
+            thisItem.addClass('open');
+            nextLevel.slideDown(speed);
+        }
+        });
+    });
+</script>
+}
+
+<!-- section start -->
+<section>
+    <div class="collection-wrapper">
+        <div class="container">
+            @{
+	            @await Component.InvokeAsync(typeof(ProductListWidgetViewComponent))
+            }
+        </div>
+    </div>
+</section>
+<!-- Section ends -->

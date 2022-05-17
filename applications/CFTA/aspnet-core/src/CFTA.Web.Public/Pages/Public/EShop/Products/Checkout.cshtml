@@ -1,0 +1,13 @@
+﻿@page "/e-shop/products/checkout"
+@using CFTA.Web.Public.Pages.Components.ProductCheckoutWidget
+@model CFTA.Web.Public.Pages.Public.EShop.Products.CheckoutModel
+@{
+}
+
+<section class="checkout-page">
+    <div class="container">
+        @{
+	        @await Component.InvokeAsync(typeof(ProductCheckoutWidgetViewComponent))
+        }
+    </div>
+</section>

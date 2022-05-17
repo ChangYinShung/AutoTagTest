@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>CFTA</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Identity.Pro.Application" Version="$(VoloVersion)" />
+		<ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Application\FS.CmsKitManagement.Application.csproj" />
+		<ProjectReference Include="..\..\..\..\..\modules\FS.EntityManagement\src\FS.EntityManagement.Application\FS.EntityManagement.Application.csproj" />
+		<ProjectReference Include="..\..\..\..\..\modules\FS.EShopManagement\src\FS.EShopManagement.Application\FS.EShopManagement.Application.csproj" />
+		<ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.Application\FS.FormManagement.Application.csproj" />
+		<ProjectReference Include="..\..\..\..\..\projects\EasyAbp.PaymentService\modules\EasyAbp.PaymentService\src\EasyAbp.PaymentService.Application\EasyAbp.PaymentService.Application.csproj" />
+		<ProjectReference Include="..\CFTA.Data\CFTA.Data.csproj" />
+		<ProjectReference Include="..\CFTA.Domain\CFTA.Domain.csproj" />
+		<ProjectReference Include="..\CFTA.Application.Contracts\CFTA.Application.Contracts.csproj" />
+		<ProjectReference Include="..\CFTA.Public.ContentDefinitions\CFTA.Public.ContentDefinitions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.SettingManagement.Application" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.FileManagement.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Saas.Host.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.AuditLogging.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.Identity.Pro.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.IdentityServer.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.Account.Pro.Public.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.Account.Pro.Admin.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.LanguageManagement.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.TextTemplateManagement.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Abp.LeptonTheme.Management.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.CmsKit.Pro.Application" Version="$(VoloVersion)" />
+		<PackageReference Include="Volo.Payment.Admin.Application" Version="$(VoloVersion)" />
+	</ItemGroup>
+
+</Project>

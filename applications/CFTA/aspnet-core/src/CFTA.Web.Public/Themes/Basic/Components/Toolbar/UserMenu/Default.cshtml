@@ -1,0 +1,36 @@
+﻿@using Localization.Resources.AbpUi
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.MultiTenancy
+@using Volo.Abp.UI.Navigation
+@using Volo.Abp.Users
+@inject ICurrentUser CurrentUser
+@inject ICurrentTenant CurrentTenant
+@inject IHtmlLocalizer<AbpUiResource> L
+@model ApplicationMenu
+<div class="dropdown">
+    <a class="" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        @if (CurrentUser.TenantId != null)
+        {
+            <small><i>@CurrentTenant.Name</i>\</small>
+
+            @CurrentUser.UserName
+        }
+        else
+        {
+            @CurrentUser.UserName
+        }
+    </a>
+
+    @if (Model.Items.Any())
+    {
+        <div class="dropdown-menu dropdown-menu-end border-0 shadow-sm" aria-labelledby="dropdownMenuLink" >
+            
+            <a href="@Url.Content("~/e-shop/orders/index")">
+                訂單查詢
+            </a>
+            <a href="@Url.Content("~/Account/Logout")">
+                登出
+            </a>
+        </div>
+    }
+</div>
