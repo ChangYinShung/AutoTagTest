@@ -18,11 +18,12 @@ jobs:
       working-directory: .\ci
       shell: powershell
       continue-on-error: true
-    - name: read directoryBuild.props
-        id: directoryBuildProps
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: ./Directory.Build.props
+
+    - name: read directoryBuild 
+      id: directoryBuildProps 
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./Directory.Build.props
     - name: get version
         id: getVersion
         uses: AsasInnab/regex-action@v1
