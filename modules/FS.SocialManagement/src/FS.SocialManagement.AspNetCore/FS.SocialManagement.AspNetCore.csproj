@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.SocialManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Social.LineNotify\src\FS.Social.LineNotify.AspNetCore\FS.Social.LineNotify.AspNetCore.csproj" />
+    <ProjectReference Include="..\FS.SocialManagement.Application\FS.SocialManagement.Application.csproj" />
+    <ProjectReference Include="..\FS.SocialManagement.EntityFrameworkCore\FS.SocialManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.SocialManagement.HttpApi\FS.SocialManagement.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>

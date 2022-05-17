@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.SocialManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Social\src\FS.Social.Domain\FS.Social.Domain.csproj" />
+    <ProjectReference Include="..\FS.SocialManagement.Domain.Shared\FS.SocialManagement.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

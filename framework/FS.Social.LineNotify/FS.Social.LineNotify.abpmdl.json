@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Social.LineNotify.Domain.Shared": {
+      "path": "src/FS.Social.LineNotify.Domain.Shared/FS.Social.LineNotify.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.Domain": {
+      "path": "src/FS.Social.LineNotify.Domain/FS.Social.LineNotify.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.Application.Contracts": {
+      "path": "src/FS.Social.LineNotify.Application.Contracts/FS.Social.LineNotify.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.Application": {
+      "path": "src/FS.Social.LineNotify.Application/FS.Social.LineNotify.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.EntityFrameworkCore": {
+      "path": "src/FS.Social.LineNotify.EntityFrameworkCore/FS.Social.LineNotify.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.MongoDB": {
+      "path": "src/FS.Social.LineNotify.MongoDB/FS.Social.LineNotify.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.HttpApi": {
+      "path": "src/FS.Social.LineNotify.HttpApi/FS.Social.LineNotify.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.HttpApi.Client": {
+      "path": "src/FS.Social.LineNotify.HttpApi.Client/FS.Social.LineNotify.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.TestBase": {
+      "path": "test/FS.Social.LineNotify.TestBase/FS.Social.LineNotify.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.LineNotify.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Social.LineNotify.EntityFrameworkCore.Tests/FS.Social.LineNotify.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.LineNotify.MongoDB.Tests": {
+      "path": "test/FS.Social.LineNotify.MongoDB.Tests/FS.Social.LineNotify.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.LineNotify.Domain.Tests": {
+      "path": "test/FS.Social.LineNotify.Domain.Tests/FS.Social.LineNotify.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.LineNotify.Application.Tests": {
+      "path": "test/FS.Social.LineNotify.Application.Tests/FS.Social.LineNotify.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.LineNotify.HttpApi.Host": {
+      "path": "host/FS.Social.LineNotify.HttpApi.Host/FS.Social.LineNotify.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.LineNotify.Web": {
+      "path": "src/FS.Social.LineNotify.Web/FS.Social.LineNotify.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Social.LineNotify.HttpApi.Client.ConsoleTestApp/FS.Social.LineNotify.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.LineNotify.Web.Host": {
+      "path": "host/FS.Social.LineNotify.Web.Host/FS.Social.LineNotify.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.LineNotify.IdentityServer": {
+      "path": "host/FS.Social.LineNotify.IdentityServer/FS.Social.LineNotify.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.LineNotify.Host.Shared": {
+      "path": "host/FS.Social.LineNotify.Host.Shared/FS.Social.LineNotify.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.LineNotify.Web.Unified": {
+      "path": "host/FS.Social.LineNotify.Web.Unified/FS.Social.LineNotify.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.LineNotify.Blazor": {
+      "path": "src/FS.Social.LineNotify.Blazor/FS.Social.LineNotify.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.Blazor.Host": {
+      "path": "host/FS.Social.LineNotify.Blazor.Host/FS.Social.LineNotify.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.LineNotify.Blazor.Server": {
+      "path": "src/FS.Social.LineNotify.Blazor.Server/FS.Social.LineNotify.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.Blazor.WebAssembly": {
+      "path": "src/FS.Social.LineNotify.Blazor.WebAssembly/FS.Social.LineNotify.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.LineNotify.Blazor.Server.Host": {
+      "path": "host/FS.Social.LineNotify.Blazor.Server.Host/FS.Social.LineNotify.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

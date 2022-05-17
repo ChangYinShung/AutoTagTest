@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.LineNotify": {
+      "path": "FS.LineNotify.abpmdl.json"
+    }
+  }
+}

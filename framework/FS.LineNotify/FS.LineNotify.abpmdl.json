@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.LineNotify.Domain.Shared": {
+      "path": "src/FS.LineNotify.Domain.Shared/FS.LineNotify.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.Domain": {
+      "path": "src/FS.LineNotify.Domain/FS.LineNotify.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.Application.Contracts": {
+      "path": "src/FS.LineNotify.Application.Contracts/FS.LineNotify.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.Application": {
+      "path": "src/FS.LineNotify.Application/FS.LineNotify.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.EntityFrameworkCore": {
+      "path": "src/FS.LineNotify.EntityFrameworkCore/FS.LineNotify.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.MongoDB": {
+      "path": "src/FS.LineNotify.MongoDB/FS.LineNotify.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.HttpApi": {
+      "path": "src/FS.LineNotify.HttpApi/FS.LineNotify.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.HttpApi.Client": {
+      "path": "src/FS.LineNotify.HttpApi.Client/FS.LineNotify.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.TestBase": {
+      "path": "test/FS.LineNotify.TestBase/FS.LineNotify.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.LineNotify.EntityFrameworkCore.Tests": {
+      "path": "test/FS.LineNotify.EntityFrameworkCore.Tests/FS.LineNotify.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.LineNotify.MongoDB.Tests": {
+      "path": "test/FS.LineNotify.MongoDB.Tests/FS.LineNotify.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.LineNotify.Domain.Tests": {
+      "path": "test/FS.LineNotify.Domain.Tests/FS.LineNotify.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.LineNotify.Application.Tests": {
+      "path": "test/FS.LineNotify.Application.Tests/FS.LineNotify.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.LineNotify.HttpApi.Host": {
+      "path": "host/FS.LineNotify.HttpApi.Host/FS.LineNotify.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.LineNotify.Web": {
+      "path": "src/FS.LineNotify.Web/FS.LineNotify.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.LineNotify.HttpApi.Client.ConsoleTestApp/FS.LineNotify.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.LineNotify.Web.Host": {
+      "path": "host/FS.LineNotify.Web.Host/FS.LineNotify.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.LineNotify.IdentityServer": {
+      "path": "host/FS.LineNotify.IdentityServer/FS.LineNotify.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.LineNotify.Host.Shared": {
+      "path": "host/FS.LineNotify.Host.Shared/FS.LineNotify.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.LineNotify.Web.Unified": {
+      "path": "host/FS.LineNotify.Web.Unified/FS.LineNotify.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.LineNotify.Blazor": {
+      "path": "src/FS.LineNotify.Blazor/FS.LineNotify.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.Blazor.Host": {
+      "path": "host/FS.LineNotify.Blazor.Host/FS.LineNotify.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.LineNotify.Blazor.Server": {
+      "path": "src/FS.LineNotify.Blazor.Server/FS.LineNotify.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.Blazor.WebAssembly": {
+      "path": "src/FS.LineNotify.Blazor.WebAssembly/FS.LineNotify.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.LineNotify.Blazor.Server.Host": {
+      "path": "host/FS.LineNotify.Blazor.Server.Host/FS.LineNotify.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

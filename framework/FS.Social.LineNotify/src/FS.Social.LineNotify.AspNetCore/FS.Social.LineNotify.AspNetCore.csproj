@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Social.LineNotify</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.LineNotify\src\FS.LineNotify.HttpClient\FS.LineNotify.HttpClient.csproj" />
+    <ProjectReference Include="..\FS.Social.LineNotify.Application\FS.Social.LineNotify.Application.csproj" />
+    <ProjectReference Include="..\FS.Social.LineNotify.HttpApi\FS.Social.LineNotify.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>

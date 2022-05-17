@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Social.Domain.Shared": {
+      "path": "src/FS.Social.Domain.Shared/FS.Social.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.Domain": {
+      "path": "src/FS.Social.Domain/FS.Social.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.Application.Contracts": {
+      "path": "src/FS.Social.Application.Contracts/FS.Social.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.Application": {
+      "path": "src/FS.Social.Application/FS.Social.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.EntityFrameworkCore": {
+      "path": "src/FS.Social.EntityFrameworkCore/FS.Social.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.MongoDB": {
+      "path": "src/FS.Social.MongoDB/FS.Social.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.HttpApi": {
+      "path": "src/FS.Social.HttpApi/FS.Social.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.HttpApi.Client": {
+      "path": "src/FS.Social.HttpApi.Client/FS.Social.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.TestBase": {
+      "path": "test/FS.Social.TestBase/FS.Social.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Social.EntityFrameworkCore.Tests/FS.Social.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.MongoDB.Tests": {
+      "path": "test/FS.Social.MongoDB.Tests/FS.Social.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.Domain.Tests": {
+      "path": "test/FS.Social.Domain.Tests/FS.Social.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.Application.Tests": {
+      "path": "test/FS.Social.Application.Tests/FS.Social.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.HttpApi.Host": {
+      "path": "host/FS.Social.HttpApi.Host/FS.Social.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.Web": {
+      "path": "src/FS.Social.Web/FS.Social.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Social.HttpApi.Client.ConsoleTestApp/FS.Social.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Social.Web.Host": {
+      "path": "host/FS.Social.Web.Host/FS.Social.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.IdentityServer": {
+      "path": "host/FS.Social.IdentityServer/FS.Social.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.Host.Shared": {
+      "path": "host/FS.Social.Host.Shared/FS.Social.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.Web.Unified": {
+      "path": "host/FS.Social.Web.Unified/FS.Social.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.Blazor": {
+      "path": "src/FS.Social.Blazor/FS.Social.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.Blazor.Host": {
+      "path": "host/FS.Social.Blazor.Host/FS.Social.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Social.Blazor.Server": {
+      "path": "src/FS.Social.Blazor.Server/FS.Social.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.Blazor.WebAssembly": {
+      "path": "src/FS.Social.Blazor.WebAssembly/FS.Social.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Social.Blazor.Server.Host": {
+      "path": "host/FS.Social.Blazor.Server.Host/FS.Social.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.SocialManagement.Domain.Shared": {
+      "path": "src/FS.SocialManagement.Domain.Shared/FS.SocialManagement.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.Domain": {
+      "path": "src/FS.SocialManagement.Domain/FS.SocialManagement.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.Application.Contracts": {
+      "path": "src/FS.SocialManagement.Application.Contracts/FS.SocialManagement.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.Application": {
+      "path": "src/FS.SocialManagement.Application/FS.SocialManagement.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.EntityFrameworkCore": {
+      "path": "src/FS.SocialManagement.EntityFrameworkCore/FS.SocialManagement.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.MongoDB": {
+      "path": "src/FS.SocialManagement.MongoDB/FS.SocialManagement.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.HttpApi": {
+      "path": "src/FS.SocialManagement.HttpApi/FS.SocialManagement.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.HttpApi.Client": {
+      "path": "src/FS.SocialManagement.HttpApi.Client/FS.SocialManagement.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.TestBase": {
+      "path": "test/FS.SocialManagement.TestBase/FS.SocialManagement.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.SocialManagement.EntityFrameworkCore.Tests": {
+      "path": "test/FS.SocialManagement.EntityFrameworkCore.Tests/FS.SocialManagement.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.SocialManagement.MongoDB.Tests": {
+      "path": "test/FS.SocialManagement.MongoDB.Tests/FS.SocialManagement.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.SocialManagement.Domain.Tests": {
+      "path": "test/FS.SocialManagement.Domain.Tests/FS.SocialManagement.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.SocialManagement.Application.Tests": {
+      "path": "test/FS.SocialManagement.Application.Tests/FS.SocialManagement.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.SocialManagement.HttpApi.Host": {
+      "path": "host/FS.SocialManagement.HttpApi.Host/FS.SocialManagement.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.SocialManagement.Web": {
+      "path": "src/FS.SocialManagement.Web/FS.SocialManagement.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.SocialManagement.HttpApi.Client.ConsoleTestApp/FS.SocialManagement.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.SocialManagement.Web.Host": {
+      "path": "host/FS.SocialManagement.Web.Host/FS.SocialManagement.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.SocialManagement.IdentityServer": {
+      "path": "host/FS.SocialManagement.IdentityServer/FS.SocialManagement.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.SocialManagement.Host.Shared": {
+      "path": "host/FS.SocialManagement.Host.Shared/FS.SocialManagement.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.SocialManagement.Web.Unified": {
+      "path": "host/FS.SocialManagement.Web.Unified/FS.SocialManagement.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.SocialManagement.Blazor": {
+      "path": "src/FS.SocialManagement.Blazor/FS.SocialManagement.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.Blazor.Host": {
+      "path": "host/FS.SocialManagement.Blazor.Host/FS.SocialManagement.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.SocialManagement.Blazor.Server": {
+      "path": "src/FS.SocialManagement.Blazor.Server/FS.SocialManagement.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.Blazor.WebAssembly": {
+      "path": "src/FS.SocialManagement.Blazor.WebAssembly/FS.SocialManagement.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.SocialManagement.Blazor.Server.Host": {
+      "path": "host/FS.SocialManagement.Blazor.Server.Host/FS.SocialManagement.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Social.LineNotify</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    
+    <ProjectReference Include="..\..\..\FS.LineNotify\src\FS.LineNotify.HttpApi\FS.LineNotify.HttpApi.csproj" />
+    
+    <ProjectReference Include="..\FS.Social.LineNotify.Application.Contracts\FS.Social.LineNotify.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

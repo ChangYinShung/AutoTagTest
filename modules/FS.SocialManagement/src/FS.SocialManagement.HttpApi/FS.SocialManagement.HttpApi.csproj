@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.SocialManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Social\src\FS.Social.HttpApi\FS.Social.HttpApi.csproj" />
+    <ProjectReference Include="..\FS.SocialManagement.Application.Contracts\FS.SocialManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Social": {
+      "path": "FS.Social.abpmdl.json"
+    }
+  }
+}
