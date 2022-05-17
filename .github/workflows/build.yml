@@ -15,8 +15,7 @@ jobs:
     - name: build all
       id: buildAction
       run: |
-        Invoke-Pester /build-all.ps1 -Passthru
-      working-directory: /ci
+        /ci/build-all.ps1 -Passthru
       shell:  pwsh
       continue-on-error: true
 
