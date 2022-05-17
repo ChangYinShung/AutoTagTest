@@ -25,4 +25,5 @@ jobs:
      
       token: ${{ secrets.LINE_NOTIFY_TOKEN }}
       if : steps.buildAction.outcome != 'success'
+      run: echo ::set-output name=status::success
       message: 'LINE Notify test message'
