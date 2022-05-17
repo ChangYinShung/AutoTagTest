@@ -6,7 +6,10 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+     strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-dotnet@master
@@ -14,9 +17,9 @@ jobs:
         dotnet-version: 6.0.300
     - name: build all
       id: buildAction
-      run: |
-        ./ci/build-all.ps1 -Passthru
-      shell:  pwsh
+      run: .\build-all.ps1
+      working-directory: .\ci
+      shell: powershell
       continue-on-error: true
 
     - name: read directoryBuild 
