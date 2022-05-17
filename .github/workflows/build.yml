@@ -15,9 +15,9 @@ jobs:
         dotnet-version: 6.0.300
     - name: build all
       id: buildAction
-      run: /build-all.ps1
-      working-directory: /ci
       shell: pwsh
+      working-directory: ./ci
+      run: /build-all.ps1
       continue-on-error: true
 
     - name: read directoryBuild 
