@@ -20,7 +20,6 @@ jobs:
       working-directory: .\ci
       shell: powershell
       continue-on-error: true
-      
     - uses: louis70109/line-notify-action@master
     - name: NotifyMessage
       token: ${{ secrets.LINE_NOTIFY_TOKEN }}
